@@ -1,0 +1,1669 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nancy Abdullah Fathy — Full Stack Developer specializing in PHP, Laravel, React.js and AI-powered web applications."
+    />
+    <title>Nancy Abdullah Fathy | Full Stack Developer</title>
+
+    <!-- Preconnect for speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts: English + Arabic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Portfolio CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+  </head>
+  <body>
+    <!-- ══ SCROLL PROGRESS ══════════════════════════════════════ -->
+    <div id="scrollProgress"></div>
+
+    <!-- ══ LOADER ═══════════════════════════════════════════════ -->
+    <div id="loader">
+      <div class="loader-logo">NAF</div>
+      <div class="loader-bar"><div class="loader-prog" id="lp"></div></div>
+      <div class="loader-txt">Initializing Portfolio</div>
+    </div>
+
+    <!-- ══ CURSOR ════════════════════════════════════════════════ -->
+    <div class="cursor" id="cur"></div>
+    <div class="cursor-ring" id="curR"></div>
+
+    <!-- ══ PARTICLES ════════════════════════════════════════════ -->
+    <canvas id="particles"></canvas>
+
+    <!-- ══ FLOATING BUTTONS ═════════════════════════════════════ -->
+    <a
+      href="https://wa.me/201279424259"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-btn"
+      id="waBtn"
+      aria-label="WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="wa-tooltip" data-i18n="wa_tooltip">Chat on WhatsApp</span>
+    </a>
+    <button class="back-top" id="backTop" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ══ NAV ═══════════════════════════════════════════════════ -->
+    <nav id="navbar">
+      <a href="#hero" class="nav-logo">NAF</a>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+        <li><a href="#education" data-i18n="nav_education">Education</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="hamburger" id="menuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <button class="lang-toggle" id="langToggle" data-i18n="lang_btn">
+          عربي
+        </button>
+      </div>
+    </nav>
+
+    <!-- ══ MOBILE SIDEBAR (off‑canvas) ═══════════════════════════ -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">NAF</div>
+        <button class="sidebar-close" id="sidebarClose">&times;</button>
+      </div>
+      <div class="sidebar-content">
+        <ul class="sidebar-nav">
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+          <li>
+            <a href="#experience" data-i18n="nav_experience">Experience</a>
+          </li>
+          <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+          <li><a href="#education" data-i18n="nav_education">Education</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <div class="sidebar-controls">
+          <button
+            class="theme-toggle sidebar-theme-toggle"
+            id="sidebarThemeToggle"
+            aria-label="Toggle theme"
+          >
+            <i class="fas fa-sun" id="sidebarThemeIcon"></i>
+          </button>
+          <button
+            class="lang-toggle sidebar-lang-toggle"
+            id="sidebarLangToggle"
+            data-i18n="lang_btn"
+          >
+            عربي
+          </button>
+        </div>
+        <div class="sidebar-socials">
+          <a
+            href="https://www.linkedin.com/in/nancy-abdullah"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/nancy-abduallh"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+
+          <a href="mailto:nancyabdo857@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a href="tel:+201279424259" aria-label="Phone"
+            ><i class="fas fa-phone"></i
+          ></a>
+        </div>
+        <div class="sidebar-footer" data-i18n="footer_sub">
+          BUILT WITH PASSION & PRECISION
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- ══ HERO ══════════════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero_badge">Available for Opportunities</span>
+          </div>
+
+          <h1 class="hero-name">
+            <span data-i18n="hero_name1">Nancy</span>
+            <span class="gold" data-i18n="hero_name2">Abdullah Fathy</span>
+          </h1>
+
+          <p class="hero-role">
+            <span id="typedRole"></span><span class="typed-cursor">|</span>
+          </p>
+
+          <p class="hero-desc" data-i18n="hero_desc">
+            Software Engineer with 3+ years of experience building scalable,
+            intelligent web applications — transforming complex challenges into
+            seamless digital experiences that empower users and delight clients.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-gold">
+              <i class="fas fa-layer-group"></i>
+              <span data-i18n="hero_btn_projects">View Projects</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fas fa-paper-plane"></i>
+              <span data-i18n="hero_btn_hire">Hire Me</span>
+            </a>
+            <a href="mailto:nancyabdo857@gmail.com" class="btn btn-outline">
+              <i class="fas fa-envelope"></i>
+              <span data-i18n="hero_btn_email">Email Me</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num" data-i18n="stat_years">3+</div>
+              <div class="stat-label" data-i18n="stat_years_lbl">
+                Years Exp.
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-i18n="stat_projects">10+</div>
+              <div class="stat-label" data-i18n="stat_projects_lbl">
+                Projects
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-i18n="stat_gpa">3.68</div>
+              <div class="stat-label" data-i18n="stat_gpa_lbl">GPA / 4.0</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-i18n="stat_grade">A+</div>
+              <div class="stat-label" data-i18n="stat_grade_lbl">Top Grade</div>
+            </div>
+          </div>
+        </div>
+        <!-- /hero-text -->
+
+        <div class="hero-visual">
+          <div class="profile-frame">
+            <img
+              src="./images/WhatsApp Image 2026-02-23 at 15.37.14.jpeg"
+              class="profile-img"
+              alt="Nancy Abdullah Fathy"
+              loading="eager"
+              onerror="
+                this.onerror = null;
+                this.src =
+                  'https://via.placeholder.com/360x450/1a1a1a/c9a84c?text=NAF';
+              "
+            />
+          </div>
+          <div class="float-badge top-right">
+            <i class="fab fa-laravel"></i>
+            <span data-i18n="badge_laravel">Laravel Expert</span>
+          </div>
+          <div class="float-badge bottom-left">
+            <i class="fab fa-react"></i>
+            <span data-i18n="badge_react">React Developer</span>
+          </div>
+        </div>
+      </div>
+      <!-- /hero-content -->
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- ══ ABOUT ══════════════════════════════════════════════════ -->
+    <section id="about" class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="sec-num">01</div>
+          <div>
+            <div class="sec-tag" data-i18n="about_tag">Who I Am</div>
+            <h2 class="sec-title" data-i18n="about_title">About Me</h2>
+            <div class="gold-line"></div>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-img-wrap reveal">
+            <img
+              src="./images/WhatsApp Image 2026-02-23 at 15.37.14.jpeg"
+              alt="Nancy Abdullah Fathy"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src =
+                  'https://via.placeholder.com/400x533/1a1a1a/c9a84c?text=NAF';
+              "
+            />
+            <div class="about-deco"></div>
+          </div>
+
+          <div class="reveal" style="transition-delay: 0.15s">
+            <p class="about-lead" data-i18n="about_lead">
+              "Driven by a passion for creating smart, scalable, and
+              user-centric solutions."
+            </p>
+            <p class="about-text" data-i18n="about_p1">
+              I'm a Software Engineer with over 3 years of specialized
+              experience in front-end (React.js), back-end (PHP &amp; Laravel),
+              database design, full-stack development, and AI. I am passionate
+              about building elegant, high-performance web applications that
+              users love.
+            </p>
+            <p class="about-text" data-i18n="about_p2">
+              My aim is to transform complex challenges into seamless digital
+              experiences by combining clean code, intuitive interfaces, and
+              efficient system design — delivering not just functional
+              applications, but meaningful user journeys.
+            </p>
+
+            <div class="about-details">
+              <div class="detail-item">
+                <label data-i18n="lbl_location">Location</label>
+                <span data-i18n="val_location">Giza, Egypt</span>
+              </div>
+              <div class="detail-item">
+                <label data-i18n="lbl_email">Email</label>
+                <span>nancyabdo857@gmail.com</span>
+              </div>
+              <div class="detail-item">
+                <label data-i18n="lbl_phone">Phone</label>
+                <span>+(20) 1279424259</span>
+              </div>
+              <div class="detail-item">
+                <label data-i18n="lbl_university">University</label>
+                <span data-i18n="val_university">Helwan University</span>
+              </div>
+              <div class="detail-item">
+                <label data-i18n="lbl_major">Major</label>
+                <span data-i18n="val_major">AI Department — CS &amp; AI</span>
+              </div>
+              <div class="detail-item">
+                <label data-i18n="lbl_gpa">GPA</label>
+                <span data-i18n="val_gpa">3.68 / 4.0 · Excellent</span>
+              </div>
+            </div>
+
+            <div class="lang-grid" id="langGrid">
+              <div class="lang-item">
+                <div class="lang-name" data-i18n="lang_arabic">Arabic</div>
+                <div class="lang-bar">
+                  <div class="lang-fill" data-w="100"></div>
+                </div>
+                <div class="lang-level" data-i18n="lang_lv_arabic">
+                  Native / Fluent
+                </div>
+              </div>
+              <div class="lang-item">
+                <div class="lang-name" data-i18n="lang_english">English</div>
+                <div class="lang-bar">
+                  <div class="lang-fill" data-w="82"></div>
+                </div>
+                <div class="lang-level" data-i18n="lang_lv_english">
+                  Very Good
+                </div>
+              </div>
+              <div class="lang-item">
+                <div class="lang-name" data-i18n="lang_deutsch">Deutsch</div>
+                <div class="lang-bar">
+                  <div class="lang-fill" data-w="55"></div>
+                </div>
+                <div class="lang-level" data-i18n="lang_lv_deutsch">Good</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /about-grid -->
+      </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- ══ SKILLS ════════════════════════════════════════════════ -->
+    <section id="skills" class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="sec-num">02</div>
+          <div>
+            <div class="sec-tag" data-i18n="skills_tag">What I Know</div>
+            <h2 class="sec-title" data-i18n="skills_title">Technical Skills</h2>
+            <div class="gold-line"></div>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Languages -->
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <div class="skill-cat" data-i18n="sk1_cat">Core</div>
+            <div class="skill-title" data-i18n="sk1_title">Languages</div>
+            <div class="skill-tags">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span><span class="tag">PHP</span>
+              <span class="tag">Python</span><span class="tag">Java</span>
+              <span class="tag">C++</span><span class="tag">TypeScript</span>
+            </div>
+          </div>
+
+          <!-- Frameworks -->
+          <div class="skill-card reveal" style="transition-delay: 0.1s">
+            <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+            <div class="skill-cat" data-i18n="sk2_cat">Frameworks</div>
+            <div class="skill-title" data-i18n="sk2_title">
+              Frameworks &amp; Libraries
+            </div>
+            <div class="skill-tags">
+              <span class="tag">Laravel</span><span class="tag">React.js</span>
+              <span class="tag">Vue.js</span><span class="tag">Livewire</span>
+              <span class="tag">Bootstrap</span><span class="tag">jQuery</span>
+              <span class="tag">Tailwind</span
+              ><span class="tag">Alpine.js</span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-card reveal" style="transition-delay: 0.2s">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <div class="skill-cat" data-i18n="sk3_cat">Data</div>
+            <div class="skill-title" data-i18n="sk3_title">Databases</div>
+            <div class="skill-tags">
+              <span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+              <span class="tag">MS SQL Server</span
+              ><span class="tag">Oracle Server</span>
+              <span class="tag">Eloquent ORM</span
+              ><span class="tag">Redis</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-card reveal" style="transition-delay: 0.1s">
+            <div class="skill-icon"><i class="fas fa-tools"></i></div>
+            <div class="skill-cat" data-i18n="sk4_cat">DevOps</div>
+            <div class="skill-title" data-i18n="sk4_title">
+              Tools &amp; Version Control
+            </div>
+            <div class="skill-tags">
+              <span class="tag">Git</span><span class="tag">GitHub</span>
+              <span class="tag">GitLab</span><span class="tag">Docker</span>
+              <span class="tag">Docker Compose</span
+              ><span class="tag">VSCode</span> <span class="tag">PHPStorm</span
+              ><span class="tag">Postman</span>
+              <span class="tag">RESTful APIs</span
+              ><span class="tag">GraphQL</span>
+              <span class="tag">MyFatoorah</span>
+            </div>
+          </div>
+
+          <!-- AI -->
+          <div class="skill-card reveal" style="transition-delay: 0.2s">
+            <div class="skill-icon"><i class="fas fa-brain"></i></div>
+            <div class="skill-cat" data-i18n="sk5_cat">AI</div>
+            <div class="skill-title" data-i18n="sk5_title">
+              AI &amp; Architecture
+            </div>
+            <div class="skill-tags">
+              <span class="tag">Machine Learning</span
+              ><span class="tag">Deep Learning</span>
+              <span class="tag">AI Development</span
+              ><span class="tag">TensorFlow</span>
+              <span class="tag">PyTorch</span><span class="tag">MVC</span>
+              <span class="tag">Design Patterns</span
+              ><span class="tag">SOLID</span> <span class="tag">OOP</span
+              ><span class="tag">Microservices</span>
+            </div>
+          </div>
+
+          <!-- Cloud -->
+          <div class="skill-card reveal" style="transition-delay: 0.3s">
+            <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+            <div class="skill-cat" data-i18n="sk6_cat">Cloud</div>
+            <div class="skill-title" data-i18n="sk6_title">Infrastructure</div>
+            <div class="skill-tags">
+              <span class="tag">AWS</span><span class="tag">DigitalOcean</span>
+              <span class="tag">CI/CD</span><span class="tag">Apache</span>
+              <span class="tag">Linux</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-card reveal" style="transition-delay: 0.1s">
+            <div class="skill-icon"><i class="fas fa-users"></i></div>
+            <div class="skill-cat" data-i18n="sk7_cat">Soft Skills</div>
+            <div class="skill-title" data-i18n="sk7_title">
+              Professional Skills
+            </div>
+            <div class="skill-tags">
+              <span class="tag">Teamwork</span
+              ><span class="tag">Problem Solving</span>
+              <span class="tag">Agile</span><span class="tag">Scrum</span>
+              <span class="tag">Project Management</span
+              ><span class="tag">Communication</span>
+              <span class="tag">Technical Writing</span>
+            </div>
+          </div>
+        </div>
+        <!-- /skills-grid -->
+      </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- ══ EXPERIENCE ═════════════════════════════════════════════ -->
+    <section id="experience" class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="sec-num">03</div>
+          <div>
+            <div class="sec-tag" data-i18n="exp_tag">My Journey</div>
+            <h2 class="sec-title" data-i18n="exp_title">Work Experience</h2>
+            <div class="gold-line"></div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <!-- Bluezone -->
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-period" data-i18n="bz_period">
+              December 2024 — May 2025
+            </div>
+            <div class="tl-role" data-i18n="bz_role">
+              Full Stack PHP/Laravel Developer
+            </div>
+            <div class="tl-company">
+              <i
+                class="fas fa-building"
+                style="
+                  color: var(--gold);
+                  margin-right: 0.4rem;
+                  font-size: 0.75rem;
+                "
+              ></i>
+              <span data-i18n="bz_company">Bluezone Web Company</span>
+            </div>
+            <ul class="tl-desc">
+              <li data-i18n="bz_li1">
+                Developed and maintained e-commerce platforms (Nabela, Sakba,
+                Shantongulf, AndMore) using PHP Laravel &amp; MySQL with
+                responsive, cross-browser-compatible design.
+              </li>
+              <li data-i18n="bz_li2">
+                Implemented dynamic product catalogs, user authentication, and
+                real-time inventory management — reducing page load times by 30%
+                through query optimization and caching.
+              </li>
+              <li data-i18n="bz_li3">
+                Designed responsive UI components using Blade, HTML5, CSS3, and
+                JavaScript — leading to a 20% increase in user engagement and
+                session duration.
+              </li>
+              <li data-i18n="bz_li4">
+                Integrated MyFatoorah payment gateway and designed RESTful APIs,
+                improving conversion rates by 15%.
+              </li>
+              <li data-i18n="bz_li5">
+                Streamlined development workflows using Git &amp; Docker,
+                cutting deployment times in half.
+              </li>
+            </ul>
+          </div>
+
+          <!-- NTI -->
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-period" data-i18n="nti_period">
+              July 2025 — August 2025
+            </div>
+            <div class="tl-role" data-i18n="nti_role">
+              Full Stack Developer Intern
+            </div>
+            <div class="tl-company">
+              <i
+                class="fas fa-building"
+                style="
+                  color: var(--gold);
+                  margin-right: 0.4rem;
+                  font-size: 0.75rem;
+                "
+              ></i>
+              <span data-i18n="nti_company"
+                >National Telecommunication Institute (NTI)</span
+              >
+            </div>
+            <ul class="tl-desc">
+              <li data-i18n="nti_li1">
+                Gained hands-on experience in PHP, Laravel, MySQL, HTML, CSS,
+                JavaScript, and Bootstrap for building dynamic web applications.
+              </li>
+              <li data-i18n="nti_li2">
+                Developed and optimized backend APIs, implemented
+                authentication, and integrated database-driven features.
+              </li>
+              <li data-i18n="nti_li3">
+                Acquired freelancing skills including proposal writing, client
+                communication, project pricing, and contract management.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Prodigy -->
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-period" data-i18n="pro_period">
+              August — September 2024
+            </div>
+            <div class="tl-role" data-i18n="pro_role">
+              Full Stack Development Intern
+            </div>
+            <div class="tl-company">
+              <i
+                class="fas fa-building"
+                style="
+                  color: var(--gold);
+                  margin-right: 0.4rem;
+                  font-size: 0.75rem;
+                "
+              ></i>
+              <span data-i18n="pro_company">Prodigy Info Tech</span>
+            </div>
+            <ul class="tl-desc">
+              <li data-i18n="pro_li1">
+                Completed multiple projects independently: User Authentication,
+                Employee Management System, E-commerce Store, and Social Media
+                Website.
+              </li>
+              <li data-i18n="pro_li2">
+                Built dynamic web applications using HTML, CSS, JavaScript, PHP,
+                and MySQL.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Code Alpha -->
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-period" data-i18n="ca_period">August 2024</div>
+            <div class="tl-role" data-i18n="ca_role">
+              Full Stack Development Intern
+            </div>
+            <div class="tl-company">
+              <i
+                class="fas fa-building"
+                style="
+                  color: var(--gold);
+                  margin-right: 0.4rem;
+                  font-size: 0.75rem;
+                "
+              ></i>
+              <span data-i18n="ca_company">Code Alpha</span>
+            </div>
+            <ul class="tl-desc">
+              <li data-i18n="ca_li1">
+                Designed user-friendly interfaces using Bootstrap and
+                implemented robust authentication systems using Laravel.
+              </li>
+              <li data-i18n="ca_li2">
+                Worked on Secure User Authentication, Employee Management, and
+                E-commerce Store tasks.
+              </li>
+            </ul>
+          </div>
+
+          <!-- CIB -->
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-period" data-i18n="cib_period">
+              5 August — 22 August 2024
+            </div>
+            <div class="tl-role" data-i18n="cib_role">Internship Trainee</div>
+            <div class="tl-company">
+              <i
+                class="fas fa-university"
+                style="
+                  color: var(--gold);
+                  margin-right: 0.4rem;
+                  font-size: 0.75rem;
+                "
+              ></i>
+              <span data-i18n="cib_company">CIB Bank</span>
+            </div>
+            <ul class="tl-desc">
+              <li data-i18n="cib_li1">
+                Developed skills in digital literacy, cybersecurity intro,
+                digital transformation, and entrepreneurial thinking.
+              </li>
+              <li data-i18n="cib_li2">
+                Collaborated with international institutions (SAS, LinkedIn,
+                Frankfurt School) and earned 4 certificates.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /timeline -->
+      </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- ══ PROJECTS ═══════════════════════════════════════════════ -->
+    <section id="projects" class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="sec-num">04</div>
+          <div>
+            <div class="sec-tag" data-i18n="proj_tag">My Work</div>
+            <h2 class="sec-title" data-i18n="proj_title">Featured Projects</h2>
+            <div class="gold-line"></div>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Car Rental -->
+          <div class="project-card">
+            <div>
+              <div class="mtabs">
+                <button
+                  class="mtab active"
+                  onclick="swapMedia(this, 'car', 'img')"
+                  data-i18n="screenshot"
+                >
+                  Screenshot
+                </button>
+                <button
+                  class="mtab"
+                  onclick="swapMedia(this, 'car', 'vid')"
+                  data-i18n="demo_video"
+                >
+                  Demo Video
+                </button>
+              </div>
+              <div class="media-wrap">
+                <div id="car-img" class="media-panel active">
+                  <img
+                    src="./images/car.png"
+                    alt="Car Rental System"
+                    loading="lazy"
+                    onerror="
+                      this.onerror = null;
+                      this.src =
+                        'https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Car+Rental';
+                    "
+                  />
+                </div>
+                <div id="car-vid" class="media-panel">
+                  <video
+                    src="./videos/صلاح أبو الدهب للسيارات - Google Chrome 2026-02-23 15-25-56.mp4"
+                    controls
+                    loading="lazy"
+                  ></video>
+                </div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <div class="proj-period" data-i18n="car_period">2026</div>
+              <div class="proj-title" data-i18n="car_title">
+                Car Rental Website
+              </div>
+              <p class="proj-desc" data-i18n="car_desc">
+                A full-featured car rental platform with luxury vehicle
+                listings, advanced search and filtering, customer reviews, and a
+                modern responsive design.
+              </p>
+              <div class="proj-tech">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="live_demo">Live Demo</span></a
+                >
+                <a href="#" class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Nabela -->
+          <div class="project-card">
+            <div>
+              <div class="mtabs">
+                <button
+                  class="mtab active"
+                  onclick="swapMedia(this, 'nabela', 'img')"
+                  data-i18n="screenshot"
+                >
+                  Screenshot
+                </button>
+                <button
+                  class="mtab"
+                  onclick="swapMedia(this, 'nabela', 'vid')"
+                  data-i18n="demo_video"
+                >
+                  Demo Video
+                </button>
+              </div>
+              <div class="media-wrap">
+                <div id="nabela-img" class="media-panel active">
+                  <img
+                    src="./images/nabila.png"
+                    alt="Nabela E-Commerce"
+                    loading="lazy"
+                    onerror="
+                      this.onerror = null;
+                      this.src =
+                        'https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Nabela';
+                    "
+                  />
+                </div>
+                <div id="nabela-vid" class="media-panel">
+                  <video
+                    src="./videos/nabila.mp4"
+                    controls
+                    loading="lazy"
+                  ></video>
+                </div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <div class="proj-period" data-i18n="nab_period">
+                January — February 2024
+              </div>
+              <div class="proj-title" data-i18n="nab_title">
+                Nabela E-Commerce Platform
+              </div>
+              <p class="proj-desc" data-i18n="nab_desc">
+                Kuwait-based e-commerce for traditional women's wear (abayas).
+                Multi-currency (KWD, SAR, AED, QAR, BHD, OMR) and bilingual
+                Arabic/English interface with responsive design.
+              </p>
+              <div class="proj-tech">
+                <span class="tech-tag">Laravel</span
+                ><span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span
+                ><span class="tech-tag">Blade</span>
+                <span class="tech-tag">MyFatoorah</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://nabelakwt.com/ar"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="live_demo">Live Demo</span></a
+                >
+                <a href="#" class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- AndMore -->
+          <div class="project-card">
+            <div>
+              <div class="mtabs">
+                <button
+                  class="mtab active"
+                  onclick="swapMedia(this, 'andmore', 'img')"
+                  data-i18n="screenshot"
+                >
+                  Screenshot
+                </button>
+                <button
+                  class="mtab"
+                  onclick="swapMedia(this, 'andmore', 'vid')"
+                  data-i18n="demo_video"
+                >
+                  Demo Video
+                </button>
+              </div>
+              <div class="media-wrap">
+                <div id="andmore-img" class="media-panel active">
+                  <img
+                    src="./images/andmore.png"
+                    alt="AndMore E-commerce"
+                    loading="lazy"
+                    onerror="
+                      this.onerror = null;
+                      this.src =
+                        'https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=AndMore';
+                    "
+                  />
+                </div>
+                <div id="andmore-vid" class="media-panel">
+                  <video
+                    src="./videos/اند مور - Google Chrome 2025-08-18 13-25-17.mp4"
+                    controls
+                    loading="lazy"
+                  ></video>
+                </div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <div class="proj-period" data-i18n="and_period">
+                February — March 2024
+              </div>
+              <div class="proj-title" data-i18n="and_title">
+                AndMore E‑commerce Website
+              </div>
+              <p class="proj-desc" data-i18n="and_desc">
+                Kuwait‑based e‑commerce platform offering diverse products
+                across electronics, fashion, home goods, and personal care.
+                Features promotional ads, intuitive navigation, and multiple
+                payment methods.
+              </p>
+              <div class="proj-tech">
+                <span class="tech-tag">PHP</span
+                ><span class="tech-tag">Laravel</span>
+                <span class="tech-tag">MySQL</span
+                ><span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">JavaScript</span
+                ><span class="tech-tag">MyFatoorah</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://andmoree.com/ar"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="live_demo">Live Demo</span></a
+                >
+                <a href="#" class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Sakba -->
+          <div class="project-card">
+            <div>
+              <div class="mtabs">
+                <button
+                  class="mtab active"
+                  onclick="swapMedia(this, 'sakba', 'img')"
+                  data-i18n="screenshot"
+                >
+                  Screenshot
+                </button>
+                <button
+                  class="mtab"
+                  onclick="swapMedia(this, 'sakba', 'vid')"
+                  data-i18n="demo_video"
+                >
+                  Demo Video
+                </button>
+              </div>
+              <div class="media-wrap">
+                <div id="sakba-img" class="media-panel active">
+                  <img
+                    src="./images/sakba.png"
+                    alt="Sakba Platform"
+                    loading="lazy"
+                    onerror="
+                      this.onerror = null;
+                      this.src =
+                        'https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Sakba';
+                    "
+                  />
+                </div>
+                <div id="sakba-vid" class="media-panel">
+                  <video
+                    src="./videos/Sakba - Home - Google Chrome 2025-08-18 13-23-29.mp4"
+                    controls
+                    loading="lazy"
+                  ></video>
+                </div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <div class="proj-period" data-i18n="sak_period">
+                December 2024 — January 2025
+              </div>
+              <div class="proj-title" data-i18n="sak_title">
+                Sakba Custom Dashdasha Platform
+              </div>
+              <p class="proj-desc" data-i18n="sak_desc">
+                Kuwait-based e-commerce for custom men's dashdashas with fabric
+                selection. Integrates Visa, MasterCard &amp; KNET. Improved page
+                responsiveness by 25%.
+              </p>
+              <div class="proj-tech">
+                <span class="tech-tag">Laravel</span
+                ><span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">Eloquent ORM</span
+                ><span class="tech-tag">KNET</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="live_demo">Live Demo</span></a
+                >
+                <a href="#" class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Shantongulf -->
+          <div class="project-card">
+            <div>
+              <div class="mtabs">
+                <button
+                  class="mtab active"
+                  onclick="swapMedia(this, 'shanton', 'img')"
+                  data-i18n="screenshot"
+                >
+                  Screenshot
+                </button>
+                <button
+                  class="mtab"
+                  onclick="swapMedia(this, 'shanton', 'vid')"
+                  data-i18n="demo_video"
+                >
+                  Demo Video
+                </button>
+              </div>
+              <div class="media-wrap">
+                <div id="shanton-img" class="media-panel active">
+                  <img
+                    src="./images/shanton.png"
+                    alt="Shantongulf"
+                    loading="lazy"
+                    onerror="
+                      this.onerror = null;
+                      this.src =
+                        'https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Shantongulf';
+                    "
+                  />
+                </div>
+                <div id="shanton-vid" class="media-panel">
+                  <video
+                    src="./videos/شانتون _ الرئيسية - Google Chrome 2025-08-19 12-24-11.mp4"
+                    controls
+                    loading="lazy"
+                  ></video>
+                </div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <div class="proj-period" data-i18n="sha_period">
+                March — April 2024
+              </div>
+              <div class="proj-title" data-i18n="sha_title">
+                Shantongulf Women's Fashion Store
+              </div>
+              <p class="proj-desc" data-i18n="sha_desc">
+                Kuwait-based e-commerce for traditional women's wear including
+                abayas and seasonal dresses. Multi-currency support, language
+                toggle, and streamlined cart system.
+              </p>
+              <div class="proj-tech">
+                <span class="tech-tag">Laravel</span
+                ><span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span
+                ><span class="tech-tag">Bootstrap</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://www.shantongulf.com/ar"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="live_demo">Live Demo</span></a
+                >
+                <a href="#" class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- AXIT -->
+          <div class="project-card">
+            <div>
+              <div class="mtabs">
+                <button
+                  class="mtab active"
+                  onclick="swapMedia(this, 'axit', 'img')"
+                  data-i18n="screenshot"
+                >
+                  Screenshot
+                </button>
+                <button
+                  class="mtab"
+                  onclick="swapMedia(this, 'axit', 'vid')"
+                  data-i18n="demo_video"
+                >
+                  Demo Video
+                </button>
+              </div>
+              <div class="media-wrap">
+                <div id="axit-img" class="media-panel active">
+                  <img
+                    src="./images/axit.png"
+                    alt="AXIT Landing Page"
+                    loading="lazy"
+                    onerror="
+                      this.onerror = null;
+                      this.src =
+                        'https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=AXIT';
+                    "
+                  />
+                </div>
+                <div id="axit-vid" class="media-panel">
+                  <video
+                    src="./videos/AXIT Website - Google Chrome 2026-02-23 17-09-06.mp4"
+                    controls
+                    loading="lazy"
+                  ></video>
+                </div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <div class="proj-period" data-i18n="axi_period">January 2023</div>
+              <div class="proj-title" data-i18n="axi_title">
+                AXIT Landing Page
+              </div>
+              <p class="proj-desc" data-i18n="axi_desc">
+                Modern, responsive landing page for a fictional tech company
+                AXIT. Clean design, tabs, and mobile‑first layout with
+                interactive elements.
+              </p>
+              <div class="proj-tech">
+                <span class="tech-tag">HTML5</span
+                ><span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span
+                ><span class="tech-tag">Bootstrap</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://nancy-abduallh.github.io/AXIT-Website/"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="live_demo">Live Demo</span></a
+                >
+                <a
+                  href="https://github.com/nancy-abduallh/AXIT-Website"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /projects-grid -->
+      </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- ══ GALLERY ════════════════════════════════════════════════ -->
+    <section id="gallery" class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="sec-num">05</div>
+          <div>
+            <div class="sec-tag" data-i18n="gal_tag">Visual Showcase</div>
+            <h2 class="sec-title" data-i18n="gal_title">Project Gallery</h2>
+            <div class="gold-line"></div>
+          </div>
+        </div>
+
+        <div class="gallery-filters">
+          <button
+            class="gf-btn active"
+            onclick="gFilter(this, 'all')"
+            data-i18n="gal_all"
+          >
+            All Media
+          </button>
+          <button
+            class="gf-btn"
+            onclick="gFilter(this, 'img')"
+            data-i18n="gal_screenshots"
+          >
+            Screenshots
+          </button>
+          <button
+            class="gf-btn"
+            onclick="gFilter(this, 'vid')"
+            data-i18n="gal_videos"
+          >
+            Demo Videos
+          </button>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gi wide" data-type="vid">
+            <video
+              src="./videos/nabila.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div class="gi-overlay">
+              <span class="gi-label" data-i18n="gal_nabela"
+                >Nabela E-Commerce</span
+              >
+            </div>
+          </div>
+          <div class="gi" data-type="vid">
+            <video
+              src="./videos/Sakba - Home - Google Chrome 2025-08-18 13-23-29.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div class="gi-overlay">
+              <span class="gi-label" data-i18n="gal_sakba">Sakba Platform</span>
+            </div>
+          </div>
+          <div class="gi" data-type="img">
+            <img
+              src="./images/shanton.png"
+              alt="Shantongulf"
+              loading="lazy"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x400/1a1a1a/c9a84c?text=Shantongulf'
+              "
+            />
+            <div class="gi-overlay">
+              <span class="gi-label" data-i18n="gal_shanton">Shantongulf</span>
+            </div>
+          </div>
+          <div class="gi" data-type="img">
+            <img
+              src="./images/car.png"
+              alt="Car Rental System"
+              loading="lazy"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x400/1a1a1a/c9a84c?text=Car+Rental'
+              "
+            />
+            <div class="gi-overlay">
+              <span class="gi-label" data-i18n="gal_car">Car Rental</span>
+            </div>
+          </div>
+          <div class="gi" data-type="img">
+            <img
+              src="./images/axit.png"
+              alt="AXIT Landing Page"
+              loading="lazy"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x400/1a1a1a/c9a84c?text=AXIT'
+              "
+            />
+            <div class="gi-overlay">
+              <span class="gi-label" data-i18n="gal_axit">AXIT</span>
+            </div>
+          </div>
+          <div class="gi wide" data-type="vid">
+            <video
+              src="./videos/اند مور - Google Chrome 2025-08-18 13-25-17.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div class="gi-overlay">
+              <span class="gi-label" data-i18n="gal_andmore">AndMore Demo</span>
+            </div>
+          </div>
+          <div class="gi" data-type="vid">
+            <video
+              src="./videos/Encyclopedia - Google Chrome 2024-05-08 14-48-07.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div class="gi-overlay">
+              <span class="gi-label" data-i18n="gal_encyclopedia"
+                >Encyclopedia</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- /gallery-grid -->
+      </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- ══ EDUCATION ══════════════════════════════════════════════ -->
+    <section id="education" class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="sec-num">06</div>
+          <div>
+            <div class="sec-tag" data-i18n="edu_tag">Academic Background</div>
+            <h2 class="sec-title" data-i18n="edu_title">
+              Education &amp; Certificates
+            </h2>
+            <div class="gold-line"></div>
+          </div>
+        </div>
+
+        <div class="edu-grid reveal">
+          <div class="edu-card">
+            <div class="edu-year" data-i18n="edu1_year">
+              September 2022 — Present
+            </div>
+            <div class="edu-degree" data-i18n="edu1_degree">
+              Bachelor of Science in Computer Science &amp; Artificial
+              Intelligence
+            </div>
+            <div class="edu-school">
+              <i
+                class="fas fa-university"
+                style="
+                  color: var(--gold);
+                  margin-right: 0.4rem;
+                  font-size: 0.8rem;
+                "
+              ></i>
+              <span data-i18n="edu1_school"
+                >Helwan University · AI Department</span
+              >
+            </div>
+            <span class="edu-grade"
+              ><i class="fas fa-star" style="font-size: 0.65rem"></i>
+              <span data-i18n="edu1_grade1">Grade: Excellent</span></span
+            >
+            <span class="edu-grade"
+              ><i class="fas fa-chart-line" style="font-size: 0.65rem"></i>
+              <span data-i18n="edu1_grade2">GPA: 3.68 / 4.0</span></span
+            >
+          </div>
+          <div class="edu-card">
+            <div class="edu-year" data-i18n="edu2_year">
+              Academic Excellence
+            </div>
+            <div class="edu-degree" data-i18n="edu2_degree">
+              AI &amp; Software Engineering Focus
+            </div>
+            <div class="edu-school" data-i18n="edu2_school">
+              Consistently maintaining excellent academic standing
+            </div>
+            <p class="edu-extra" data-i18n="edu2_text">
+              Majoring in Artificial Intelligence with curriculum spanning
+              machine learning, data structures, algorithms, web development,
+              and software engineering — complemented by extensive real-world
+              project experience since first year.
+            </p>
+          </div>
+        </div>
+
+        <div class="cert-list reveal">
+          <div class="cert-item">
+            <i class="fas fa-certificate cert-icon"></i>
+            <div>
+              <div class="cert-name" data-i18n="cert1_name">
+                Certificate of Completing Internship from NTI
+              </div>
+              <div class="cert-issuer" data-i18n="cert1_issuer">
+                National Telecommunication Institute · August 2025
+              </div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <i class="fas fa-award cert-icon"></i>
+            <div>
+              <div class="cert-name" data-i18n="cert2_name">
+                Web Development — PHP/Laravel Specialization
+              </div>
+              <div class="cert-issuer" data-i18n="cert2_issuer">
+                Udemy · August 2024
+              </div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <i class="fas fa-university cert-icon"></i>
+            <div>
+              <div class="cert-name" data-i18n="cert3_name">
+                CIB Bank Digital Transformation Certificates (×4)
+              </div>
+              <div class="cert-issuer" data-i18n="cert3_issuer">
+                CIB Bank · August 2024
+              </div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <i class="fas fa-certificate cert-icon"></i>
+            <div>
+              <div class="cert-name" data-i18n="cert4_name">
+                Internship Certificate — Code Alpha
+              </div>
+              <div class="cert-issuer" data-i18n="cert4_issuer">
+                Code Alpha Company · September 2024
+              </div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <i class="fas fa-certificate cert-icon"></i>
+            <div>
+              <div class="cert-name" data-i18n="cert5_name">
+                Internship Certificate — Prodigy Info Tech
+              </div>
+              <div class="cert-issuer" data-i18n="cert5_issuer">
+                Prodigy Info Tech · August 2024
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- ══ CONTACT ════════════════════════════════════════════════ -->
+    <section id="contact" class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="sec-num">07</div>
+          <div>
+            <div class="sec-tag" data-i18n="contact_tag">Get in Touch</div>
+            <h2 class="sec-title" data-i18n="contact_title">Let's Connect</h2>
+            <div class="gold-line"></div>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: info -->
+          <div class="reveal">
+            <p class="contact-tagline" data-i18n="contact_tagline">
+              "Let's build something extraordinary together."
+            </p>
+            <p class="contact-text" data-i18n="contact_text">
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of something great. Reach out through any
+              channel below and I'll get back to you swiftly.
+            </p>
+
+            <div class="contact-methods">
+              <a href="mailto:nancyabdo857@gmail.com" class="c-method">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <span class="c-method-lbl" data-i18n="c_email_lbl"
+                    >Email</span
+                  >
+                  <span class="c-method-val">nancyabdo857@gmail.com</span>
+                </div>
+              </a>
+              <a href="tel:+201279424259" class="c-method">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <span class="c-method-lbl" data-i18n="c_phone_lbl"
+                    >Phone</span
+                  >
+                  <span class="c-method-val">+(20) 1279424259</span>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nancy-abdullah"
+                target="_blank"
+                rel="noopener"
+                class="c-method"
+              >
+                <i class="fab fa-linkedin"></i>
+                <div>
+                  <span class="c-method-lbl" data-i18n="c_linkedin_lbl"
+                    >LinkedIn</span
+                  >
+                  <span class="c-method-val" data-i18n="c_linkedin_val"
+                    >Connect on LinkedIn</span
+                  >
+                </div>
+              </a>
+              <a
+                href="https://github.com/nancy-abduallh"
+                target="_blank"
+                rel="noopener"
+                class="c-method"
+              >
+                <i class="fab fa-github"></i>
+                <div>
+                  <span class="c-method-lbl" data-i18n="c_github_lbl"
+                    >GitHub</span
+                  >
+                  <span class="c-method-val" data-i18n="c_github_val"
+                    >View Repositories</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="reveal" style="transition-delay: 0.15s">
+            <form
+              id="contactForm"
+              class="contact-form"
+              onsubmit="submitForm(event)"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-i18n="f_name">Your Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    data-i18n-ph="f_name_ph"
+                    placeholder="Full name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label data-i18n="f_email">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    data-i18n-ph="f_email_ph"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-i18n="f_proj_type">Project Type</label>
+                  <select
+                    name="project_type"
+                    id="selectProjectType"
+                    class="form-control"
+                  >
+                    <option value="">Select project type...</option>
+                    <option value="landing">
+                      Landing Page / Promotional Website
+                    </option>
+                    <option value="ecomm">E-Commerce Store</option>
+                    <option value="webapp">
+                      Web Application / SaaS Platform
+                    </option>
+                    <option value="corp">Corporate / Business Website</option>
+                    <option value="api">
+                      API Development &amp; Integration
+                    </option>
+                    <option value="cms">WordPress / CMS Website</option>
+                    <option value="dash">
+                      Admin Dashboard &amp; Back-Office
+                    </option>
+                    <option value="redesign">Mobile-Responsive Redesign</option>
+                    <option value="portfolio">
+                      Portfolio / Personal Website
+                    </option>
+                    <option value="custom">Custom Web Solution</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label data-i18n="f_budget">Budget (EGP)</label>
+                  <select name="budget" id="selectBudget" class="form-control">
+                    <option value="">Select budget range...</option>
+                    <option value="under2k">Under 2,000 EGP</option>
+                    <option value="2k-5k">2,000 – 5,000 EGP</option>
+                    <option value="5k-10k">5,000 – 10,000 EGP</option>
+                    <option value="10k-20k">10,000 – 20,000 EGP</option>
+                    <option value="20k-50k">20,000 – 50,000 EGP</option>
+                    <option value="over50k">Above 50,000 EGP</option>
+                    <option value="open">Open to Discussion</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="f_subject">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  class="form-control"
+                  data-i18n-ph="f_subject_ph"
+                  placeholder="Project inquiry, collaboration..."
+                />
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="f_msg">Message</label>
+                <textarea
+                  name="message"
+                  class="form-control"
+                  rows="5"
+                  data-i18n-ph="f_msg_ph"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" id="sendBtn" class="btn btn-gold btn-send">
+                <span class="btn-send-text">
+                  <i class="fas fa-paper-plane"></i>
+                  <span data-i18n="f_send">Send Message</span>
+                </span>
+                <span class="btn-spinner"></span>
+              </button>
+
+              <div id="formFeedback" class="form-feedback"></div>
+            </form>
+          </div>
+        </div>
+        <!-- /contact-grid -->
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ═════════════════════════════════════════════════ -->
+    <footer>
+      <div class="container">
+        <div class="footer-logo">NAF</div>
+        <div class="footer-socials">
+          <a
+            href="https://www.linkedin.com/in/nancy-abdullah"
+            target="_blank"
+            rel="noopener"
+            class="soc-btn"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/nancy-abduallh"
+            target="_blank"
+            rel="noopener"
+            class="soc-btn"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://wa.me/201279424259"
+            target="_blank"
+            rel="noopener"
+            class="soc-btn"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a
+            href="mailto:nancyabdo857@gmail.com"
+            class="soc-btn"
+            aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a href="tel:+201279424259" class="soc-btn" aria-label="Phone"
+            ><i class="fas fa-phone"></i
+          ></a>
+        </div>
+        <div class="footer-txt" data-i18n="footer_txt">
+          © 2026 Nancy Abdullah Fathy · Full Stack Developer · Giza, Egypt
+        </div>
+        <div class="footer-sub" data-i18n="footer_sub">
+          BUILT WITH PASSION &amp; PRECISION
+        </div>
+      </div>
+    </footer>
+
+    <!-- ══ LIGHTBOX ═══════════════════════════════════════════════ -->
+    <div id="lightbox" class="lightbox">
+      <button id="lightboxClose" class="lightbox-close" aria-label="Close">
+        &times;
+      </button>
+      <img id="lightboxImg" class="lightbox-content" alt="" />
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- ══ SCRIPTS ════════════════════════════════════════════════ -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
