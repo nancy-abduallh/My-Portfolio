@@ -29,6 +29,7 @@ const T = {
     stat_grade: 'A+',     stat_grade_lbl: 'Top Grade',
     badge_laravel: 'Laravel Expert',
     badge_react: 'React Developer',
+    initial_letter: 'N',
 
     /* About */
     about_tag: 'Who I Am', about_title: 'About Me',
@@ -214,6 +215,7 @@ const T = {
     stat_grade: 'A+',     stat_grade_lbl: 'تقدير امتياز',
     badge_laravel: 'خبيرة Laravel',
     badge_react: 'مطورة React',
+    initial_letter: 'ن',
 
     /* About */
     about_tag: 'من أنا', about_title: 'نبذة عني',
