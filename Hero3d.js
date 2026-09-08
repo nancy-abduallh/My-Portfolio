@@ -1,15 +1,15 @@
 /* ══════════════════════════════════════════════════════════════
-   hero3d.js — lightweight animated 3D orb for the hero section
-   Built with three.js. Degrades gracefully: if three.js hasn't
-   loaded, WebGL is unavailable, or the user prefers reduced
-   motion, the container is simply left hidden (CSS default).
+   Hero3d.js — interactive 3D hero orb (three.js)
+   · Dual rotating icosahedra + orbiting particle shell
+   · Tilted torus ring for extra depth
+   · Mouse parallax — the whole scene leans toward your cursor
+   · Graceful degradation: no WebGL / reduced motion / small
+     screens → container stays hidden (CSS default).
    ══════════════════════════════════════════════════════════════ */
 (function () {
     const mount = document.getElementById('hero3d');
     if (!mount) return;
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     function init() {
         if (typeof THREE === 'undefined') return;
@@ -21,9 +21,7 @@
         let renderer;
         try {
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        } catch (e) {
-            return; // WebGL not available — fail silently, static circle still shows
-        }
+        } catch (e) { return; }
 
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
         renderer.setSize(width, height);
@@ -36,24 +34,35 @@
         const gold = 0xc9a84c;
         const goldLight = 0xe8cf8a;
 
-        // Outer wireframe icosahedron — the "structure"
-        const outerGeo = new THREE.IcosahedronGeometry(2.15, 1);
-        const outerMat = new THREE.MeshBasicMaterial({ color: gold, wireframe: true, transparent: true, opacity: 0.55 });
-        const outer = new THREE.Mesh(outerGeo, outerMat);
+        /* Outer wireframe icosahedron */
+        const outer = new THREE.Mesh(
+            new THREE.IcosahedronGeometry(2.15, 1),
+            new THREE.MeshBasicMaterial({ color: gold, wireframe: true, transparent: true, opacity: 0.55 })
+        );
         scene.add(outer);
 
-        // Inner solid icosahedron — subtle glassy core
-        const innerGeo = new THREE.IcosahedronGeometry(1.35, 1);
-        const innerMat = new THREE.MeshBasicMaterial({ color: goldLight, wireframe: true, transparent: true, opacity: 0.25 });
-        const inner = new THREE.Mesh(innerGeo, innerMat);
+        /* Inner counter-rotating icosahedron */
+        const inner = new THREE.Mesh(
+            new THREE.IcosahedronGeometry(1.35, 1),
+            new THREE.MeshBasicMaterial({ color: goldLight, wireframe: true, transparent: true, opacity: 0.25 })
+        );
         scene.add(inner);
 
-        // Orbiting particles representing the tech stack
-        const particleCount = 60;
+        /* Tilted torus ring — orbit path */
+        const ring = new THREE.Mesh(
+            new THREE.TorusGeometry(2.7, 0.015, 8, 120),
+            new THREE.MeshBasicMaterial({ color: gold, transparent: true, opacity: 0.35 })
+        );
+        ring.rotation.x = Math.PI / 2.4;
+        ring.rotation.y = 0.4;
+        scene.add(ring);
+
+        /* Orbiting particles */
+        const particleCount = 80;
         const particleGeo = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         for (let i = 0; i < particleCount; i++) {
-            const r = 2.7 + Math.random() * 0.6;
+            const r = 2.7 + Math.random() * 0.8;
             const theta = Math.random() * Math.PI * 2;
             const phi = Math.acos((Math.random() * 2) - 1);
             positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
@@ -61,11 +70,19 @@
             positions[i * 3 + 2] = r * Math.cos(phi);
         }
         particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const particleMat = new THREE.PointsMaterial({ color: gold, size: 0.045, transparent: true, opacity: 0.85 });
-        const particles = new THREE.Points(particleGeo, particleMat);
+        const particles = new THREE.Points(
+            particleGeo,
+            new THREE.PointsMaterial({ color: gold, size: 0.045, transparent: true, opacity: 0.85 })
+        );
         scene.add(particles);
 
-        let frameId = null;
+        /* Mouse parallax targets */
+        let targetRX = 0, targetRY = 0;
+        document.addEventListener('mousemove', e => {
+            targetRY = (e.clientX / innerWidth - 0.5) * 0.5;
+            targetRX = (e.clientY / innerHeight - 0.5) * 0.35;
+        }, { passive: true });
+
         let paused = document.hidden;
         const clock = new THREE.Clock();
 
@@ -79,15 +96,22 @@
         }
 
         function animate() {
-            if (paused) { frameId = requestAnimationFrame(animate); return; }
-            const t = clock.getElapsedTime();
-            outer.rotation.y = t * 0.18;
-            outer.rotation.x = t * 0.09;
-            inner.rotation.y = -t * 0.14;
-            inner.rotation.x = t * 0.07;
-            particles.rotation.y = t * 0.06;
-            renderer.render(scene, camera);
-            frameId = requestAnimationFrame(animate);
+            if (!paused) {
+                const t = clock.getElapsedTime();
+                outer.rotation.y = t * 0.18;
+                outer.rotation.x = t * 0.09;
+                inner.rotation.y = -t * 0.14;
+                inner.rotation.x = t * 0.07;
+                ring.rotation.z = t * 0.12;
+                particles.rotation.y = t * 0.06;
+
+                /* Smooth parallax lean toward cursor */
+                scene.rotation.y += (targetRY - scene.rotation.y) * 0.05;
+                scene.rotation.x += (targetRX - scene.rotation.x) * 0.05;
+
+                renderer.render(scene, camera);
+            }
+            requestAnimationFrame(animate);
         }
 
         window.addEventListener('resize', onResize);
@@ -98,8 +122,7 @@
     }
 
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        // three.js is loaded with `defer`, so give it a tick to attach to window
-        setTimeout(init, 0);
+        setTimeout(init, 0); // three.js loads with defer — give it a tick
     } else {
         window.addEventListener('DOMContentLoaded', () => setTimeout(init, 0));
     }

@@ -1,29 +1,34 @@
 /* ══════════════════════════════════════════════════════════════
-   tilt3d.js — subtle 3D pointer-tilt for project & skill cards.
-   Only runs for fine-pointer (mouse/trackpad) devices and only
-   when the user hasn't asked for reduced motion.
+   Tilt3d.js — 3D pointer-tilt with moving glare highlight.
+   Applies to project, skill and education cards; injects a
+   .tilt-glare element per card (styled in style.css).
+   Fine-pointer devices only; respects reduced motion.
    ══════════════════════════════════════════════════════════════ */
 (function () {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     if (prefersReduced || !hasFinePointer) return;
 
-    const MAX_TILT = 7;      // degrees
-    const LIFT = -7;         // px, matches the existing hover translateY
+    const MAX_TILT = 7;   // degrees
+    const LIFT = -7;      // px
     const SCALE = 1.015;
 
     function attachTilt(el) {
         let rect = null;
         let raf = null;
 
-        function onEnter() {
-            rect = el.getBoundingClientRect();
-        }
+        /* Glare overlay */
+        el.classList.add('tilt-host');
+        const glare = document.createElement('div');
+        glare.className = 'tilt-glare';
+        el.appendChild(glare);
+
+        function onEnter() { rect = el.getBoundingClientRect(); }
 
         function onMove(e) {
             if (!rect) rect = el.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width;   // 0..1
-            const y = (e.clientY - rect.top) / rect.height;   // 0..1
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
             const rotateY = (x - 0.5) * 2 * MAX_TILT;
             const rotateX = (0.5 - y) * 2 * MAX_TILT;
 
@@ -31,6 +36,8 @@
             raf = requestAnimationFrame(() => {
                 el.style.transform =
                     `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(${LIFT}px) scale(${SCALE})`;
+                glare.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
+                glare.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
             });
         }
 
@@ -46,7 +53,9 @@
     }
 
     function init() {
-        document.querySelectorAll('.project-card, .skill-card').forEach(attachTilt);
+        document
+            .querySelectorAll('.project-card, .skill-card, .edu-card')
+            .forEach(attachTilt);
     }
 
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
