@@ -10,25 +10,26 @@ const FORMSPREE_URL = 'https://formspree.io/f/xgonvjjy';
 const T = {
   en: {
     /* Nav */
-    nav_about: 'About',       nav_skills: 'Skills',     nav_experience: 'Experience',
-    nav_projects: 'Projects', nav_gallery: 'Gallery',   nav_education: 'Education',
+    nav_about: 'About', nav_skills: 'Skills', nav_experience: 'Experience',
+    nav_projects: 'Projects', nav_gallery: 'Gallery', nav_education: 'Education',
     nav_contact: 'Contact',
 
     /* Hero */
     hero_badge: 'Available for Opportunities',
     hero_name1: 'Nancy',
     hero_name2: 'Abdullah Fathy',
-    hero_role_typed: ['Full Stack Web Developer', 'PHP / Laravel Expert', 'React.js Developer', 'Software Engineer'],
+    hero_role_typed: ['Full Stack Web Developer', 'TypeScript / Next.js Developer', 'PHP / Laravel Expert', 'React.js Developer', 'Software Engineer'],
     hero_desc: 'Software Engineer with 3+ years of experience building scalable, intelligent web applications — transforming complex challenges into seamless digital experiences that empower users and delight clients.',
     hero_btn_projects: 'View Projects',
     hero_btn_hire: 'Hire Me',
     hero_btn_email: 'Email Me',
-    stat_years: '3+',     stat_years_lbl: 'Years Exp.',
+    stat_years: '3+', stat_years_lbl: 'Years Exp.',
     stat_projects: '10+', stat_projects_lbl: 'Projects',
-    stat_gpa: '3.68',     stat_gpa_lbl: 'GPA / 4.0',
-    stat_grade: 'A+',     stat_grade_lbl: 'Top Grade',
+    stat_gpa: '3.68', stat_gpa_lbl: 'GPA / 4.0',
+    stat_grade: 'A+', stat_grade_lbl: 'Top Grade',
     badge_laravel: 'Laravel Expert',
     badge_react: 'React Developer',
+    badge_nextjs: 'Next.js / TypeScript',
     initial_letter: 'N',
 
     /* About */
@@ -36,25 +37,25 @@ const T = {
     about_lead: '"Driven by a passion for creating smart, scalable, and user-centric solutions."',
     about_p1: "I'm a Software Engineer with over 3 years of specialized experience in front-end (React.js), back-end (PHP & Laravel), database design, full-stack development, and AI. I am passionate about building elegant, high-performance web applications that users love.",
     about_p2: "My aim is to transform complex challenges into seamless digital experiences by combining clean code, intuitive interfaces, and efficient system design — delivering not just functional applications, but meaningful user journeys.",
-    lbl_location: 'Location',  val_location: 'Giza, Egypt',
+    lbl_location: 'Location', val_location: 'Giza, Egypt',
     lbl_email: 'Email',
     lbl_phone: 'Phone',
     lbl_university: 'University', val_university: 'Helwan University',
-    lbl_major: 'Major',           val_major: 'AI Department — CS & AI',
-    lbl_gpa: 'GPA',               val_gpa: '3.68 / 4.0 · Excellent',
-    lang_arabic: 'Arabic',   lang_lv_arabic: 'Native / Fluent',
+    lbl_major: 'Major', val_major: 'AI Department — CS & AI',
+    lbl_gpa: 'GPA', val_gpa: '3.68 / 4.0 · Excellent',
+    lang_arabic: 'Arabic', lang_lv_arabic: 'Native / Fluent',
     lang_english: 'English', lang_lv_english: 'Very Good',
     lang_deutsch: 'Deutsch', lang_lv_deutsch: 'Good',
 
     /* Skills */
     skills_tag: 'What I Know', skills_title: 'Technical Skills',
-    sk1_cat: 'Core',       sk1_title: 'Languages',
+    sk1_cat: 'Core', sk1_title: 'Languages',
     sk2_cat: 'Frameworks', sk2_title: 'Frameworks & Libraries',
-    sk3_cat: 'Data',       sk3_title: 'Databases',
-    sk4_cat: 'DevOps',     sk4_title: 'Tools & Version Control',
-    sk5_cat: 'AI',         sk5_title: 'AI & Architecture',
-    sk6_cat: 'Cloud',      sk6_title: 'Infrastructure',
-    sk7_cat: 'Soft Skills',sk7_title: 'Professional Skills',
+    sk3_cat: 'Data', sk3_title: 'Databases',
+    sk4_cat: 'DevOps', sk4_title: 'Tools & Version Control',
+    sk5_cat: 'AI', sk5_title: 'AI & Architecture',
+    sk6_cat: 'Cloud', sk6_title: 'Infrastructure',
+    sk7_cat: 'Soft Skills', sk7_title: 'Professional Skills',
 
     /* Experience */
     exp_tag: 'My Journey', exp_title: 'Work Experience',
@@ -147,14 +148,14 @@ const T = {
     c_github_lbl: 'GitHub', c_github_val: 'View Repositories',
 
     /* Form */
-    f_name: 'Your Name',       f_name_ph: 'Full name',
-    f_email: 'Email Address',  f_email_ph: 'your@email.com',
+    f_name: 'Your Name', f_name_ph: 'Full name',
+    f_email: 'Email Address', f_email_ph: 'your@email.com',
     f_proj_type: 'Project Type',
     f_proj_ph: 'Select project type...',
     f_budget: 'Budget (EGP)',
     f_budget_ph: 'Select budget range...',
-    f_subject: 'Subject',      f_subject_ph: 'Project inquiry, collaboration...',
-    f_msg: 'Message',          f_msg_ph: 'Tell me about your project...',
+    f_subject: 'Subject', f_subject_ph: 'Project inquiry, collaboration...',
+    f_msg: 'Message', f_msg_ph: 'Tell me about your project...',
     f_send: 'Send Message',
     f_success: '✓ Message sent! I\'ll get back to you soon.',
     f_error: '✗ Something went wrong. Please try again or email me directly.',
@@ -196,7 +197,7 @@ const T = {
 
   ar: {
     /* Nav */
-    nav_about: 'عني',         nav_skills: 'مهاراتي',      nav_experience: 'خبراتي',
+    nav_about: 'عني', nav_skills: 'مهاراتي', nav_experience: 'خبراتي',
     nav_projects: 'مشاريعي', nav_gallery: 'معرض الأعمال', nav_education: 'التعليم',
     nav_contact: 'تواصل معي',
 
@@ -204,17 +205,18 @@ const T = {
     hero_badge: 'متاحة للفرص الوظيفية',
     hero_name1: 'نانسي',
     hero_name2: 'عبدالله فتحي',
-    hero_role_typed: ['مطورة ويب متكاملة', 'خبيرة PHP / Laravel', 'مطورة React.js', 'مهندسة برمجيات'],
+    hero_role_typed: ['مطورة ويب متكاملة', 'مطورة TypeScript / Next.js', 'خبيرة PHP / Laravel', 'مطورة React.js', 'مهندسة برمجيات'],
     hero_desc: 'مهندسة برمجيات بخبرة تزيد عن 3 سنوات في بناء تطبيقات ويب ذكية وقابلة للتوسع — تحويل التحديات المعقدة إلى تجارب رقمية سلسة تُمكّن المستخدمين وتُسعد العملاء.',
     hero_btn_projects: 'استعراض المشاريع',
     hero_btn_hire: 'وظّفني',
     hero_btn_email: 'راسلني',
-    stat_years: '3+',     stat_years_lbl: 'سنوات خبرة',
+    stat_years: '3+', stat_years_lbl: 'سنوات خبرة',
     stat_projects: '10+', stat_projects_lbl: 'مشروع',
-    stat_gpa: '3.68',     stat_gpa_lbl: 'معدل / 4.0',
-    stat_grade: 'A+',     stat_grade_lbl: 'تقدير امتياز',
+    stat_gpa: '3.68', stat_gpa_lbl: 'معدل / 4.0',
+    stat_grade: 'A+', stat_grade_lbl: 'تقدير امتياز',
     badge_laravel: 'خبيرة Laravel',
     badge_react: 'مطورة React',
+    badge_nextjs: 'Next.js / TypeScript',
     initial_letter: 'ن',
 
     /* About */
@@ -222,25 +224,25 @@ const T = {
     about_lead: '"مدفوعة بشغف لإنشاء حلول ذكية وقابلة للتوسع ومتمحورة حول المستخدم ."',
     about_p1: 'أنا مهندسة برمجيات بخبرة تزيد عن 3 سنوات متخصصة في تطوير الواجهة الأمامية (React.js) والخلفية (PHP & Laravel) وتصميم قواعد البيانات والتطوير المتكامل والذكاء الاصطناعي. أحب بناء تطبيقات ويب أنيقة وعالية الأداء يحبها المستخدمون.',
     about_p2: 'هدفي هو تحويل التحديات المعقدة إلى تجارب رقمية سلسة من خلال الجمع بين الكود النظيف والواجهات البديهية وتصميم الأنظمة الفعّالة — لتقديم تجارب مستخدم متكاملة وليس مجرد تطبيقات وظيفية.',
-    lbl_location: 'الموقع',        val_location: 'الجيزة، مصر',
+    lbl_location: 'الموقع', val_location: 'الجيزة، مصر',
     lbl_email: 'البريد الإلكتروني',
     lbl_phone: 'الهاتف',
-    lbl_university: 'الجامعة',     val_university: 'جامعة حلوان',
-    lbl_major: 'التخصص',           val_major: 'قسم الذكاء الاصطناعي — علوم الحاسب',
-    lbl_gpa: 'المعدل التراكمي',    val_gpa: '3.68 / 4.0 · امتياز',
-    lang_arabic: 'العربية',   lang_lv_arabic: 'اللغة الأم',
+    lbl_university: 'الجامعة', val_university: 'جامعة حلوان',
+    lbl_major: 'التخصص', val_major: 'قسم الذكاء الاصطناعي — علوم الحاسب',
+    lbl_gpa: 'المعدل التراكمي', val_gpa: '3.68 / 4.0 · امتياز',
+    lang_arabic: 'العربية', lang_lv_arabic: 'اللغة الأم',
     lang_english: 'الإنجليزية', lang_lv_english: 'جيد جداً',
     lang_deutsch: 'الألمانية', lang_lv_deutsch: 'جيد',
 
     /* Skills */
     skills_tag: 'ما أعرفه', skills_title: 'المهارات التقنية',
-    sk1_cat: 'أساسية',    sk1_title: 'لغات البرمجة',
+    sk1_cat: 'أساسية', sk1_title: 'لغات البرمجة',
     sk2_cat: 'أُطر عمل', sk2_title: 'الأُطر والمكتبات',
-    sk3_cat: 'بيانات',   sk3_title: 'قواعد البيانات',
-    sk4_cat: 'DevOps',   sk4_title: 'الأدوات والإصدارات',
+    sk3_cat: 'بيانات', sk3_title: 'قواعد البيانات',
+    sk4_cat: 'DevOps', sk4_title: 'الأدوات والإصدارات',
     sk5_cat: 'ذكاء اصطناعي', sk5_title: 'الذكاء الاصطناعي والمعمارية',
-    sk6_cat: 'سحابة',   sk6_title: 'البنية التحتية',
-    sk7_cat: 'مهنية',   sk7_title: 'المهارات الشخصية',
+    sk6_cat: 'سحابة', sk6_title: 'البنية التحتية',
+    sk7_cat: 'مهنية', sk7_title: 'المهارات الشخصية',
 
     /* Experience */
     exp_tag: 'مسيرتي المهنية', exp_title: 'الخبرة العملية',
@@ -333,14 +335,14 @@ const T = {
     c_github_lbl: 'جيت هاب', c_github_val: 'استعراض المستودعات',
 
     /* Form */
-    f_name: 'الاسم الكامل',         f_name_ph: 'أدخل اسمك الكامل',
-    f_email: 'البريد الإلكتروني',   f_email_ph: 'your@email.com',
+    f_name: 'الاسم الكامل', f_name_ph: 'أدخل اسمك الكامل',
+    f_email: 'البريد الإلكتروني', f_email_ph: 'your@email.com',
     f_proj_type: 'نوع المشروع',
     f_proj_ph: 'اختر نوع المشروع...',
     f_budget: 'الميزانية (جنيه مصري)',
     f_budget_ph: 'اختر نطاق الميزانية...',
-    f_subject: 'الموضوع',            f_subject_ph: 'استفسار عن مشروع، تعاون...',
-    f_msg: 'الرسالة',                f_msg_ph: 'أخبرني عن مشروعك...',
+    f_subject: 'الموضوع', f_subject_ph: 'استفسار عن مشروع، تعاون...',
+    f_msg: 'الرسالة', f_msg_ph: 'أخبرني عن مشروعك...',
     f_send: 'إرسال الرسالة',
     f_success: '✓ تم إرسال الرسالة! سأرد عليك قريباً.',
     f_error: '✗ حدث خطأ. يرجى المحاولة مرة أخرى أو مراسلتي مباشرةً.',
@@ -382,9 +384,9 @@ const T = {
 };
 
 /* ── STATE ─────────────────────────────────────────────────── */
-let currentLang  = localStorage.getItem('naf_lang')  || 'en';
+let currentLang = localStorage.getItem('naf_lang') || 'en';
 let currentTheme = localStorage.getItem('naf_theme') || 'dark';
-let typedIndex   = 0;
+let typedIndex = 0;
 let typedCharIdx = 0;
 let typedDeleting = false;
 
@@ -394,10 +396,10 @@ function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('naf_theme', theme);
   const isDark = theme === 'dark';
-  const icon   = document.getElementById('themeIcon');
+  const icon = document.getElementById('themeIcon');
   const sidebarIcon = document.getElementById('sidebarThemeIcon');
-  if (icon)  icon.className  = isDark ? 'fas fa-sun'  : 'fas fa-moon';
-  if (sidebarIcon) sidebarIcon.className = isDark ? 'fas fa-sun'  : 'fas fa-moon';
+  if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  if (sidebarIcon) sidebarIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
 }
 
 /* ── APPLY LANGUAGE ────────────────────────────────────────── */
@@ -535,19 +537,19 @@ function rebuildSelects(lang) {
 
 /* ── SCROLL EFFECTS ────────────────────────────────────────── */
 (function initScroll() {
-  const nav     = document.getElementById('navbar');
+  const nav = document.getElementById('navbar');
   const backTop = document.getElementById('backTop');
-  const waBtn   = document.getElementById('waBtn');
-  const prog    = document.getElementById('scrollProgress');
+  const waBtn = document.getElementById('waBtn');
+  const prog = document.getElementById('scrollProgress');
 
   window.addEventListener('scroll', () => {
     const sy = window.scrollY;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     if (prog) prog.style.width = (sy / docH * 100) + '%';
-    if (nav)  nav.classList.toggle('scrolled', sy > 60);
+    if (nav) nav.classList.toggle('scrolled', sy > 60);
     const show = sy > 500;
     if (backTop) backTop.classList.toggle('show', show);
-    if (waBtn)   waBtn.classList.toggle('show', show);
+    if (waBtn) waBtn.classList.toggle('show', show);
   }, { passive: true });
 
   /* Active nav link */
@@ -606,10 +608,10 @@ function initTyping() {
 
 /* ── SIDEBAR (off‑canvas) ──────────────────────────────────── */
 (function initSidebar() {
-  const menuBtn     = document.getElementById('menuBtn');
-  const sidebar     = document.getElementById('mobileSidebar');
-  const closeBtn    = document.getElementById('sidebarClose');
-  const backdrop    = document.getElementById('sidebarBackdrop');
+  const menuBtn = document.getElementById('menuBtn');
+  const sidebar = document.getElementById('mobileSidebar');
+  const closeBtn = document.getElementById('sidebarClose');
+  const backdrop = document.getElementById('sidebarBackdrop');
   const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
   if (!menuBtn || !sidebar || !closeBtn || !backdrop) return;
 
@@ -652,7 +654,7 @@ function gFilter(btn, type) {
   btn.classList.add('active');
   document.querySelectorAll('.gi').forEach(item => {
     const show = type === 'all' || item.dataset.type === type;
-    item.style.opacity   = show ? '1' : '0.2';
+    item.style.opacity = show ? '1' : '0.2';
     item.style.transform = show ? '' : 'scale(0.96)';
     item.style.pointerEvents = show ? '' : 'none';
   });
@@ -661,22 +663,22 @@ function gFilter(btn, type) {
 /* ── FORM SUBMISSION ───────────────────────────────────────── */
 async function submitForm(event) {
   event.preventDefault();
-  const btn      = document.getElementById('sendBtn');
+  const btn = document.getElementById('sendBtn');
   const feedback = document.getElementById('formFeedback');
-  const form     = document.getElementById('contactForm');
-  const t        = T[currentLang];
+  const form = document.getElementById('contactForm');
+  const t = T[currentLang];
 
   btn.classList.add('loading');
   btn.disabled = true;
   feedback.className = 'form-feedback';
 
   const data = {
-    name:         form.querySelector('[name="name"]').value,
-    email:        form.querySelector('[name="email"]').value,
+    name: form.querySelector('[name="name"]').value,
+    email: form.querySelector('[name="email"]').value,
     project_type: form.querySelector('[name="project_type"]').value,
-    budget:       form.querySelector('[name="budget"]').value,
-    subject:      form.querySelector('[name="subject"]').value,
-    message:      form.querySelector('[name="message"]').value,
+    budget: form.querySelector('[name="budget"]').value,
+    subject: form.querySelector('[name="subject"]').value,
+    message: form.querySelector('[name="message"]').value,
   };
 
   if (!data.name || !data.email || !data.message) {
@@ -715,7 +717,7 @@ async function submitForm(event) {
 
 /* ── LIGHTBOX ──────────────────────────────────────────────── */
 (function initLightbox() {
-  const lb    = document.getElementById('lightbox');
+  const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
   const lbCap = document.getElementById('lightboxCaption');
   const lbCls = document.getElementById('lightboxClose');
@@ -779,7 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Image error fallbacks */
   document.querySelectorAll('img').forEach(img => {
     img.loading = 'lazy';
-    img.addEventListener('error', function() {
+    img.addEventListener('error', function () {
       if (!this.src.includes('placeholder')) {
         this.src = 'https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=' + encodeURIComponent(this.alt || 'Image');
       }
@@ -788,7 +790,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Video error fallbacks */
   document.querySelectorAll('video').forEach(vid => {
-    vid.addEventListener('error', function() {
+    vid.addEventListener('error', function () {
       const ph = document.createElement('div');
       ph.className = 'media-ph';
       ph.innerHTML = '<i class="fas fa-video"></i><p>Video unavailable</p>';

@@ -23,6 +23,9 @@
   <!-- Portfolio CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Three.js (hero 3D orb) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
   <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
 </head>
 
@@ -204,6 +207,7 @@
       <!-- /hero-text -->
 
       <div class="hero-visual">
+        <div class="hero-orb-3d" id="hero3d" aria-hidden="true"></div>
         <div class="about-initial-circle reveal">
           <div class="initial-circle">
             <span data-i18n="initial_letter">N</span>
@@ -216,6 +220,10 @@
         <div class="float-badge bottom-left">
           <i class="fab fa-react"></i>
           <span data-i18n="badge_react">React Developer</span>
+        </div>
+        <div class="float-badge bottom-right">
+          <i class="fas fa-code"></i>
+          <span data-i18n="badge_nextjs">Next.js / TypeScript</span>
         </div>
       </div>
     </div>
@@ -358,7 +366,7 @@
             Frameworks &amp; Libraries
           </div>
           <div class="skill-tags">
-            <span class="tag">Laravel</span><span class="tag">React.js</span>
+            <span class="tag">Next.js</span><span class="tag">Laravel</span><span class="tag">React.js</span>
             <span class="tag">Vue.js</span><span class="tag">Livewire</span>
             <span class="tag">Bootstrap</span><span class="tag">jQuery</span>
             <span class="tag">Tailwind</span><span class="tag">Alpine.js</span>
@@ -1465,6 +1473,8 @@
 
   <!-- ══ SCRIPTS ════════════════════════════════════════════════ -->
   <script src="script.js" defer></script>
+  <script src="hero3d.js" defer></script>
+  <script src="tilt3d.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM8G59D1TD"></script>
   <script>
