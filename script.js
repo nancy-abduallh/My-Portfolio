@@ -455,7 +455,7 @@ function rebuildSelects(lang) {
     pts.forEach(p => {
       cx.beginPath();
       cx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      cx.fillStyle = `rgba(201,168,76,${p.o})`;
+      cx.fillStyle = `rgba(0,240,255,${p.o})`;
       cx.fill();
       p.x += p.vx; p.y += p.vy;
       if (p.x < 0) p.x = cv.width; if (p.x > cv.width) p.x = 0;
@@ -733,3 +733,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+/* ── HERO IMAGE SLIDER (2 slides, auto-advance, dots + arrows) ── */
+(function () {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  if (slides.length < 2) return;
+  let cur = 0, timer;
+  const go = n => {
+    cur = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+    dots.forEach((d, k) => d.classList.toggle('active', k === cur));
+  };
+  const start = () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    clearInterval(timer);
+    timer = setInterval(() => go(cur + 1), 6000);
+  };
+  document.getElementById('heroPrev').addEventListener('click', () => { go(cur - 1); start(); });
+  document.getElementById('heroNext').addEventListener('click', () => { go(cur + 1); start(); });
+  dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); start(); }));
+  start();
+})();

@@ -31,8 +31,8 @@
         const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
         camera.position.set(0, 0, 7);
 
-        const gold = 0xc9a84c;
-        const goldLight = 0xe8cf8a;
+        const gold = 0x00f0ff;
+        const goldLight = 0xa855f7;
 
         /* Outer wireframe icosahedron */
         const outer = new THREE.Mesh(
@@ -48,6 +48,13 @@
         );
         scene.add(inner);
 
+        /* Pulsing neural core */
+        const core = new THREE.Mesh(
+            new THREE.SphereGeometry(0.75, 20, 20),
+            new THREE.MeshBasicMaterial({ color: gold, wireframe: true, transparent: true, opacity: 0.6 })
+        );
+        scene.add(core);
+
         /* Tilted torus ring — orbit path */
         const ring = new THREE.Mesh(
             new THREE.TorusGeometry(2.7, 0.015, 8, 120),
@@ -58,7 +65,7 @@
         scene.add(ring);
 
         /* Orbiting particles */
-        const particleCount = 80;
+        const particleCount = 180;
         const particleGeo = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         for (let i = 0; i < particleCount; i++) {
@@ -72,7 +79,7 @@
         particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         const particles = new THREE.Points(
             particleGeo,
-            new THREE.PointsMaterial({ color: gold, size: 0.045, transparent: true, opacity: 0.85 })
+            new THREE.PointsMaterial({ color: gold, size: 0.06, transparent: true, opacity: 0.85 })
         );
         scene.add(particles);
 
@@ -103,6 +110,7 @@
                 inner.rotation.y = -t * 0.14;
                 inner.rotation.x = t * 0.07;
                 ring.rotation.z = t * 0.12;
+                core.scale.setScalar(1 + Math.sin(t * 1.5) * 0.06);
                 particles.rotation.y = t * 0.06;
 
                 /* Smooth parallax lean toward cursor */
