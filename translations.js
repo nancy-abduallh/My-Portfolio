@@ -9,6 +9,8 @@ const T = {
         nav_contact: 'Contact',
 
         hero_badge: 'Available for Opportunities',
+        hero_tagline: 'Single developer for all your web & software needs.',
+        hero_scroll: 'Scroll',
         hero_name1: 'Nancy',
         hero_name2: 'Abdullah Fathy',
         hero_role_typed: ['TypeScript / Next.js /Laravel Developer', 'Full Stack Web Developer', 'React.js Developer', 'PHP / Laravel Expert', 'Software Engineer'],
@@ -80,6 +82,10 @@ const T = {
 
         proj_tag: 'My Work', proj_title: 'Featured Projects',
         pf_all: 'All',
+        saudtourism_title: 'SA Tourism — Luxury Travel & Experiences Platform',
+        saudtourism_desc: 'Premier Saudi tourism platform offering luxury curated travel experiences, VIP desert expeditions, historical tours in AlUla and Diriyah, and seamless booking for high-end domestic tourism.',
+        saudtrading_title: 'Saud Trading Est. — Global Trade & Digital Solutions',
+        saudtrading_desc: 'Corporate global trade platform supplying essential food commodities, raw plastic polymers, and integrated AI-powered digital services across Saudi Arabia aligned with Vision 2030.',
         bay_title: 'Baytak — Home Maintenance Platform',
         bay_desc: 'Home-maintenance booking platform connecting customers with verified technicians (plumbing, electrical, AC, carpentry, painting, cleaning) and tracking each request from booking to completion.',
         alf_title: 'Alf Leila Restaurant Platform',
@@ -101,6 +107,8 @@ const T = {
 
         gal_tag: 'Visual Showcase', gal_title: 'Project Gallery',
         gal_all: 'All Media', gal_screenshots: 'Screenshots', gal_videos: 'Demo Videos',
+        gal_saudtourism_vid: 'SA Tourism Platform', gal_saudtourism_img: 'SA Tourism Preview',
+        gal_saudtrading_vid: 'Saud Trading EST', gal_saudtrading_img: 'Saud Trading Preview',
         gal_nabela: 'Nabela E-Commerce', gal_sakba: 'Sakba Platform',
         gal_shanton: 'Shantongulf', gal_car: 'Car Rental',
         gal_axit: 'AXIT', gal_andmore: 'AndMore Demo', gal_encyclopedia: 'Encyclopedia',
@@ -154,7 +162,7 @@ const T = {
         bd_4: '10,000 – 20,000 EGP', bd_5: '20,000 – 50,000 EGP', bd_6: 'Above 50,000 EGP',
         bd_7: 'Open to Discussion',
 
-        screenshot: 'Screenshot', demo_video: 'Demo Video', live_demo: 'Live Demo',
+        screenshot: 'Screenshot', demo_video: 'Demo Video', live_demo: 'Live Demo', github_btn: 'GitHub',
         lang_btn: 'عربي', wa_tooltip: 'Chat on WhatsApp',
         footer_txt: '© 2026 Nancy Abdullah Fathy · TypeScript / Next.js / Laravel Developer · Giza, Egypt',
         footer_sub: 'BUILT WITH PASSION & PRECISION',
@@ -166,6 +174,8 @@ const T = {
         nav_contact: 'تواصل معي',
 
         hero_badge: 'متاحة للفرص الوظيفية',
+        hero_tagline: 'مطور واحد متكامل لكافة احتياجاتك البرمجية والويب.',
+        hero_scroll: 'مرر للأسفل',
         hero_name1: 'نانسي',
         hero_name2: 'عبدالله فتحي',
         hero_role_typed: ['مطورة TypeScript / Next.js / Laravel', 'مطورة ويب متكاملة', 'مطورة React.js', 'خبيرة PHP / Laravel', 'مهندسة برمجيات'],
@@ -237,6 +247,10 @@ const T = {
 
         proj_tag: 'أعمالي', proj_title: 'المشاريع المميزة',
         pf_all: 'الكل',
+        saudtourism_title: 'منصة SA للسياحة — تجارب وباقات سياحية فاخرة',
+        saudtourism_desc: 'منصة سياحية متكاملة لحجز أرقى التجارب والباقات السياحية الفاخرة في السعودية: حافة العالم، منتجعات العلا، جزر البحر الأحمر، وقصور الدرعية التاريخية بخدمات VIP متكاملة.',
+        saudtrading_title: 'مؤسسة سعود للتجارة — تجارة عالمية وحلول رقمية',
+        saudtrading_desc: 'منصة تجارة وتوريد سعودية رائدة للسلع الغذائية والمواد البلاستيكية الخام، والحلول الرقمية المتكاملة المدعومة بالذكاء الاصطناعي لمواكبة رؤية 2030.',
         bay_title: 'بيتك — منصة الصيانة المنزلية',
         bay_desc: 'منصة حجز صيانة منزلية تربط العملاء بفنيين معتمدين (سباكة، كهرباء، تكييف، نجارة، دهانات، تنظيف) وتتابع كل طلب من الحجز حتى الإتمام.',
         alf_title: 'منصة مطعم ألف ليلة',
@@ -258,6 +272,8 @@ const T = {
 
         gal_tag: 'عرض مرئي', gal_title: 'معرض المشاريع',
         gal_all: 'جميع الوسائط', gal_screenshots: 'لقطات الشاشة', gal_videos: 'فيديوهات العرض',
+        gal_saudtourism_vid: 'منصة SA للسياحة', gal_saudtourism_img: 'لقطة SA للسياحة',
+        gal_saudtrading_vid: 'مؤسسة سعود للتجارة', gal_saudtrading_img: 'لقطة سعود للتجارة',
         gal_nabela: 'نبيلة للتجارة الإلكترونية', gal_sakba: 'منصة سكبة',
         gal_shanton: 'شانتون خليج', gal_car: 'تأجير السيارات',
         gal_axit: 'أكسيت', gal_andmore: 'عرض أند مور', gal_encyclopedia: 'الموسوعة',
@@ -311,7 +327,7 @@ const T = {
         bd_4: '10,000 – 20,000 جنيه', bd_5: '20,000 – 50,000 جنيه', bd_6: 'أكثر من 50,000 جنيه',
         bd_7: 'قابل للنقاش',
 
-        screenshot: 'لقطة شاشة', demo_video: 'فيديو تجريبي', live_demo: 'عرض مباشر',
+        screenshot: 'لقطة شاشة', demo_video: 'فيديو تجريبي', live_demo: 'عرض مباشر', github_btn: 'جيت هاب',
         lang_btn: 'English', wa_tooltip: 'تواصل عبر واتساب',
         footer_txt: '© 2026 نانسي عبدالله فتحي · مطورة TypeScript / Next.js / Laravel · الجيزة، مصر',
         footer_sub: 'مبنية بشغف ودقة',

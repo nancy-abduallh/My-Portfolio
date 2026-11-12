@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Cairo:wght@400;600;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400;1,9..40,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&family=Cairo:wght@400;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
@@ -61,8 +61,7 @@
     </ul>
     <div class="nav-controls">
       <button class="hamburger" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
-      <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-sun"
-          id="themeIcon"></i></button> -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon" id="themeIcon"></i></button>
       <button class="lang-toggle" id="langToggle" data-i18n="lang_btn">عربي</button>
     </div>
   </nav>
@@ -101,77 +100,102 @@
   </div>
   <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide active" style="background-image:url('images/tech-wallpaper.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/web-development.jpg')"></div>
-    </div>
-    <div class="hero-slider-ctrl">
-      <button type="button" id="heroPrev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-      <span class="hero-dot active" data-i="0"></span><span class="hero-dot" data-i="1"></span>
-      <button type="button" id="heroNext" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span data-i18n="hero_badge">Available for Opportunities</span>
-        </div>
+  <!-- HERO (Jeton-inspired 3D Coral Curved Stage) -->
+  <section id="hero" class="jeton-hero">
+    <div class="jeton-hero-stage">
+      <!-- 3D HELICAL DISCS CANVAS -->
+      <div class="jeton-hero-canvas" id="hero3d" aria-hidden="true"></div>
 
-        <h1 class="hero-name">
-          <span data-i18n="hero_name1">Nancy</span>
-          <span class="gold" data-i18n="hero_name2">Abdullah Fathy</span>
-        </h1>
-
-        <p class="hero-role"><span id="typedRole"></span><span class="typed-cursor">|</span></p>
-
-        <p class="hero-desc" data-i18n="hero_desc">
-          TypeScript & Next.js Developer with 3+ years of experience building fast, scalable,
-          SEO-friendly web applications — from interactive React front-ends to robust Laravel
-          back-ends and AI-powered features.
-        </p>
-
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-gold"><i class="fas fa-layer-group"></i><span
-              data-i18n="hero_btn_projects">View Projects</span></a>
-          <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i><span
-              data-i18n="hero_btn_hire">Hire Me</span></a>
-          <a href="mailto:nancyabdo857@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i><span
-              data-i18n="hero_btn_email">Email Me</span></a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-num" data-count="3" data-suffix="+">0</div>
-            <div class="stat-label" data-i18n="stat_years_lbl">Years Exp.</div>
+      <div class="jeton-hero-inner">
+        <!-- LEFT COLUMN: EDITORIAL TYPOGRAPHY & CTAs -->
+        <div class="jeton-hero-col-left">
+          <div class="jeton-pill-badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero_badge">Available for Opportunities</span>
           </div>
-          <div class="stat-item">
-            <div class="stat-num" data-count="10" data-suffix="+">0</div>
-            <div class="stat-label" data-i18n="stat_projects_lbl">Projects</div>
+
+          <h1 class="hero-name jeton-hero-title">
+            <span class="jeton-title-line" data-i18n="hero_name1">Nancy</span>
+            <span class="jeton-title-line accent" data-i18n="hero_name2">Abdullah Fathy</span>
+          </h1>
+
+          <p class="hero-role jeton-hero-role"><span id="typedRole"></span><span class="typed-cursor">|</span></p>
+
+          <p class="hero-desc jeton-hero-desc" data-i18n="hero_desc">
+            TypeScript & Next.js Developer with 3+ years of experience building fast, scalable,
+            SEO-friendly web applications — from interactive React front-ends to robust Laravel
+            back-ends and AI-powered features.
+          </p>
+
+          <div class="hero-btns jeton-hero-btns">
+            <a href="#projects" class="btn jeton-btn-white"><i class="fas fa-layer-group"></i><span
+                data-i18n="hero_btn_projects">View Projects</span></a>
+            <a href="#contact" class="btn jeton-btn-glass"><i class="fas fa-paper-plane"></i><span
+                data-i18n="hero_btn_hire">Hire Me</span></a>
+            <a href="mailto:nancyabdo857@gmail.com" class="btn jeton-btn-glass"><i class="fas fa-envelope"></i><span
+                data-i18n="hero_btn_email">Email Me</span></a>
           </div>
-          <div class="stat-item">
-            <div class="stat-num">3.68</div>
-            <div class="stat-label" data-i18n="stat_gpa_lbl">GPA / 4.0</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">A+</div>
-            <div class="stat-label" data-i18n="stat_grade_lbl">Top Grade</div>
+
+          <div class="jeton-scroll-badge">
+            <a href="#about" class="jeton-scroll-link" aria-label="Scroll to content">
+              <i class="fas fa-mouse"></i>
+              <span data-i18n="hero_scroll">Scroll</span>
+              <i class="fas fa-arrow-down scroll-arrow"></i>
+            </a>
           </div>
         </div>
-      </div>
 
-      <div class="hero-visual">
-        <div class="hud-chip" aria-hidden="true"><span class="pulse-dot"></span>NEURAL_CORE: RUNNING</div>
-        <div class="hero-orb-3d" id="hero3d" aria-hidden="true"></div>
-        <div class="float-badge top-right"><i class="fas fa-bolt"></i><span data-i18n="badge_nextjs">TypeScript /
-            Next.js Developer</span></div>
-        <div class="float-badge bottom-left"><i class="fab fa-react"></i><span data-i18n="badge_react">React
-            Developer</span></div>
-        <div class="float-badge bottom-right"><i class="fab fa-laravel"></i><span data-i18n="badge_laravel">Laravel
-            Expert</span></div>
+        <!-- RIGHT COLUMN: HEADLINE TAGLINE, STORE-STYLE BADGES, STATS -->
+        <div class="jeton-hero-col-right">
+          <div class="jeton-right-headline">
+            <p class="jeton-tagline" data-i18n="hero_tagline">Single developer for all your web & software needs.</p>
+          </div>
+
+          <!-- APP STORE / DISCOVER BADGES -->
+          <div class="jeton-store-group">
+            <a href="https://github.com/nancy-abduallh" target="_blank" rel="noopener" class="jeton-store-badge">
+              <i class="fab fa-github"></i>
+              <div class="store-badge-text">
+                <span class="store-sub">EXPLORE REPOSITORIES</span>
+                <strong class="store-title">GitHub Profile</strong>
+              </div>
+            </a>
+            <a href="#projects" class="jeton-store-badge">
+              <i class="fas fa-laptop-code"></i>
+              <div class="store-badge-text">
+                <span class="store-sub">PRODUCTION BUILDS</span>
+                <strong class="store-title">Featured Apps</strong>
+              </div>
+            </a>
+          </div>
+
+          <!-- STATS PILL ROW -->
+          <div class="hero-stats jeton-hero-stats">
+            <div class="stat-item">
+              <div class="stat-num" data-count="3" data-suffix="+">0</div>
+              <div class="stat-label" data-i18n="stat_years_lbl">Years Exp.</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-count="12" data-suffix="+">0</div>
+              <div class="stat-label" data-i18n="stat_projects_lbl">Projects</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">3.68</div>
+              <div class="stat-label" data-i18n="stat_gpa_lbl">GPA / 4.0</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">A+</div>
+              <div class="stat-label" data-i18n="stat_grade_lbl">Top Grade</div>
+            </div>
+          </div>
+
+          <!-- FLOATING TECH CHIPS -->
+          <div class="jeton-tech-chips">
+            <div class="jeton-chip"><i class="fas fa-bolt"></i><span data-i18n="badge_nextjs">TypeScript / Next.js Developer</span></div>
+            <div class="jeton-chip"><i class="fab fa-react"></i><span data-i18n="badge_react">React Developer</span></div>
+            <div class="jeton-chip"><i class="fab fa-laravel"></i><span data-i18n="badge_laravel">Laravel Expert</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -201,11 +225,32 @@
       </div>
 
       <div class="about-grid">
-        <div class="about-initial-circle reveal">
-          <div class="initial-circle"><span data-i18n="initial_letter">N</span></div>
+        <!-- 3D EDITORIAL PROFILE CARD -->
+        <div class="about-profile-card reveal">
+          <div class="about-card-halo"></div>
+          <div class="about-avatar-wrap">
+            <div class="initial-circle"><span data-i18n="initial_letter">N</span></div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="about-name">Nancy Abdullah Fathy</h3>
+          <p class="about-role-pill"><i class="fas fa-code"></i> <span>Full-Stack & Next.js Engineer</span></p>
+          <div class="about-status-badge">
+            <span class="status-dot"></span>
+            <span data-i18n="hero_badge">Available for Opportunities</span>
+          </div>
+          <div class="about-card-divider"></div>
+          <div class="about-card-highlights">
+            <div class="ach-item"><i class="fas fa-graduation-cap"></i> <span>Helwan University · AI Dept</span></div>
+            <div class="ach-item"><i class="fas fa-star"></i> <span>3.68 GPA · Top Grade Honors</span></div>
+            <div class="ach-item"><i class="fas fa-map-marker-alt"></i> <span data-i18n="val_location">Giza, Egypt</span></div>
+          </div>
+          <div class="about-card-actions">
+            <a href="#contact" class="btn btn-gold btn-sm"><i class="fas fa-paper-plane"></i> <span data-i18n="hero_btn_hire">Hire Me</span></a>
+            <a href="mailto:nancyabdo857@gmail.com" class="btn btn-outline btn-sm"><i class="fas fa-envelope"></i> <span data-i18n="hero_btn_email">Email</span></a>
+          </div>
         </div>
 
-        <div class="reveal" style="transition-delay: 0.15s">
+        <div class="reveal about-content-col" style="transition-delay: 0.15s">
           <p class="about-lead" data-i18n="about_lead">"Driven by a passion for creating smart, scalable, and
             user-centric solutions."</p>
           <p class="about-text" data-i18n="about_p1">
@@ -476,6 +521,80 @@
       </div>
 
       <div class="projects-grid">
+        <!-- SA Tourism Platform -->
+        <div class="project-card" data-stack="nextjs typescript react">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'saudtourism','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'saudtourism','vid')" data-i18n="demo_video">Demo
+                Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="saudtourism-img" class="media-panel active">
+                <img src="./images/saudtourism.png" alt="SA Tourism Platform" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=SA+Tourism';" />
+              </div>
+              <div id="saudtourism-vid" class="media-panel">
+                <video src="./videos/SA للسياحة _ تجارب سعودية فاخرة - Google Chrome 2026-10-26 13-51-23.mp4" controls
+                  loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="saudtourism_title">SA Tourism — Luxury Travel &amp; Experiences Platform
+            </div>
+            <p class="proj-desc" data-i18n="saudtourism_desc">Premier Saudi tourism platform offering luxury curated
+              travel experiences, VIP desert expeditions, historical tours in AlUla and Diriyah, and seamless booking
+              for high-end domestic tourism.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">React</span><span class="tech-tag">Tailwind CSS</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://saudtourism.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAUD TRADING EST. -->
+        <div class="project-card" data-stack="react typescript">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'saudtrading','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'saudtrading','vid')" data-i18n="demo_video">Demo
+                Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="saudtrading-img" class="media-panel active">
+                <img src="./images/saudtrading.png" alt="Saud Trading EST" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Saud+Trading';" />
+              </div>
+              <div id="saudtrading-vid" class="media-panel">
+                <video src="./videos/سعود التجارية _ تجارة عالمية برؤية سعودية - Google Chrome 2026-10-08 10-29-29.mp4"
+                  controls loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="saudtrading_title">Saud Trading Est. — Global Trade &amp; Digital
+              Solutions</div>
+            <p class="proj-desc" data-i18n="saudtrading_desc">Corporate global trade platform supplying essential food
+              commodities, raw plastic polymers, and integrated AI-powered digital services across Saudi Arabia aligned
+              with Vision 2030.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">TanStack Start</span><span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span><span class="tech-tag">Tailwind CSS</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://saud.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
+          </div>
+        </div>
+
         <!-- Baytak — Next.js/TS first: flagship for the new role -->
         <div class="project-card" data-stack="nextjs typescript">
           <div>
@@ -504,8 +623,8 @@
               <span class="tech-tag">React Hook Form</span>
             </div>
             <div class="proj-links">
-              <a href="https://baytak-frontend-production.up.railway.app/" target="_blank" rel="noopener"
-                class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
+              <a href="https://baytak.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
                   Demo</span></a>
 
             </div>
@@ -678,7 +797,6 @@
             <div class="proj-links">
               <a href="https://andmoree.com/ar" target="_blank" rel="noopener" class="proj-link"><i
                   class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-              <!-- <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a> -->
             </div>
           </div>
         </div>
@@ -712,7 +830,6 @@
             <div class="proj-links">
               <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
                   Demo</span></a>
-              <!-- <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a> -->
             </div>
           </div>
         </div>
@@ -746,7 +863,6 @@
             <div class="proj-links">
               <a href="https://www.shantongulf.com/ar" target="_blank" rel="noopener" class="proj-link"><i
                   class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-              <!-- <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a> -->
             </div>
           </div>
         </div>
@@ -810,6 +926,18 @@
       </div>
 
       <div class="gallery-grid">
+
+        <div class="gi" data-type="img">
+          <img src="./images/saudtourism.png" alt="SA Tourism Platform" loading="lazy"
+            onerror="this.src='https://via.placeholder.com/400x400/1a1a1a/c9a84c?text=SA+Tourism'" />
+          <div class="gi-overlay"><span class="gi-label" data-i18n="gal_saudtourism_img">SA Tourism Preview</span></div>
+        </div>
+        <div class="gi wide" data-type="vid">
+          <video src="./videos/سعود التجارية _ تجارة عالمية برؤية سعودية - Google Chrome 2026-10-08 10-29-29.mp4"
+            autoplay muted loop playsinline></video>
+          <div class="gi-overlay"><span class="gi-label" data-i18n="gal_saudtrading_vid">Saud Trading EST</span></div>
+        </div>
+
         <div class="gi wide" data-type="vid">
           <video src="./videos/nabila.mp4" autoplay muted loop playsinline></video>
           <div class="gi-overlay"><span class="gi-label" data-i18n="gal_nabela">Nabela E-Commerce</span></div>
@@ -1033,6 +1161,27 @@
       <div class="footer-sub" data-i18n="footer_sub">BUILT WITH PASSION & PRECISION</div>
     </div>
   </footer>
+
+  <!-- JETON SIGNATURE FLOATING BOTTOM CAPSULE NAV -->
+  <aside class="jeton-bottom-nav" id="jetonBottomNav" aria-label="Quick navigation">
+    <div class="jeton-bottom-capsule">
+      <a href="#hero" class="capsule-home" aria-label="Home"><i class="fas fa-home"></i></a>
+      <div class="capsule-divider"></div>
+      <div class="capsule-links">
+        <a href="#about" class="capsule-item"><span data-i18n="nav_about">About</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#skills" class="capsule-item"><span data-i18n="nav_skills">Skills</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#projects" class="capsule-item"><span data-i18n="nav_projects">Projects</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#gallery" class="capsule-item"><span data-i18n="nav_gallery">Gallery</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#experience" class="capsule-item"><span data-i18n="nav_experience">Experience</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#contact" class="capsule-item"><span data-i18n="nav_contact">Contact</span> <i class="fas fa-chevron-down"></i></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- JETON FLOATING QUICK CHAT BUTTON -->
+  <a href="#contact" class="jeton-quick-chat" id="jetonQuickChat" aria-label="Quick Message">
+    <i class="fas fa-comment-dots"></i>
+  </a>
 
   <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">

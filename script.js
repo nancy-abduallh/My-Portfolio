@@ -86,6 +86,10 @@ const T = {
 
     proj_tag: 'My Work', proj_title: 'Featured Projects',
     pf_all: 'All',
+    saudtourism_title: 'SA Tourism — Luxury Travel & Experiences Platform',
+    saudtourism_desc: 'Premier Saudi tourism platform offering luxury curated travel experiences, VIP desert expeditions, historical tours in AlUla and Diriyah, and seamless booking for high-end domestic tourism.',
+    saudtrading_title: 'Saud Trading Est. — Global Trade & Digital Solutions',
+    saudtrading_desc: 'Corporate global trade platform supplying essential food commodities, raw plastic polymers, and integrated AI-powered digital services across Saudi Arabia aligned with Vision 2030.',
     bay_title: 'Baytak — Home Maintenance Platform',
     bay_desc: 'Home-maintenance booking platform connecting customers with verified technicians (plumbing, electrical, AC, carpentry, painting, cleaning) and tracking each request from booking to completion.',
     alf_title: 'Alf Leila Restaurant Platform',
@@ -107,6 +111,8 @@ const T = {
 
     gal_tag: 'Visual Showcase', gal_title: 'Project Gallery',
     gal_all: 'All Media', gal_screenshots: 'Screenshots', gal_videos: 'Demo Videos',
+    gal_saudtourism_vid: 'SA Tourism Platform', gal_saudtourism_img: 'SA Tourism Preview',
+    gal_saudtrading_vid: 'Saud Trading EST', gal_saudtrading_img: 'Saud Trading Preview',
     gal_nabela: 'Nabela E-Commerce', gal_sakba: 'Sakba Platform',
     gal_shanton: 'Shantongulf', gal_car: 'Car Rental',
     gal_axit: 'AXIT', gal_andmore: 'AndMore Demo', gal_encyclopedia: 'Encyclopedia',
@@ -160,7 +166,7 @@ const T = {
     bd_4: '10,000 – 20,000 EGP', bd_5: '20,000 – 50,000 EGP', bd_6: 'Above 50,000 EGP',
     bd_7: 'Open to Discussion',
 
-    screenshot: 'Screenshot', demo_video: 'Demo Video', live_demo: 'Live Demo',
+    screenshot: 'Screenshot', demo_video: 'Demo Video', live_demo: 'Live Demo', github_btn: 'GitHub',
     lang_btn: 'عربي', wa_tooltip: 'Chat on WhatsApp',
     footer_txt: '© 2026 Nancy Abdullah Fathy · TypeScript / Next.js / Laravel Developer · Giza, Egypt',
     footer_sub: 'BUILT WITH PASSION & PRECISION',
@@ -243,6 +249,10 @@ const T = {
 
     proj_tag: 'أعمالي', proj_title: 'المشاريع المميزة',
     pf_all: 'الكل',
+    saudtourism_title: 'منصة SA للسياحة — تجارب وباقات سياحية فاخرة',
+    saudtourism_desc: 'منصة سياحية متكاملة لحجز أرقى التجارب والباقات السياحية الفاخرة في السعودية: حافة العالم، منتجعات العلا، جزر البحر الأحمر، وقصور الدرعية التاريخية بخدمات VIP متكاملة.',
+    saudtrading_title: 'مؤسسة سعود للتجارة — تجارة عالمية وحلول رقمية',
+    saudtrading_desc: 'منصة تجارة وتوريد سعودية رائدة للسلع الغذائية والمواد البلاستيكية الخام، والحلول الرقمية المتكاملة المدعومة بالذكاء الاصطناعي لمواكبة رؤية 2030.',
     bay_title: 'بيتك — منصة الصيانة المنزلية',
     bay_desc: 'منصة حجز صيانة منزلية تربط العملاء بفنيين معتمدين (سباكة، كهرباء، تكييف، نجارة، دهانات، تنظيف) وتتابع كل طلب من الحجز حتى الإتمام.',
     alf_title: 'منصة مطعم ألف ليلة',
@@ -264,6 +274,8 @@ const T = {
 
     gal_tag: 'عرض مرئي', gal_title: 'معرض المشاريع',
     gal_all: 'جميع الوسائط', gal_screenshots: 'لقطات الشاشة', gal_videos: 'فيديوهات العرض',
+    gal_saudtourism_vid: 'منصة SA للسياحة', gal_saudtourism_img: 'لقطة SA للسياحة',
+    gal_saudtrading_vid: 'مؤسسة سعود للتجارة', gal_saudtrading_img: 'لقطة سعود للتجارة',
     gal_nabela: 'نبيلة للتجارة الإلكترونية', gal_sakba: 'منصة سكبة',
     gal_shanton: 'شانتون خليج', gal_car: 'تأجير السيارات',
     gal_axit: 'أكسيت', gal_andmore: 'عرض أند مور', gal_encyclopedia: 'الموسوعة',
@@ -317,7 +329,7 @@ const T = {
     bd_4: '10,000 – 20,000 جنيه', bd_5: '20,000 – 50,000 جنيه', bd_6: 'أكثر من 50,000 جنيه',
     bd_7: 'قابل للنقاش',
 
-    screenshot: 'لقطة شاشة', demo_video: 'فيديو تجريبي', live_demo: 'عرض مباشر',
+    screenshot: 'لقطة شاشة', demo_video: 'فيديو تجريبي', live_demo: 'عرض مباشر', github_btn: 'جيت هاب',
     lang_btn: 'English', wa_tooltip: 'تواصل عبر واتساب',
     footer_txt: '© 2026 نانسي عبدالله فتحي · مطورة TypeScript / Next.js / Laravel · الجيزة، مصر',
     footer_sub: 'مبنية بشغف ودقة',
@@ -326,7 +338,7 @@ const T = {
 
 /* ── STATE ─────────────────────────────────────────────────── */
 let currentLang = localStorage.getItem('naf_lang') || 'en';
-let currentTheme = localStorage.getItem('naf_theme') || 'dark';
+let currentTheme = localStorage.getItem('naf_theme') || 'light';
 let typedIndex = 0, typedCharIdx = 0, typedDeleting = false;
 
 /* ── THEME ─────────────────────────────────────────────────── */
@@ -455,7 +467,7 @@ function rebuildSelects(lang) {
     pts.forEach(p => {
       cx.beginPath();
       cx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      cx.fillStyle = `rgba(0,240,255,${p.o})`;
+      cx.fillStyle = `rgba(247,59,32,${p.o})`;
       cx.fill();
       p.x += p.vx; p.y += p.vy;
       if (p.x < 0) p.x = cv.width; if (p.x > cv.width) p.x = 0;
@@ -472,7 +484,9 @@ function rebuildSelects(lang) {
   const waBtn = document.getElementById('waBtn');
   const prog = document.getElementById('scrollProgress');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a, .sidebar-nav a');
+  const navLinks = document.querySelectorAll('.nav-links a, .sidebar-nav a, .capsule-links a');
+  const bottomNav = document.getElementById('jetonBottomNav');
+  const quickChat = document.getElementById('jetonQuickChat');
 
   window.addEventListener('scroll', () => {
     const sy = window.scrollY;
@@ -482,22 +496,49 @@ function rebuildSelects(lang) {
     const show = sy > 500;
     if (backTop) backTop.classList.toggle('show', show);
     if (waBtn) waBtn.classList.toggle('show', show);
+    if (bottomNav) bottomNav.classList.toggle('show', sy > 60);
+    if (quickChat) quickChat.classList.toggle('show', sy > 60);
     let cur = '';
     sections.forEach(s => { if (sy >= s.offsetTop - 260) cur = s.id; });
     navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
   }, { passive: true });
 })();
 
-/* ── INTERSECTION OBSERVER ─────────────────────────────────── */
+/* ── INTERSECTION OBSERVER WITH STAGGERED HIDE-TO-SHOW ─────── */
 (function initObserver() {
+  // Assign staggered delays to elements inside grids for cascading reveal
+  const gridSelectors = [
+    '.skills-grid > *',
+    '.timeline > *',
+    '.projects-grid > *',
+    '.gallery-grid > *',
+    '.cert-list > *',
+    '.contact-methods > *',
+    '.about-details > *',
+    '.edu-grid > *'
+  ];
+
+  gridSelectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach((child, idx) => {
+      if (!child.style.transitionDelay) {
+        child.style.transitionDelay = `${(idx % 6) * 0.08}s`;
+      }
+    });
+  });
+
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       e.target.classList.add('visible');
       e.target.querySelectorAll('.lang-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
+      obs.unobserve(e.target);
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal,.timeline-item,.project-card,.skill-card,.cert-item').forEach(el => obs.observe(el));
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  const targets = document.querySelectorAll(
+    '.reveal, .timeline-item, .project-card, .skill-card, .cert-item, .gi, .edu-card, .c-method, .about-profile-card, .detail-item, .section-header'
+  );
+  targets.forEach(el => obs.observe(el));
 })();
 
 /* ── TYPING EFFECT ─────────────────────────────────────────── */
@@ -695,7 +736,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTheme(currentTheme);
   applyLang(currentLang);
 
-  document.getElementById('themeToggle').addEventListener('click', () => {
+  document.getElementById('themeToggle')?.addEventListener('click', () => {
     applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
   });
   document.getElementById('sidebarThemeToggle')?.addEventListener('click', () => {
@@ -750,8 +791,8 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(timer);
     timer = setInterval(() => go(cur + 1), 6000);
   };
-  document.getElementById('heroPrev').addEventListener('click', () => { go(cur - 1); start(); });
-  document.getElementById('heroNext').addEventListener('click', () => { go(cur + 1); start(); });
+  document.getElementById('heroPrev')?.addEventListener('click', () => { go(cur - 1); start(); });
+  document.getElementById('heroNext')?.addEventListener('click', () => { go(cur + 1); start(); });
   dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); start(); }));
   start();
 })();
