@@ -4723,6 +4723,13 @@ h1.hero-name.jeton-hero-title {
   color: var(--color-signal-orange, #f73b20) !important;
 }
 
+.edu-grades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
 .edu-grade {
   display: inline-flex;
   align-items: center;
