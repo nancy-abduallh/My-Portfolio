@@ -4250,6 +4250,20 @@ h1.hero-name.jeton-hero-title {
   color: var(--color-signal-orange, #f73b20) !important;
 }
 
+.tl-type-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.16rem 0.55rem;
+  border-radius: 9999px;
+  background: rgba(247, 59, 32, 0.06);
+  color: var(--color-ash-grey, #6b5350);
+  border: 1px solid rgba(247, 59, 32, 0.14);
+  margin-inline-start: 0.45rem;
+  white-space: nowrap;
+}
+
 .tl-desc {
   list-style: none;
   padding: 0;

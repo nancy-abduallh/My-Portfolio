@@ -262,6 +262,25 @@ html, body { overflow-x: clip; }
     border-bottom-color: rgba(255, 255, 255, 0.08) !important;
   }
 
+  .tl-type-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    padding: 0.12rem 0.48rem !important;
+    border-radius: 9999px !important;
+    margin-inline-start: auto !important;
+    background: rgba(247, 59, 32, 0.06) !important;
+    color: #8c726e !important;
+    border: 1px solid rgba(247, 59, 32, 0.14) !important;
+    white-space: nowrap !important;
+  }
+  [data-theme="dark"] .tl-type-badge {
+    background: rgba(247, 59, 32, 0.12) !important;
+    color: #ff9d8f !important;
+    border-color: rgba(247, 59, 32, 0.22) !important;
+  }
+
   /* Responsibilities & Achievements List */
   .tl-desc {
     list-style: none !important;

@@ -268,6 +268,12 @@ footer .footer-logo { color: #fff !important; }
   opacity: 1 !important;
 }
 
+[data-theme="dark"] .tl-type-badge {
+  background: rgba(247, 59, 32, 0.12) !important;
+  color: #ff9d8f !important;
+  border-color: rgba(247, 59, 32, 0.25) !important;
+}
+
 /* Timeline Bullets */
 [data-theme="dark"] .tl-desc li {
   color: #e5cec9 !important;
