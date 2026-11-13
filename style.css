@@ -5437,21 +5437,20 @@ footer {
     transform: translateX(50%) !important;
   }
   .timeline-item {
-    margin-left: 26px !important;
-    margin-right: 20px !important;
-    padding: 1.25rem 1.15rem !important;
-    border-radius: 16px !important;
+    margin-left: 24px !important;
+    margin-right: 14px !important;
+    padding: 1.15rem 1.1rem !important;
+    border-radius: 18px !important;
   }
   [dir="rtl"] .timeline-item {
-    margin-left: 20px !important;
-    margin-right: 26px !important;
+    margin-left: 14px !important;
+    margin-right: 24px !important;
   }
   .tl-desc {
-    padding-left: 1rem !important;
+    padding: 0 !important;
   }
   [dir="rtl"] .tl-desc {
-    padding-left: 0 !important;
-    padding-right: 1rem !important;
+    padding: 0 !important;
   }
 
   /* Skills Grid */
