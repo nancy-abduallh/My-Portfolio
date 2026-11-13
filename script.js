@@ -342,14 +342,14 @@ const T = {
 
 /* ── STATE ─────────────────────────────────────────────────── */
 let currentLang = localStorage.getItem('naf_lang') || 'en';
-let currentTheme = localStorage.getItem('naf_theme') || 'light';
+let currentTheme = localStorage.getItem('naf_theme_v2') || 'light';
 let typedIndex = 0, typedCharIdx = 0, typedDeleting = false;
 
 /* ── THEME ─────────────────────────────────────────────────── */
 function applyTheme(theme) {
   currentTheme = theme;
   document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('naf_theme', theme);
+  localStorage.setItem('naf_theme_v2', theme);
   const isDark = theme === 'dark';
   const icon = document.getElementById('themeIcon');
   const sidebarIcon = document.getElementById('sidebarThemeIcon');
@@ -488,16 +488,20 @@ function rebuildSelects(lang) {
   const waBtn = document.getElementById('waBtn');
   const prog = document.getElementById('scrollProgress');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a, .sidebar-nav a, .jh-capsule a');
+  const navLinks = document.querySelectorAll('.nav-links a, .sidebar-nav a, .capsule-links a');
+  const bottomNav = document.getElementById('jetonBottomNav');
+  const quickChat = document.getElementById('jetonQuickChat');
 
   window.addEventListener('scroll', () => {
     const sy = window.scrollY;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     if (prog) prog.style.width = (sy / docH * 100) + '%';
     if (nav) nav.classList.toggle('scrolled', sy > 60);
-    const show = sy > 400;
+    const show = sy > 500;
     if (backTop) backTop.classList.toggle('show', show);
-    if (waBtn) waBtn.classList.toggle('show', sy > 100);
+    if (waBtn) waBtn.classList.toggle('show', show);
+    if (bottomNav) bottomNav.classList.toggle('show', sy > 60);
+    if (quickChat) quickChat.classList.toggle('show', sy > 60);
     let cur = '';
     sections.forEach(s => { if (sy >= s.offsetTop - 260) cur = s.id; });
     navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));

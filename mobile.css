@@ -1,0 +1,114 @@
+/* ══════════════════════════════════════════════════════════════
+   mobile.css — professional phone layout  (loads LAST)
+
+   · Skills        → swipeable snap carousel (was 6 tall cards)
+   · Projects      → compact cards, one-row scrollable filters
+   · Gallery       → tidy 2-column mosaic, captions always visible
+   · All sections  → tighter rhythm, bigger tap targets,
+                     16px inputs (no iOS zoom), safe-area aware
+   Works in LTR and RTL (Arabic).
+   ══════════════════════════════════════════════════════════════ */
+
+html, body { overflow-x: clip; }
+
+@media (hover: none) {
+  .cursor, .cursor-ring { display: none !important; }
+  * { cursor: auto !important; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+
+@media (max-width: 768px) {
+  :root { --m-pad: 1.15rem; }
+
+  .container { width: calc(100% - (var(--m-pad) * 2)); }
+
+  /* ── rhythm ──────────────────────────────────────────────── */
+  #about, #skills, #experience, #projects, #gallery, #education, #contact {
+    padding-block: 3.4rem !important;
+  }
+  .section-header { margin-bottom: 1.6rem !important; }
+  .sec-title { font-size: clamp(1.85rem, 8vw, 2.35rem) !important; line-height: 1.08; letter-spacing: -.03em; }
+
+  /* ── skills: swipe carousel ──────────────────────────────── */
+  .skills-grid {
+    display: flex !important;
+    gap: .85rem !important;
+    overflow-x: auto;
+    margin-inline: calc(var(--m-pad) * -1);
+    padding: .25rem var(--m-pad) 1.2rem;
+    scroll-padding-inline: var(--m-pad);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .skills-grid::-webkit-scrollbar { display: none; }
+  .skills-grid > .skill-card {
+    flex: 0 0 86%;
+    scroll-snap-align: start;
+    padding: 1.25rem !important;
+  }
+  .skills-grid .skill-tags { margin-top: .25rem !important; }
+
+  /* ── projects ────────────────────────────────────────────── */
+  .proj-filters, .gallery-filters {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: .5rem !important;
+    overflow-x: auto;
+    margin-inline: calc(var(--m-pad) * -1);
+    padding: .15rem var(--m-pad) .4rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .proj-filters::-webkit-scrollbar, .gallery-filters::-webkit-scrollbar { display: none; }
+  .pf-btn, .gf-btn { flex: 0 0 auto; min-height: 40px; padding-inline: 1rem !important; white-space: nowrap; }
+
+  .projects-grid { gap: 1.1rem !important; }
+  .project-card { border-radius: 18px !important; }
+  .project-card .proj-body { padding: 1.05rem 1.1rem 1.2rem !important; }
+  .proj-title { font-size: 1.05rem !important; line-height: 1.25; }
+  .proj-desc { font-size: .88rem !important; line-height: 1.55 !important; }
+  .proj-tech { gap: .4rem !important; }
+  .proj-tech .tech-tag { font-size: .68rem !important; padding: .28rem .65rem !important; }
+  .proj-links { display: flex; }
+  .proj-links .proj-link { flex: 1; justify-content: center; min-height: 44px; }
+  .mtab { min-height: 36px; }
+
+  /* ── gallery: 2-col mosaic ───────────────────────────────── */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 132px !important;
+    gap: .6rem !important;
+    grid-auto-flow: dense;
+  }
+  .gi, .gi.wide { aspect-ratio: auto !important; border-radius: 14px !important; }
+  .gi.wide { grid-column: span 2 !important; }
+  .gi img, .gi video { object-position: top center; }
+  .gi-overlay {
+    opacity: 1 !important;
+    padding: .6rem .7rem !important;
+    background: linear-gradient(to top, rgba(20, 3, 2, .72) 0%, transparent 60%) !important;
+  }
+  .gi-label { color: #fff !important; font-size: .58rem !important; letter-spacing: 1.4px !important; }
+
+  /* ── about / experience / education / contact ────────────── */
+  .about-profile-card { padding: 1.5rem 1.25rem !important; }
+  .detail-item { padding: .8rem .95rem !important; }
+  .timeline-item { padding: 1.15rem 1.1rem !important; border-radius: 16px !important; }
+  .edu-card, .cert-item { border-radius: 16px !important; }
+  .contact-form { padding: 1.25rem !important; border-radius: 18px !important; }
+  .c-method { padding: .85rem 1rem !important; }
+  .form-control { font-size: 16px !important; min-height: 46px; }
+  textarea.form-control { min-height: 120px; }
+
+  /* ── floating buttons: smaller, clear of content ─────────── */
+  .whatsapp-btn { right: 1rem !important; bottom: 4.4rem !important; width: 42px !important; height: 42px !important; }
+  .back-top     { right: 1rem !important; bottom: 1rem !important;   width: 42px !important; height: 42px !important; }
+
+  footer { padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important; }
+}
+
+@media (max-width: 380px) {
+  .skills-grid > .skill-card { flex-basis: 88%; }
+  .gallery-grid { grid-auto-rows: 116px !important; }
+}

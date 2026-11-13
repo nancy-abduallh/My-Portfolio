@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="hero.css" />
   <link rel="stylesheet" href="sections.css" />
+  <link rel="stylesheet" href="mobile.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
   <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
 </head>
@@ -172,24 +173,9 @@
       </div>
     </div>
 
-    <!-- Jeton Signature In-Hero Bottom Dock (matches Image 1: left scroll pill, center capsule, right support) -->
-    <div class="jh-bottom-bar">
-      <a href="#about" class="jh-scroll" aria-label="Scroll to content">
-        <i class="fas fa-mouse"></i><span data-i18n="hero_scroll">Scroll</span>
-      </a>
-
-      <nav class="jh-capsule" aria-label="Hero navigation">
-        <a href="#about" class="jh-capsule-item"><span data-i18n="nav_about">About</span></a>
-        <a href="#skills" class="jh-capsule-item"><span data-i18n="nav_skills">Skills</span></a>
-        <a href="#experience" class="jh-capsule-item"><span data-i18n="nav_experience">Experience</span></a>
-        <a href="#projects" class="jh-capsule-item"><span data-i18n="nav_projects">Projects</span></a>
-        <a href="#contact" class="jh-capsule-item"><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-
-      <a href="#contact" class="jh-support-btn" aria-label="Support & Contact">
-        <i class="fas fa-headset"></i><span data-i18n="nav_contact">Contact</span>
-      </a>
-    </div>
+    <a href="#about" class="jh-scroll" aria-label="Scroll to content">
+      <i class="fas fa-mouse"></i><span data-i18n="hero_scroll">Scroll</span>
+    </a>
   </section>
 
   <!-- TECH MARQUEE -->
@@ -1154,7 +1140,26 @@
     </div>
   </footer>
 
+  <!-- JETON SIGNATURE FLOATING BOTTOM CAPSULE NAV -->
+  <aside class="jeton-bottom-nav" id="jetonBottomNav" aria-label="Quick navigation">
+    <div class="jeton-bottom-capsule">
+      <a href="#hero" class="capsule-home" aria-label="Home"><i class="fas fa-home"></i></a>
+      <div class="capsule-divider"></div>
+      <div class="capsule-links">
+        <a href="#about" class="capsule-item"><span data-i18n="nav_about">About</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#skills" class="capsule-item"><span data-i18n="nav_skills">Skills</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#projects" class="capsule-item"><span data-i18n="nav_projects">Projects</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#gallery" class="capsule-item"><span data-i18n="nav_gallery">Gallery</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#experience" class="capsule-item"><span data-i18n="nav_experience">Experience</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#contact" class="capsule-item"><span data-i18n="nav_contact">Contact</span> <i class="fas fa-chevron-down"></i></a>
+      </div>
+    </div>
+  </aside>
 
+  <!-- JETON FLOATING QUICK CHAT BUTTON -->
+  <a href="#contact" class="jeton-quick-chat" id="jetonQuickChat" aria-label="Quick Message">
+    <i class="fas fa-comment-dots"></i>
+  </a>
 
   <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">

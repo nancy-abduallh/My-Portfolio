@@ -217,6 +217,8 @@
   animation: jhFade .9s .9s cubic-bezier(.16, 1, .3, 1) both;
 }
 .jh-stat .stat-num {
+  direction: ltr;
+  unicode-bidi: isolate;
   font-family: var(--font-sequel-sans, 'Inter', sans-serif);
   font-size: 1.7rem;
   font-weight: 600;
@@ -232,24 +234,12 @@
   color: rgba(255, 255, 255, .8);
 }
 
-/* ── Jeton in-hero bottom dock (matches Image 1: left scroll, center capsule, right support) ── */
-.jh-bottom-bar {
+/* ── scroll pill (bottom-start, like Jeton) ───────────────── */
+.jh-scroll {
   position: absolute;
   z-index: 4;
   inset-inline-start: var(--jh-pad-x);
-  inset-inline-end: var(--jh-pad-x);
   bottom: 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  pointer-events: none;
-}
-.jh-bottom-bar > * {
-  pointer-events: auto;
-}
-
-.jh-scroll {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
@@ -264,67 +254,8 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   animation: jhFade .9s 1.1s both;
-  transition: background .25s, transform .25s;
-}
-.jh-scroll:hover {
-  background: rgba(255, 255, 255, .28);
-  transform: translateY(-2px);
 }
 .jh-scroll i { font-size: .8rem; animation: jhNudge 1.8s ease-in-out infinite; }
-
-.jh-capsule {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.35rem 0.5rem;
-  background: rgba(255, 255, 255, .16);
-  border: 1px solid rgba(255, 255, 255, .28);
-  border-radius: 9999px;
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 10px 28px rgba(110, 12, 8, .2);
-  animation: jhFade .9s 1s both;
-}
-.jh-capsule-item {
-  padding: 0.4rem 0.95rem;
-  border-radius: 9999px;
-  color: #ffffff;
-  text-decoration: none;
-  font-family: var(--font-sequel-sans, 'Inter', sans-serif);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  transition: background .2s, color .2s, transform .2s;
-}
-.jh-capsule-item:hover {
-  background: rgba(255, 255, 255, .25);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.jh-support-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .45rem 1rem;
-  font-size: .8rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: none;
-  background: rgba(255, 255, 255, .16);
-  border: 1px solid rgba(255, 255, 255, .28);
-  border-radius: 9999px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transition: background .25s, transform .25s, color .25s;
-  animation: jhFade .9s 1.1s both;
-}
-.jh-support-btn:hover {
-  background: #ffffff;
-  color: #d82d15;
-  transform: translateY(-2px);
-}
 
 /* ── keyframes ─────────────────────────────────────────────── */
 @keyframes jhRise  { from { transform: translateY(105%); } to { transform: none; } }
@@ -337,7 +268,6 @@
   .jh-inner { grid-template-columns: 1fr; align-items: end; gap: 2rem; }
   .jh-right { max-width: 34rem; }
   .jh-badges { flex-direction: row; flex-wrap: wrap; }
-  .jh-capsule { display: none; }
 }
 @media (max-width: 640px) {
   .jh-inner { padding-top: 6.5rem; padding-bottom: 6rem; }
@@ -346,7 +276,6 @@
   .jh-desc { display: none; }
   .jh-store { min-width: 0; flex: 1 1 100%; }
   .jh-scroll { display: none; }
-  .jh-bottom-bar { justify-content: flex-end; }
 }
 @media (prefers-reduced-motion: reduce) {
   .jh-hero *, .jh-hero *::before { animation: none !important; transition: none !important; }
