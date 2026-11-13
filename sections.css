@@ -483,6 +483,26 @@ footer .footer-logo { color: #fff !important; }
   color: #ffffff !important;
 }
 
+/* ── Tech Marquee in Dark Mode (High Contrast & Seamless Integration) ── */
+[data-theme="dark"] .tech-marquee {
+  background: #1a0503 !important;
+  border-top: 1px solid rgba(255, 255, 255, .1) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .1) !important;
+}
+[data-theme="dark"] .marquee-track span {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  letter-spacing: .04em !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+}
+[data-theme="dark"] .marquee-track span:hover {
+  color: #ff6854 !important;
+}
+[data-theme="dark"] .marquee-track i {
+  color: #ff6854 !important;
+  text-shadow: 0 0 10px rgba(255, 104, 84, .6);
+}
+
 @keyframes sxSpin { to { transform: rotate(360deg); } }
 
 @media (prefers-reduced-motion: reduce) {
