@@ -15,6 +15,8 @@ const T = {
     nav_contact: 'Contact',
 
     hero_badge: 'Available for Opportunities',
+    hero_tagline: 'Single developer for all your web & software needs.',
+    hero_scroll: 'Scroll',
     hero_name1: 'Nancy',
     hero_name2: 'Abdullah Fathy',
     hero_role_typed: ['TypeScript / Next.js / Laravel Developer', 'Full Stack Web Developer', 'React.js Developer', 'PHP / Laravel Expert', 'Software Engineer'],
@@ -39,7 +41,7 @@ const T = {
     lbl_email: 'Email', lbl_phone: 'Phone',
     lbl_university: 'University', val_university: 'Helwan University',
     lbl_major: 'Major', val_major: 'AI Department — CS & AI',
-    lbl_gpa: 'GPA', val_gpa: '3.68 / 4.0 · Excellent',
+    lbl_gpa: 'GPA', val_gpa: '3.68 / 4.0 · Excellent with Honor Degree',
     lang_arabic: 'Arabic', lang_lv_arabic: 'Native / Fluent',
     lang_english: 'English', lang_lv_english: 'Very Good',
     lang_deutsch: 'Deutsch', lang_lv_deutsch: 'Good',
@@ -121,7 +123,7 @@ const T = {
     edu1_year: 'September 2022 — Present',
     edu1_degree: 'Bachelor of Science in Computer Science & Artificial Intelligence',
     edu1_school: 'Helwan University · AI Department',
-    edu1_grade1: 'Grade: Excellent',
+    edu1_grade1: 'Grade: Excellent with Honor Degree',
     edu1_grade2: 'GPA: 3.68 / 4.0',
     edu2_year: 'Academic Excellence',
     edu2_degree: 'AI & Software Engineering Focus',
@@ -178,6 +180,8 @@ const T = {
     nav_contact: 'تواصل معي',
 
     hero_badge: 'متاحة للفرص الوظيفية',
+    hero_tagline: 'مطور واحد متكامل لكافة احتياجاتك البرمجية والويب.',
+    hero_scroll: 'مرر للأسفل',
     hero_name1: 'نانسي',
     hero_name2: 'عبدالله فتحي',
     hero_role_typed: ['مطورة TypeScript / Next.js / Laravel', 'مطورة ويب متكاملة', 'مطورة React.js', 'خبيرة PHP / Laravel', 'مهندسة برمجيات'],
@@ -202,7 +206,7 @@ const T = {
     lbl_email: 'البريد الإلكتروني', lbl_phone: 'الهاتف',
     lbl_university: 'الجامعة', val_university: 'جامعة حلوان',
     lbl_major: 'التخصص', val_major: 'قسم الذكاء الاصطناعي — علوم الحاسب',
-    lbl_gpa: 'المعدل التراكمي', val_gpa: '3.68 / 4.0 · امتياز',
+    lbl_gpa: 'المعدل التراكمي', val_gpa: '3.68 / 4.0 · امتياز مع مرتبة الشرف',
     lang_arabic: 'العربية', lang_lv_arabic: 'اللغة الأم',
     lang_english: 'الإنجليزية', lang_lv_english: 'جيد جداً',
     lang_deutsch: 'الألمانية', lang_lv_deutsch: 'جيد',
@@ -284,7 +288,7 @@ const T = {
     edu1_year: 'سبتمبر 2022 — حتى الآن',
     edu1_degree: 'بكالوريوس علوم الحاسب والذكاء الاصطناعي',
     edu1_school: 'جامعة حلوان · قسم الذكاء الاصطناعي',
-    edu1_grade1: 'التقدير: امتياز',
+    edu1_grade1: 'التقدير: امتياز مع مرتبة الشرف',
     edu1_grade2: 'المعدل التراكمي: 3.68 / 4.0',
     edu2_year: 'تميز أكاديمي',
     edu2_degree: 'تخصص الذكاء الاصطناعي وهندسة البرمجيات',
@@ -484,20 +488,16 @@ function rebuildSelects(lang) {
   const waBtn = document.getElementById('waBtn');
   const prog = document.getElementById('scrollProgress');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a, .sidebar-nav a, .capsule-links a');
-  const bottomNav = document.getElementById('jetonBottomNav');
-  const quickChat = document.getElementById('jetonQuickChat');
+  const navLinks = document.querySelectorAll('.nav-links a, .sidebar-nav a, .jh-capsule a');
 
   window.addEventListener('scroll', () => {
     const sy = window.scrollY;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     if (prog) prog.style.width = (sy / docH * 100) + '%';
     if (nav) nav.classList.toggle('scrolled', sy > 60);
-    const show = sy > 500;
+    const show = sy > 400;
     if (backTop) backTop.classList.toggle('show', show);
-    if (waBtn) waBtn.classList.toggle('show', show);
-    if (bottomNav) bottomNav.classList.toggle('show', sy > 60);
-    if (quickChat) quickChat.classList.toggle('show', sy > 60);
+    if (waBtn) waBtn.classList.toggle('show', sy > 100);
     let cur = '';
     sections.forEach(s => { if (sy >= s.offsetTop - 260) cur = s.id; });
     navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));

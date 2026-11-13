@@ -15,6 +15,8 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="sections.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
   <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
 </head>
@@ -100,103 +102,93 @@
   </div>
   <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-  <!-- HERO (Jeton-inspired 3D Coral Curved Stage) -->
-  <section id="hero" class="jeton-hero">
-    <div class="jeton-hero-stage">
-      <!-- 3D HELICAL DISCS CANVAS -->
-      <div class="jeton-hero-canvas" id="hero3d" aria-hidden="true"></div>
+  <!-- ═════════ HERO — Jeton-style 3D coin stack ═════════ -->
+  <section id="hero" class="jh-hero" aria-label="Introduction">
+    <div class="jh-canvas" id="hero3d" aria-hidden="true"></div>
+    <div class="jh-shade" aria-hidden="true"></div>
+    <div class="jh-grain" aria-hidden="true"></div>
 
-      <div class="jeton-hero-inner">
-        <!-- LEFT COLUMN: EDITORIAL TYPOGRAPHY & CTAs -->
-        <div class="jeton-hero-col-left">
-          <div class="jeton-pill-badge">
-            <span class="pulse-dot"></span>
-            <span data-i18n="hero_badge">Available for Opportunities</span>
-          </div>
-
-          <h1 class="hero-name jeton-hero-title">
-            <span class="jeton-title-line" data-i18n="hero_name1">Nancy</span>
-            <span class="jeton-title-line accent" data-i18n="hero_name2">Abdullah Fathy</span>
-          </h1>
-
-          <p class="hero-role jeton-hero-role"><span id="typedRole"></span><span class="typed-cursor">|</span></p>
-
-          <p class="hero-desc jeton-hero-desc" data-i18n="hero_desc">
-            TypeScript & Next.js Developer with 3+ years of experience building fast, scalable,
-            SEO-friendly web applications — from interactive React front-ends to robust Laravel
-            back-ends and AI-powered features.
-          </p>
-
-          <div class="hero-btns jeton-hero-btns">
-            <a href="#projects" class="btn jeton-btn-white"><i class="fas fa-layer-group"></i><span
-                data-i18n="hero_btn_projects">View Projects</span></a>
-            <a href="#contact" class="btn jeton-btn-glass"><i class="fas fa-paper-plane"></i><span
-                data-i18n="hero_btn_hire">Hire Me</span></a>
-            <a href="mailto:nancyabdo857@gmail.com" class="btn jeton-btn-glass"><i class="fas fa-envelope"></i><span
-                data-i18n="hero_btn_email">Email Me</span></a>
-          </div>
-
-          <div class="jeton-scroll-badge">
-            <a href="#about" class="jeton-scroll-link" aria-label="Scroll to content">
-              <i class="fas fa-mouse"></i>
-              <span data-i18n="hero_scroll">Scroll</span>
-              <i class="fas fa-arrow-down scroll-arrow"></i>
-            </a>
-          </div>
+    <div class="jh-inner">
+      <!-- LEFT: giant headline -->
+      <div class="jh-left">
+        <div class="jh-badge">
+          <span class="pulse-dot"></span>
+          <span data-i18n="hero_badge">Available for Opportunities</span>
         </div>
 
-        <!-- RIGHT COLUMN: HEADLINE TAGLINE, STORE-STYLE BADGES, STATS -->
-        <div class="jeton-hero-col-right">
-          <div class="jeton-right-headline">
-            <p class="jeton-tagline" data-i18n="hero_tagline">Single developer for all your web & software needs.</p>
-          </div>
+        <h1 class="jh-title">
+          <span class="jh-line"><span data-i18n="hero_name1">Nancy</span></span>
+          <span class="jh-line"><span data-i18n="hero_name2">Abdullah Fathy</span></span>
+        </h1>
 
-          <!-- APP STORE / DISCOVER BADGES -->
-          <div class="jeton-store-group">
-            <a href="https://github.com/nancy-abduallh" target="_blank" rel="noopener" class="jeton-store-badge">
-              <i class="fab fa-github"></i>
-              <div class="store-badge-text">
-                <span class="store-sub">EXPLORE REPOSITORIES</span>
-                <strong class="store-title">GitHub Profile</strong>
-              </div>
-            </a>
-            <a href="#projects" class="jeton-store-badge">
-              <i class="fas fa-laptop-code"></i>
-              <div class="store-badge-text">
-                <span class="store-sub">PRODUCTION BUILDS</span>
-                <strong class="store-title">Featured Apps</strong>
-              </div>
-            </a>
-          </div>
+        <p class="jh-role"><span id="typedRole"></span><span class="typed-cursor">|</span></p>
 
-          <!-- STATS PILL ROW -->
-          <div class="hero-stats jeton-hero-stats">
-            <div class="stat-item">
-              <div class="stat-num" data-count="3" data-suffix="+">0</div>
-              <div class="stat-label" data-i18n="stat_years_lbl">Years Exp.</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num" data-count="12" data-suffix="+">0</div>
-              <div class="stat-label" data-i18n="stat_projects_lbl">Projects</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">3.68</div>
-              <div class="stat-label" data-i18n="stat_gpa_lbl">GPA / 4.0</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">A+</div>
-              <div class="stat-label" data-i18n="stat_grade_lbl">Top Grade</div>
-            </div>
-          </div>
+        <div class="jh-actions">
+          <a href="#projects" class="jh-btn jh-btn--white"><i class="fas fa-layer-group"></i><span data-i18n="hero_btn_projects">View Projects</span></a>
+          <a href="#contact" class="jh-btn jh-btn--glass"><i class="fas fa-paper-plane"></i><span data-i18n="hero_btn_hire">Hire Me</span></a>
+          <a href="mailto:nancyabdo857@gmail.com" class="jh-btn jh-btn--glass"><i class="fas fa-envelope"></i><span data-i18n="hero_btn_email">Email Me</span></a>
+        </div>
+      </div>
 
-          <!-- FLOATING TECH CHIPS -->
-          <div class="jeton-tech-chips">
-            <div class="jeton-chip"><i class="fas fa-bolt"></i><span data-i18n="badge_nextjs">TypeScript / Next.js Developer</span></div>
-            <div class="jeton-chip"><i class="fab fa-react"></i><span data-i18n="badge_react">React Developer</span></div>
-            <div class="jeton-chip"><i class="fab fa-laravel"></i><span data-i18n="badge_laravel">Laravel Expert</span></div>
+      <!-- RIGHT: tagline, description, store-style badges, stats -->
+      <div class="jh-right">
+        <p class="jh-tagline" data-i18n="hero_tagline">Single developer for all your web &amp; software needs.</p>
+
+        <p class="jh-desc" data-i18n="hero_desc">
+          TypeScript &amp; Next.js Developer with 3+ years of experience building fast, scalable,
+          SEO-friendly web applications — from interactive React front-ends to robust Laravel
+          back-ends and AI-powered features.
+        </p>
+
+        <div class="jh-badges">
+          <a href="https://github.com/nancy-abduallh" target="_blank" rel="noopener" class="jh-store">
+            <i class="fab fa-github"></i>
+            <span><small>EXPLORE REPOSITORIES</small><strong>GitHub Profile</strong></span>
+          </a>
+          <a href="#projects" class="jh-store">
+            <i class="fas fa-laptop-code"></i>
+            <span><small>PRODUCTION BUILDS</small><strong>Featured Apps</strong></span>
+          </a>
+        </div>
+
+        <div class="jh-stats">
+          <div class="jh-stat">
+            <div class="stat-num" data-count="3" data-suffix="+">0</div>
+            <div class="jh-stat-lbl" data-i18n="stat_years_lbl">Years Exp.</div>
+          </div>
+          <div class="jh-stat">
+            <div class="stat-num" data-count="12" data-suffix="+">0</div>
+            <div class="jh-stat-lbl" data-i18n="stat_projects_lbl">Projects</div>
+          </div>
+          <div class="jh-stat">
+            <div class="stat-num">3.68</div>
+            <div class="jh-stat-lbl" data-i18n="stat_gpa_lbl">GPA / 4.0</div>
+          </div>
+          <div class="jh-stat">
+            <div class="stat-num">A+</div>
+            <div class="jh-stat-lbl" data-i18n="stat_grade_lbl">Top Grade</div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Jeton Signature In-Hero Bottom Dock (matches Image 1: left scroll pill, center capsule, right support) -->
+    <div class="jh-bottom-bar">
+      <a href="#about" class="jh-scroll" aria-label="Scroll to content">
+        <i class="fas fa-mouse"></i><span data-i18n="hero_scroll">Scroll</span>
+      </a>
+
+      <nav class="jh-capsule" aria-label="Hero navigation">
+        <a href="#about" class="jh-capsule-item"><span data-i18n="nav_about">About</span></a>
+        <a href="#skills" class="jh-capsule-item"><span data-i18n="nav_skills">Skills</span></a>
+        <a href="#experience" class="jh-capsule-item"><span data-i18n="nav_experience">Experience</span></a>
+        <a href="#projects" class="jh-capsule-item"><span data-i18n="nav_projects">Projects</span></a>
+        <a href="#contact" class="jh-capsule-item"><span data-i18n="nav_contact">Contact</span></a>
+      </nav>
+
+      <a href="#contact" class="jh-support-btn" aria-label="Support & Contact">
+        <i class="fas fa-headset"></i><span data-i18n="nav_contact">Contact</span>
+      </a>
     </div>
   </section>
 
@@ -274,7 +266,7 @@
             <div class="detail-item"><label data-i18n="lbl_major">Major</label><span data-i18n="val_major">AI Department
                 — CS & AI</span></div>
             <div class="detail-item"><label data-i18n="lbl_gpa">GPA</label><span data-i18n="val_gpa">3.68 / 4.0 ·
-                Excellent</span></div>
+                Excellent with Honor Degree</span></div>
           </div>
 
           <div class="lang-grid" id="langGrid">
@@ -997,7 +989,7 @@
           <div class="edu-school"><i class="fas fa-university"></i><span data-i18n="edu1_school">Helwan University · AI
               Department</span></div>
           <span class="edu-grade"><i class="fas fa-star"></i><span data-i18n="edu1_grade1">Grade:
-              Excellent</span></span>
+              Excellent with Honor Degree</span></span>
           <span class="edu-grade"><i class="fas fa-chart-line"></i><span data-i18n="edu1_grade2">GPA: 3.68 /
               4.0</span></span>
         </div>
@@ -1162,26 +1154,7 @@
     </div>
   </footer>
 
-  <!-- JETON SIGNATURE FLOATING BOTTOM CAPSULE NAV -->
-  <aside class="jeton-bottom-nav" id="jetonBottomNav" aria-label="Quick navigation">
-    <div class="jeton-bottom-capsule">
-      <a href="#hero" class="capsule-home" aria-label="Home"><i class="fas fa-home"></i></a>
-      <div class="capsule-divider"></div>
-      <div class="capsule-links">
-        <a href="#about" class="capsule-item"><span data-i18n="nav_about">About</span> <i class="fas fa-chevron-down"></i></a>
-        <a href="#skills" class="capsule-item"><span data-i18n="nav_skills">Skills</span> <i class="fas fa-chevron-down"></i></a>
-        <a href="#projects" class="capsule-item"><span data-i18n="nav_projects">Projects</span> <i class="fas fa-chevron-down"></i></a>
-        <a href="#gallery" class="capsule-item"><span data-i18n="nav_gallery">Gallery</span> <i class="fas fa-chevron-down"></i></a>
-        <a href="#experience" class="capsule-item"><span data-i18n="nav_experience">Experience</span> <i class="fas fa-chevron-down"></i></a>
-        <a href="#contact" class="capsule-item"><span data-i18n="nav_contact">Contact</span> <i class="fas fa-chevron-down"></i></a>
-      </div>
-    </div>
-  </aside>
 
-  <!-- JETON FLOATING QUICK CHAT BUTTON -->
-  <a href="#contact" class="jeton-quick-chat" id="jetonQuickChat" aria-label="Quick Message">
-    <i class="fas fa-comment-dots"></i>
-  </a>
 
   <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">

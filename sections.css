@@ -1,0 +1,270 @@
+/* ══════════════════════════════════════════════════════════════
+   sections.css — professional background themes  (loads AFTER style.css)
+
+   One shared language (coral coin-rings, soft glows, fine grain)
+   so the whole page feels like the hero, with a different
+   "texture" per section:
+
+     About       Coin rings        Skills      Dot grid
+     Experience  Timeline lines    Projects    Ink showcase (dark)
+     Gallery     Soft canvas       Education   Ruled paper
+     Contact     Coral finale      Footer      Ink roast
+
+   Every theme has a light and a dark variant. Decoration lives
+   in ::before / ::after (pointer-events: none), content sits above.
+   ══════════════════════════════════════════════════════════════ */
+
+:root,
+[data-theme="light"] {
+  --sx-rgb: 247, 59, 32;
+  --sx-base: #ffffff;
+  --sx-base-2: #fff6f4;
+  --sx-glow: .13;
+  --sx-line: .07;
+  --sx-dot: .20;
+  --sx-grain: .045;
+}
+[data-theme="dark"] {
+  --sx-rgb: 255, 104, 84;
+  --sx-base: #150403;
+  --sx-base-2: #1f0704;
+  --sx-glow: .16;
+  --sx-line: .08;
+  --sx-dot: .22;
+  --sx-grain: .07;
+}
+
+/* concentric coin rings — explicit stops so nothing clips at the box edge */
+:root {
+  --sx-rings: radial-gradient(circle closest-side, transparent 0, transparent 17.65%, rgba(var(--sx-rgb), .14) 17.65% 18%, transparent 18%, transparent 29.65%, rgba(var(--sx-rgb), .12) 29.65% 30%, transparent 30%, transparent 41.65%, rgba(var(--sx-rgb), .11) 41.65% 42%, transparent 42%, transparent 53.65%, rgba(var(--sx-rgb), .10) 53.65% 54%, transparent 54%, transparent 65.65%, rgba(var(--sx-rgb), .08) 65.65% 66%, transparent 66%, transparent 77.65%, rgba(var(--sx-rgb), .07) 77.65% 78%, transparent 78%, transparent 89.65%, rgba(var(--sx-rgb), .05) 89.65% 90%, transparent 90%, transparent 98.65%, rgba(var(--sx-rgb), .04) 98.65% 99%, transparent 99%, transparent 100%);
+  --sx-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .2  0 0 0 0 .15  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* shared plumbing ------------------------------------------------ */
+#about, #skills, #experience, #projects, #gallery, #education, #contact {
+  position: relative;
+  isolation: isolate;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+#about::before, #skills::before, #experience::before, #projects::before,
+#gallery::before, #education::before, #contact::before,
+#about::after, #skills::after, #experience::after, #projects::after,
+#gallery::after, #education::after, #contact::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+/* fine grain over every themed section */
+#about::after, #skills::after, #experience::after, #projects::after,
+#gallery::after, #education::after, #contact::after {
+  inset: 0;
+  background-image: var(--sx-noise);
+  opacity: var(--sx-grain);
+  mix-blend-mode: multiply;
+}
+[data-theme="dark"] #about::after, [data-theme="dark"] #skills::after,
+[data-theme="dark"] #experience::after, [data-theme="dark"] #projects::after,
+[data-theme="dark"] #gallery::after, [data-theme="dark"] #education::after,
+[data-theme="dark"] #contact::after { mix-blend-mode: screen; }
+
+/* ── 1 · ABOUT — coin rings ───────────────────────────────────── */
+#about {
+  background:
+    radial-gradient(55% 45% at 0% 100%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .8)), transparent 70%),
+    linear-gradient(180deg, var(--sx-base) 0%, var(--sx-base-2) 100%) !important;
+}
+#about::before {
+  width: min(900px, 90vw); aspect-ratio: 1;
+  top: -260px; inset-inline-end: -240px;
+  background: var(--sx-rings);
+  animation: sxSpin 120s linear infinite;
+}
+
+/* ── 2 · SKILLS — dot grid ────────────────────────────────────── */
+#skills {
+  background:
+    radial-gradient(45% 40% at 100% 0%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .7)), transparent 70%),
+    linear-gradient(180deg, var(--sx-base-2) 0%, var(--sx-base) 100%) !important;
+}
+#skills::before {
+  inset: 0;
+  background-image: radial-gradient(rgba(var(--sx-rgb), var(--sx-dot)) 1.2px, transparent 1.6px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 45%, #000 20%, transparent 100%);
+          mask-image: radial-gradient(70% 60% at 50% 45%, #000 20%, transparent 100%);
+}
+
+/* ── 3 · EXPERIENCE — timeline hairlines ──────────────────────── */
+#experience {
+  background:
+    radial-gradient(50% 45% at 100% 35%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .8)), transparent 70%),
+    linear-gradient(180deg, var(--sx-base) 0%, var(--sx-base) 100%) !important;
+}
+#experience::before {
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(var(--sx-rgb), var(--sx-line)) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(var(--sx-rgb), calc(var(--sx-line) * .6)) 1px, transparent 1px);
+  background-size: 120px 100%, 100% 120px;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+}
+
+/* ── 4 · PROJECTS — warm marble editorial canvas (matches Jeton Image 1) ── */
+#projects {
+  background:
+    radial-gradient(55% 45% at 90% 10%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .75)), transparent 70%),
+    radial-gradient(50% 45% at 10% 90%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .55)), transparent 70%),
+    linear-gradient(180deg, var(--sx-base-2) 0%, var(--sx-base) 100%) !important;
+}
+#projects .sec-title { color: var(--color-ink-roast, #360802) !important; }
+#projects .sec-tag   { color: var(--color-signal-orange, #f73b20) !important; }
+#projects .pf-btn {
+  background: var(--color-linen-blush, #fdedea) !important;
+  color: var(--color-ink-roast, #360802) !important;
+  border: 1px solid rgba(247, 59, 32, .16) !important;
+}
+#projects .pf-btn.active,
+#projects .pf-btn:hover {
+  background: #f73b20 !important;
+  border-color: #f73b20 !important;
+  color: #ffffff !important;
+}
+#projects::before {
+  width: min(980px, 95vw); aspect-ratio: 1;
+  bottom: -420px; inset-inline-start: -300px;
+  background: var(--sx-rings);
+  opacity: .5;
+  animation: sxSpin 160s linear infinite reverse;
+}
+#projects::after { mix-blend-mode: multiply; opacity: var(--sx-grain); }
+
+/* Dark mode override for #projects */
+[data-theme="dark"] #projects {
+  background:
+    radial-gradient(60% 50% at 85% 0%, rgba(247, 59, 32, .34), transparent 70%),
+    radial-gradient(50% 45% at 5% 100%, rgba(247, 59, 32, .22), transparent 70%),
+    linear-gradient(180deg, #1c0604 0%, #140403 100%) !important;
+}
+[data-theme="dark"] #projects .sec-title { color: #ffffff !important; }
+[data-theme="dark"] #projects .sec-tag   { color: #ff8a78 !important; }
+[data-theme="dark"] #projects .pf-btn {
+  background: rgba(255, 255, 255, .08) !important;
+  color: #fdedea !important;
+  border-color: rgba(255, 255, 255, .22) !important;
+}
+[data-theme="dark"] #projects .pf-btn.active,
+[data-theme="dark"] #projects .pf-btn:hover {
+  background: #f73b20 !important;
+  border-color: #f73b20 !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] #projects::before { opacity: .9; }
+[data-theme="dark"] #projects::after { mix-blend-mode: screen; opacity: .07; }
+
+/* ── 5 · GALLERY — soft canvas ────────────────────────────────── */
+#gallery {
+  background:
+    radial-gradient(40% 50% at 12% 20%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .9)), transparent 70%),
+    radial-gradient(45% 55% at 92% 85%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .7)), transparent 70%),
+    linear-gradient(135deg, var(--sx-base) 0%, var(--sx-base-2) 100%) !important;
+}
+#gallery::before {
+  inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(var(--sx-rgb), .045) 0 1px, transparent 1px 22px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
+}
+
+/* ── 6 · EDUCATION — ruled paper ──────────────────────────────── */
+#education {
+  background:
+    radial-gradient(50% 45% at 0% 90%, rgba(var(--sx-rgb), calc(var(--sx-glow) * .8)), transparent 70%),
+    linear-gradient(180deg, var(--sx-base) 0%, var(--sx-base-2) 100%) !important;
+}
+#education::before {
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, transparent 0, transparent calc(8% - 1px), rgba(var(--sx-rgb), .22) calc(8% - 1px), rgba(var(--sx-rgb), .22) 8%, transparent 8%),
+    repeating-linear-gradient(180deg, transparent 0 41px, rgba(var(--sx-rgb), var(--sx-line)) 41px 42px);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+
+/* ── 7 · CONTACT — coral finale (echoes the hero) ─────────────── */
+#contact {
+  background:
+    radial-gradient(80% 60% at 50% 115%, rgba(var(--sx-rgb), .38), transparent 70%),
+    linear-gradient(180deg, var(--sx-base) 0%, var(--sx-base-2) 70%, rgba(var(--sx-rgb), .14) 100%) !important;
+}
+#contact::before {
+  width: min(1000px, 100vw); aspect-ratio: 1;
+  bottom: -520px; inset-inline-end: -220px;
+  background: var(--sx-rings);
+  animation: sxSpin 140s linear infinite;
+}
+
+/* ── footer — ink roast ───────────────────────────────────────── */
+footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 120% at 50% 130%, rgba(247, 59, 32, .35), transparent 70%),
+    linear-gradient(180deg, #230806 0%, #160403 100%) !important;
+  border-top: 0 !important;
+  color: #fdedea;
+  --text: #fdedea;
+  --text-muted: #c9a9a3;
+  --color-ink-roast: #fdedea;
+}
+footer .footer-logo { color: #fff !important; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   Dark-mode surface fix
+   (style.css hard-codes white backgrounds on cards, so in dark
+   mode they showed white boxes with cream text.)
+   ══════════════════════════════════════════════════════════════ */
+[data-theme="dark"] .about-profile-card,
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .timeline-item,
+[data-theme="dark"] .edu-card,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .cert-item,
+[data-theme="dark"] .c-method,
+[data-theme="dark"] .detail-item,
+[data-theme="dark"] .media-panel {
+  background: #230906 !important;
+  border-color: rgba(255, 255, 255, .09) !important;
+}
+[data-theme="dark"] .form-control {
+  background: rgba(255, 255, 255, .05) !important;
+  color: #fdedea !important;
+  border-color: rgba(255, 255, 255, .14) !important;
+}
+[data-theme="dark"] .mtabs { background: rgba(255, 255, 255, .08) !important; }
+[data-theme="dark"] .pf-btn,
+[data-theme="dark"] .gf-btn {
+  background: rgba(255, 255, 255, .07) !important;
+  color: #fdedea !important;
+  border-color: rgba(255, 255, 255, .18) !important;
+}
+[data-theme="dark"] .pf-btn.active, [data-theme="dark"] .pf-btn:hover,
+[data-theme="dark"] .gf-btn.active, [data-theme="dark"] .gf-btn:hover {
+  background: #f73b20 !important;
+  border-color: #f73b20 !important;
+  color: #fff !important;
+}
+
+@keyframes sxSpin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  #about::before, #projects::before, #contact::before { animation: none !important; }
+}
+@media (max-width: 640px) {
+  #about::before, #contact::before { opacity: .7; }
+  #skills::before { background-size: 22px 22px; }
+}

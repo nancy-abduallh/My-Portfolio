@@ -4975,45 +4975,18 @@ footer {
 
 /* ── UNIFIED JETON FLOATING ACTION BUTTONS STACK ───────────── */
 /* Stack order from bottom to top:
-   1. Jeton Quick Chat (#jetonQuickChat) at bottom: 24px
-   2. WhatsApp Button (#waBtn) at bottom: 82px
-   3. Back to Top (#backTop) at bottom: 140px
+   1. WhatsApp Button (#waBtn) at bottom: 24px
+   2. Back to Top (#backTop) at bottom: 84px
+   (Floating capsule nav and quick chat removed to prevent covering content)
 */
+.jeton-bottom-nav,
 .jeton-quick-chat {
-  position: fixed !important;
-  bottom: 24px !important;
-  right: 24px !important;
-  z-index: 995 !important;
-  width: 48px !important;
-  height: 48px !important;
-  border-radius: 9999px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: var(--color-signal-orange, #f73b20) !important;
-  color: #ffffff !important;
-  text-decoration: none !important;
-  font-size: 1.25rem !important;
-  box-shadow: 0 8px 24px rgba(247, 59, 32, 0.42), 0 2px 6px rgba(0, 0, 0, 0.08) !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, opacity 0.25s !important;
-  opacity: 0;
-  transform: scale(0.85);
-  pointer-events: none;
-}
-.jeton-quick-chat.show {
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  pointer-events: all !important;
-}
-.jeton-quick-chat:hover {
-  transform: scale(1.08) translateY(-2px) !important;
-  box-shadow: 0 14px 32px rgba(247, 59, 32, 0.6) !important;
-  color: #ffffff !important;
+  display: none !important;
 }
 
 .whatsapp-btn {
   position: fixed !important;
-  bottom: 82px !important;
+  bottom: 24px !important;
   right: 24px !important;
   z-index: 994 !important;
   width: 48px !important;
@@ -5045,11 +5018,11 @@ footer {
 
 .back-top {
   position: fixed !important;
-  bottom: 140px !important;
-  right: 28px !important;
+  bottom: 84px !important;
+  right: 26px !important;
   z-index: 993 !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 42px !important;
+  height: 42px !important;
   border-radius: 9999px !important;
   display: flex !important;
   align-items: center !important;
@@ -5077,17 +5050,13 @@ footer {
 }
 
 /* RTL Stack Mirroring */
-[dir="rtl"] .jeton-quick-chat {
-  right: auto !important;
-  left: 24px !important;
-}
 [dir="rtl"] .whatsapp-btn {
   right: auto !important;
   left: 24px !important;
 }
 [dir="rtl"] .back-top {
   right: auto !important;
-  left: 28px !important;
+  left: 26px !important;
 }
 
 .wa-tooltip {
@@ -5229,36 +5198,20 @@ footer {
 
 /* ── MOBILE / SMARTPHONES (<= 768px) ──────────────────────── */
 @media (max-width: 768px) {
-  /* Hide bottom capsule navigation on mobile to maximize viewport & eliminate collisions */
-  .jeton-bottom-nav {
-    display: none !important;
-  }
-
   /* Compact, non-overlapping floating action buttons */
-  .jeton-quick-chat {
-    bottom: 18px !important;
-    right: 18px !important;
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 1.15rem !important;
-  }
   .whatsapp-btn {
-    bottom: 70px !important;
+    bottom: 18px !important;
     right: 18px !important;
     width: 44px !important;
     height: 44px !important;
     font-size: 1.25rem !important;
   }
   .back-top {
-    bottom: 122px !important;
+    bottom: 70px !important;
     right: 20px !important;
     width: 40px !important;
     height: 40px !important;
     font-size: 0.9rem !important;
-  }
-  [dir="rtl"] .jeton-quick-chat {
-    right: auto !important;
-    left: 18px !important;
   }
   [dir="rtl"] .whatsapp-btn {
     right: auto !important;
