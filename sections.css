@@ -202,10 +202,17 @@ footer .footer-logo { color: #fff !important; }
 
 
 /* ══════════════════════════════════════════════════════════════
-   Dark-mode surface fix
-   (style.css hard-codes white backgrounds on cards, so in dark
-   mode they showed white boxes with cream text.)
+   Dark-mode surface & contrast overhaul
+   Ensures all cards, text, buttons, tags, and tabs are
+   high-contrast and crystal clear in dark mode.
    ══════════════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --color-ink-roast: #ffffff !important;
+  --text: #ffffff !important;
+  --text-muted: #d8c0ba !important;
+}
+
+/* Card Surfaces */
 [data-theme="dark"] .about-profile-card,
 [data-theme="dark"] .skill-card,
 [data-theme="dark"] .project-card,
@@ -217,25 +224,263 @@ footer .footer-logo { color: #fff !important; }
 [data-theme="dark"] .detail-item,
 [data-theme="dark"] .media-panel {
   background: #230906 !important;
-  border-color: rgba(255, 255, 255, .09) !important;
+  border-color: rgba(255, 255, 255, .12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35) !important;
 }
-[data-theme="dark"] .form-control {
-  background: rgba(255, 255, 255, .05) !important;
-  color: #fdedea !important;
-  border-color: rgba(255, 255, 255, .14) !important;
+
+/* Headings & Card Titles (Crisp White) */
+[data-theme="dark"] .sec-title,
+[data-theme="dark"] .proj-title,
+[data-theme="dark"] .skill-title,
+[data-theme="dark"] .tl-role,
+[data-theme="dark"] .edu-degree,
+[data-theme="dark"] .cert-name,
+[data-theme="dark"] .about-name,
+[data-theme="dark"] .contact-tagline,
+[data-theme="dark"] .c-method-val,
+[data-theme="dark"] .detail-item span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
 }
-[data-theme="dark"] .mtabs { background: rgba(255, 255, 255, .08) !important; }
+
+/* Section Tags & Category Labels (Vibrant Coral) */
+[data-theme="dark"] .sec-tag,
+[data-theme="dark"] .skill-cat,
+[data-theme="dark"] .tl-period,
+[data-theme="dark"] .c-method-lbl,
+[data-theme="dark"] .detail-item label {
+  color: #ff6854 !important;
+  font-weight: 600 !important;
+  letter-spacing: .06em !important;
+}
+
+/* Body Text & Descriptions (High-Contrast Warm Light Gray) */
+[data-theme="dark"] .proj-desc,
+[data-theme="dark"] .about-text,
+[data-theme="dark"] .about-content-col p,
+[data-theme="dark"] .contact-text,
+[data-theme="dark"] .edu-school,
+[data-theme="dark"] .edu-extra,
+[data-theme="dark"] .cert-issuer,
+[data-theme="dark"] .tl-company,
+[data-theme="dark"] .ach-item span {
+  color: #d8c0ba !important;
+  opacity: 1 !important;
+}
+
+/* Timeline Bullets */
+[data-theme="dark"] .tl-desc li {
+  color: #e5cec9 !important;
+  opacity: 1 !important;
+}
+[data-theme="dark"] .tl-desc li::before {
+  color: #ff6854 !important;
+}
+
+/* PROJECT CARDS: LIVE DEMO BUTTONS (Bright Coral with Crisp White Text) */
+[data-theme="dark"] .proj-link,
+[data-theme="dark"] .proj-link:first-child,
+[data-theme="dark"] .proj-link:last-child,
+[data-theme="dark"] .proj-link:only-child {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+  border: 1px solid #f73b20 !important;
+  box-shadow: 0 4px 16px rgba(247, 59, 32, .4) !important;
+}
+[data-theme="dark"] .proj-link i,
+[data-theme="dark"] .proj-link span {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+[data-theme="dark"] .proj-link:hover,
+[data-theme="dark"] .proj-link:first-child:hover,
+[data-theme="dark"] .proj-link:last-child:hover,
+[data-theme="dark"] .proj-link:only-child:hover {
+  background: #ff573d !important;
+  color: #ffffff !important;
+  border-color: #ff573d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(247, 59, 32, .55) !important;
+}
+
+/* Project Media Tabs (Screenshot / Demo Video) */
+[data-theme="dark"] .mtabs {
+  background: rgba(35, 9, 6, .9) !important;
+  border: 1px solid rgba(255, 255, 255, .18) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .35) !important;
+}
+[data-theme="dark"] .mtab {
+  color: #e5cec9 !important;
+  font-weight: 500 !important;
+}
+[data-theme="dark"] .mtab:hover {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .mtab.active {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(247, 59, 32, .4) !important;
+}
+
+/* Skill Tags & Project Tech Tags */
+[data-theme="dark"] .tag,
+[data-theme="dark"] .tech-tag {
+  background: rgba(255, 255, 255, .08) !important;
+  color: #f7e6e3 !important;
+  border: 1px solid rgba(255, 255, 255, .16) !important;
+}
+[data-theme="dark"] .tag:hover,
+[data-theme="dark"] .tech-tag:hover {
+  background: rgba(247, 59, 32, .22) !important;
+  color: #ffffff !important;
+  border-color: rgba(247, 59, 32, .5) !important;
+}
+[data-theme="dark"] .tag-hot {
+  background: rgba(247, 59, 32, .2) !important;
+  color: #ffa194 !important;
+  border: 1px solid rgba(247, 59, 32, .35) !important;
+}
+
+/* Filter Pills (Projects & Gallery) */
 [data-theme="dark"] .pf-btn,
 [data-theme="dark"] .gf-btn {
-  background: rgba(255, 255, 255, .07) !important;
-  color: #fdedea !important;
-  border-color: rgba(255, 255, 255, .18) !important;
+  background: rgba(255, 255, 255, .08) !important;
+  color: #f7e6e3 !important;
+  border: 1px solid rgba(255, 255, 255, .16) !important;
 }
 [data-theme="dark"] .pf-btn.active, [data-theme="dark"] .pf-btn:hover,
 [data-theme="dark"] .gf-btn.active, [data-theme="dark"] .gf-btn:hover {
   background: #f73b20 !important;
   border-color: #f73b20 !important;
-  color: #fff !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(247, 59, 32, .35) !important;
+}
+
+/* About Profile Card Details & Actions */
+[data-theme="dark"] .about-role-pill {
+  background: rgba(255, 255, 255, .08) !important;
+  color: #ffa194 !important;
+  border: 1px solid rgba(255, 255, 255, .16) !important;
+}
+[data-theme="dark"] .about-status-badge {
+  background: rgba(43, 130, 82, .22) !important;
+  color: #5be395 !important;
+  border: 1px solid rgba(43, 130, 82, .38) !important;
+}
+[data-theme="dark"] .about-card-actions .btn-gold {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+  border: 1px solid #f73b20 !important;
+}
+[data-theme="dark"] .about-card-actions .btn-outline {
+  background: rgba(255, 255, 255, .08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, .24) !important;
+}
+[data-theme="dark"] .about-card-actions .btn-outline:hover {
+  background: rgba(255, 255, 255, .16) !important;
+  border-color: rgba(255, 255, 255, .4) !important;
+}
+
+/* Education Badges & Icons */
+[data-theme="dark"] .edu-year,
+[data-theme="dark"] .edu-grade {
+  background: rgba(247, 59, 32, .18) !important;
+  color: #ffa194 !important;
+  border: 1px solid rgba(247, 59, 32, .32) !important;
+}
+[data-theme="dark"] .cert-icon {
+  background: rgba(247, 59, 32, .18) !important;
+  color: #ffa194 !important;
+  border: 1px solid rgba(247, 59, 32, .3) !important;
+}
+[data-theme="dark"] .cert-item:hover .cert-icon {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+}
+
+/* Contact Methods & Form Controls */
+[data-theme="dark"] .c-method i {
+  background: rgba(247, 59, 32, .18) !important;
+  color: #ffa194 !important;
+  border: 1px solid rgba(247, 59, 32, .3) !important;
+}
+[data-theme="dark"] .c-method:hover i {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .c-btn {
+  background: rgba(255, 255, 255, .08) !important;
+  color: #ffa194 !important;
+  border: 1px solid rgba(255, 255, 255, .18) !important;
+}
+[data-theme="dark"] .c-btn:hover {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .form-group label {
+  color: #e5cec9 !important;
+}
+[data-theme="dark"] .form-control {
+  background: rgba(255, 255, 255, .06) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, .16) !important;
+}
+[data-theme="dark"] .form-control:focus {
+  border-color: #f73b20 !important;
+  background: rgba(255, 255, 255, .09) !important;
+  box-shadow: 0 0 0 3px rgba(247, 59, 32, .25) !important;
+}
+[data-theme="dark"] .form-control::placeholder {
+  color: rgba(255, 255, 255, .45) !important;
+}
+[data-theme="dark"] .btn-submit {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(247, 59, 32, .4) !important;
+}
+[data-theme="dark"] .btn-submit:hover {
+  background: #ff573d !important;
+}
+
+/* Scrolled Navbar in Dark Mode */
+[data-theme="dark"] nav.scrolled {
+  background: rgba(22, 4, 2, .94) !important;
+  border-color: rgba(255, 255, 255, .14) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .45) !important;
+}
+[data-theme="dark"] nav.scrolled .nav-logo {
+  color: #ffffff !important;
+}
+[data-theme="dark"] nav.scrolled .nav-links a {
+  color: #e5cec9 !important;
+}
+[data-theme="dark"] nav.scrolled .nav-links a:hover,
+[data-theme="dark"] nav.scrolled .nav-links a.active {
+  color: #ffffff !important;
+  background: #f73b20 !important;
+}
+[data-theme="dark"] nav.scrolled .theme-toggle,
+[data-theme="dark"] nav.scrolled .lang-toggle {
+  background: rgba(255, 255, 255, .08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, .18) !important;
+}
+[data-theme="dark"] nav.scrolled .theme-toggle:hover,
+[data-theme="dark"] nav.scrolled .lang-toggle:hover {
+  background: #f73b20 !important;
+  color: #ffffff !important;
+  border-color: #f73b20 !important;
+}
+
+/* Gallery Items in Dark Mode */
+[data-theme="dark"] .gi {
+  background: #230906 !important;
+  border-color: rgba(255, 255, 255, .12) !important;
+}
+[data-theme="dark"] .gi-label {
+  background: rgba(247, 59, 32, .92) !important;
+  color: #ffffff !important;
 }
 
 @keyframes sxSpin { to { transform: rotate(360deg); } }

@@ -4546,26 +4546,36 @@ h1.hero-name.jeton-hero-title {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.proj-link:first-child {
+.proj-link:first-child,
+.proj-link:only-child {
   background: var(--color-signal-orange, #f73b20) !important;
   color: #ffffff !important;
-  border: 1px solid var(--color-signal-orange, #f73b20);
+  border: 1px solid var(--color-signal-orange, #f73b20) !important;
   box-shadow: 0 4px 14px rgba(247, 59, 32, 0.28);
 }
 
-.proj-link:first-child:hover {
+.proj-link:first-child i,
+.proj-link:only-child i,
+.proj-link:first-child span,
+.proj-link:only-child span {
+  color: #ffffff !important;
+}
+
+.proj-link:first-child:hover,
+.proj-link:only-child:hover {
   background: var(--color-brand-orange-tint, #f84d35) !important;
+  color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(247, 59, 32, 0.38);
 }
 
-.proj-link:last-child {
+.proj-link:not(:only-child):last-child {
   background: #ffffff !important;
   color: var(--color-ink-roast, #360802) !important;
   border: 1px solid var(--color-sand-wash, #e7dcdb);
 }
 
-.proj-link:last-child:hover {
+.proj-link:not(:only-child):last-child:hover {
   background: var(--color-linen-blush, #fdedea) !important;
   color: var(--color-signal-orange, #f73b20) !important;
   border-color: rgba(247, 59, 32, 0.3);
