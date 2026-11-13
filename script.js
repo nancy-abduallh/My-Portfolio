@@ -43,8 +43,8 @@ const T = {
     lbl_major: 'Major', val_major: 'AI Department — CS & AI',
     lbl_gpa: 'GPA', val_gpa: '3.68 / 4.0 · Excellent with Honor Degree',
     lang_arabic: 'Arabic', lang_lv_arabic: 'Native / Fluent',
-    lang_english: 'English', lang_lv_english: 'Very Good',
-    lang_deutsch: 'Deutsch', lang_lv_deutsch: 'Good',
+    lang_english: 'English', lang_lv_english: 'Excellent',
+    lang_deutsch: 'Deutsch', lang_lv_deutsch: 'Very Good',
 
     skills_tag: 'What I Know', skills_title: 'Technical Skills',
     sk1_cat: 'Core', sk1_title: 'Languages',
@@ -208,8 +208,8 @@ const T = {
     lbl_major: 'التخصص', val_major: 'قسم الذكاء الاصطناعي — علوم الحاسب',
     lbl_gpa: 'المعدل التراكمي', val_gpa: '3.68 / 4.0 · امتياز مع مرتبة الشرف',
     lang_arabic: 'العربية', lang_lv_arabic: 'اللغة الأم',
-    lang_english: 'الإنجليزية', lang_lv_english: 'جيد جداً',
-    lang_deutsch: 'الألمانية', lang_lv_deutsch: 'جيد',
+    lang_english: 'الإنجليزية', lang_lv_english: 'ممتاز',
+    lang_deutsch: 'الألمانية', lang_lv_deutsch: 'جيد جداً',
 
     skills_tag: 'ما أعرفه', skills_title: 'المهارات التقنية',
     sk1_cat: 'أساسية', sk1_title: 'لغات البرمجة',

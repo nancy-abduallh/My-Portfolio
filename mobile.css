@@ -112,36 +112,109 @@ html, body { overflow-x: clip; }
   /* ── about / experience / education / contact ────────────── */
   .about-profile-card { padding: 1.5rem 1.25rem !important; }
   .detail-item { padding: .8rem .95rem !important; }
-  .timeline-item { padding: 1.15rem 1.1rem !important; border-radius: 16px !important; }
   .edu-card, .cert-item { border-radius: 16px !important; }
   .contact-form { padding: 1.25rem !important; border-radius: 18px !important; }
   .c-method { padding: .85rem 1rem !important; }
   .form-control { font-size: 16px !important; min-height: 46px; }
   textarea.form-control { min-height: 120px; }
 
+  /* ── timeline / work experience on mobile ─────────────────── */
+  #experience::before { display: none !important; }
+  .timeline {
+    position: relative !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  .timeline::before {
+    display: block !important;
+    position: absolute !important;
+    top: 10px !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    right: auto !important;
+    width: 2px !important;
+    background: linear-gradient(180deg, #f73b20 0%, #e7dcdb 85%, transparent 100%) !important;
+    border-radius: 9999px !important;
+    opacity: 0.9 !important;
+  }
+  [data-theme="dark"] .timeline::before {
+    background: linear-gradient(180deg, #f73b20 0%, rgba(247, 59, 32, 0.3) 85%, transparent 100%) !important;
+  }
+  .timeline-item {
+    position: relative !important;
+    margin-left: 26px !important;
+    margin-right: 22px !important;
+    margin-bottom: 1.5rem !important;
+    padding: 1.25rem 1.15rem !important;
+    border-radius: 16px !important;
+  }
+  .tl-dot {
+    position: absolute !important;
+    top: 22px !important;
+    left: -16px !important;
+    right: auto !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    transform: translateX(-50%) !important;
+    background: #f73b20 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(247, 59, 32, 0.25) !important;
+    z-index: 2 !important;
+  }
+  [data-theme="dark"] .tl-dot {
+    border-color: #220603 !important;
+  }
+
+  /* RTL Timeline */
+  [dir="rtl"] .timeline {
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  [dir="rtl"] .timeline::before {
+    left: auto !important;
+    right: 10px !important;
+  }
+  [dir="rtl"] .timeline-item {
+    margin-left: 22px !important;
+    margin-right: 26px !important;
+  }
+  [dir="rtl"] .tl-dot {
+    left: auto !important;
+    right: -16px !important;
+    transform: translateX(50%) !important;
+  }
+
   /* ── floating buttons: neatly stacked, zero overlap ──────── */
   .jeton-quick-chat {
-    right: 1rem !important;
-    bottom: calc(1rem + env(safe-area-inset-bottom, 0px)) !important;
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 1.15rem !important;
+    right: 0.75rem !important;
+    bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px)) !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.05rem !important;
     z-index: 994 !important;
   }
   .whatsapp-btn {
-    right: 1rem !important;
-    bottom: calc(1rem + 52px + env(safe-area-inset-bottom, 0px)) !important;
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 1.25rem !important;
+    right: 0.75rem !important;
+    bottom: calc(0.85rem + 48px + env(safe-area-inset-bottom, 0px)) !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.15rem !important;
     z-index: 995 !important;
   }
   .back-top {
-    right: 1rem !important;
-    bottom: calc(1rem + 104px + env(safe-area-inset-bottom, 0px)) !important;
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 0.95rem !important;
+    right: 0.75rem !important;
+    bottom: calc(0.85rem + 96px + env(safe-area-inset-bottom, 0px)) !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 0.9rem !important;
     z-index: 996 !important;
   }
 
@@ -149,7 +222,7 @@ html, body { overflow-x: clip; }
   [dir="rtl"] .whatsapp-btn,
   [dir="rtl"] .back-top {
     right: auto !important;
-    left: 1rem !important;
+    left: 0.75rem !important;
   }
 
   footer { padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important; }
@@ -158,4 +231,38 @@ html, body { overflow-x: clip; }
 @media (max-width: 380px) {
   .skills-grid > .skill-card { flex-basis: 88%; }
   .gallery-grid { grid-auto-rows: 116px !important; }
+  .timeline-item {
+    margin-left: 22px !important;
+    margin-right: 18px !important;
+    padding: 1rem 0.95rem !important;
+  }
+  .timeline::before {
+    left: 8px !important;
+  }
+  .tl-dot {
+    left: -14px !important;
+  }
+  [dir="rtl"] .timeline-item {
+    margin-left: 18px !important;
+    margin-right: 22px !important;
+  }
+  [dir="rtl"] .timeline::before {
+    right: 8px !important;
+  }
+  [dir="rtl"] .tl-dot {
+    right: -14px !important;
+  }
+  .jeton-quick-chat, .whatsapp-btn, .back-top {
+    width: 36px !important;
+    height: 36px !important;
+    right: 0.5rem !important;
+  }
+  [dir="rtl"] .jeton-quick-chat,
+  [dir="rtl"] .whatsapp-btn,
+  [dir="rtl"] .back-top {
+    right: auto !important;
+    left: 0.5rem !important;
+  }
+  .whatsapp-btn { bottom: calc(0.75rem + 44px + env(safe-area-inset-bottom, 0px)) !important; }
+  .back-top     { bottom: calc(0.75rem + 88px + env(safe-area-inset-bottom, 0px)) !important; }
 }
