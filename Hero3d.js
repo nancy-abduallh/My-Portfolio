@@ -18,6 +18,18 @@
     var mount = document.getElementById('hero3d');
     if (!mount) return;
 
+    var heroVideo = document.getElementById('heroVideo');
+    if (heroVideo && !mount.classList.contains('force-3d')) {
+        // Authentic studio-rendered video takes precedence.
+        // Three.js stands by as fallback if video fails to load or play.
+        heroVideo.addEventListener('error', function () {
+            console.warn('[Hero3d] Hero video error, activating Three.js fallback');
+            mount.style.display = 'block';
+            start();
+        });
+        return;
+    }
+
     var hero = document.getElementById('hero');
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var isMobile = window.matchMedia('(max-width: 760px)').matches;

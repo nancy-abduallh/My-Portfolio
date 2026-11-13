@@ -105,6 +105,24 @@
 
   <!-- ═════════ HERO — Jeton-style 3D coin stack ═════════ -->
   <section id="hero" class="jh-hero" aria-label="Introduction">
+    <div class="jh-video-wrap" id="heroVideoWrap" aria-hidden="true">
+      <video class="_video-asset jh-hero-video h-full w-full object-cover"
+        id="heroVideo"
+        type="video/mp4"
+        width="3840"
+        height="2160"
+        loop
+        muted
+        autoplay
+        playsinline="true"
+        poster="assets/videos/hero-poster.jpg"
+        preload="auto"
+        data-media="video"
+        data-intersecting="true">
+        <source src="assets/videos/hero-mobile.mp4#t=0.01" type="video/mp4">
+        <source src="https://d2xn6tai5u6yqd.cloudfront.net/splash/individual/landing-homepage-mobile/landing-homepage-mobile-639267853133338014.mp4#t=0.01" type="video/mp4">
+      </video>
+    </div>
     <div class="jh-canvas" id="hero3d" aria-hidden="true"></div>
     <div class="jh-shade" aria-hidden="true"></div>
     <div class="jh-grain" aria-hidden="true"></div>

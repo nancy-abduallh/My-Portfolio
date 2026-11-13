@@ -22,6 +22,24 @@ html, body { overflow-x: clip; }
 
   .container { width: calc(100% - (var(--m-pad) * 2)); }
 
+  /* ── hero video mobile placement ────────────────────────── */
+  .jh-video-wrap {
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    opacity: 0.88 !important;
+  }
+  .jh-hero-video {
+    object-position: 65% 25% !important;
+    transform: scale(1.1) !important;
+  }
+  [dir="rtl"] .jh-hero-video {
+    object-position: 35% 25% !important;
+    transform: scale(1.1) scaleX(-1) !important;
+  }
+
   /* ── rhythm ──────────────────────────────────────────────── */
   #about, #skills, #experience, #projects, #gallery, #education, #contact {
     padding-block: 3.4rem !important;

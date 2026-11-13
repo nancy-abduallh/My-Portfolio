@@ -25,6 +25,49 @@
   border: 0 !important;
 }
 
+/* ── authentic Jeton 3D video asset ────────────────────────── */
+.jh-video-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58vw;
+  max-width: 1150px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%);
+}
+
+[dir="rtl"] .jh-video-wrap {
+  right: auto;
+  left: 0;
+  mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%);
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%);
+}
+
+.jh-hero-video,
+.jh-video-wrap video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  opacity: 0.95;
+  transition: opacity 1s cubic-bezier(.16, 1, .3, 1);
+}
+
+[dir="rtl"] .jh-hero-video,
+[dir="rtl"] .jh-video-wrap video {
+  object-position: center left;
+  transform: scaleX(-1);
+}
+
+.jh-hero:has(.jh-hero-video) .jh-canvas {
+  display: none !important;
+}
+
 /* ── 3D canvas ─────────────────────────────────────────────── */
 .jh-canvas {
   position: absolute;
@@ -265,11 +308,41 @@
 
 /* ── responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .jh-video-wrap {
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .jh-hero-video,
+  .jh-video-wrap video {
+    object-position: 70% 30%;
+    opacity: 0.82;
+  }
+  [dir="rtl"] .jh-hero-video,
+  [dir="rtl"] .jh-video-wrap video {
+    object-position: 30% 30%;
+    transform: scaleX(-1);
+  }
   .jh-inner { grid-template-columns: 1fr; align-items: end; gap: 2rem; }
   .jh-right { max-width: 34rem; }
   .jh-badges { flex-direction: row; flex-wrap: wrap; }
 }
 @media (max-width: 640px) {
+  .jh-video-wrap {
+    opacity: 0.88;
+  }
+  .jh-hero-video,
+  .jh-video-wrap video {
+    object-position: 65% 25%;
+    transform: scale(1.1);
+  }
+  [dir="rtl"] .jh-hero-video,
+  [dir="rtl"] .jh-video-wrap video {
+    object-position: 35% 25%;
+    transform: scale(1.1) scaleX(-1);
+  }
   .jh-inner { padding-top: 6.5rem; padding-bottom: 6rem; }
   .jh-title { font-size: clamp(2.7rem, 13.5vw, 4.6rem); }
   .jh-btn { padding: .8rem 1.1rem; font-size: .88rem; }
@@ -278,5 +351,7 @@
   .jh-scroll { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .jh-video-wrap video { display: none !important; }
+  .jh-video-wrap { background-image: url('assets/videos/hero-poster.jpg'); background-size: cover; background-position: center; }
   .jh-hero *, .jh-hero *::before { animation: none !important; transition: none !important; }
 }

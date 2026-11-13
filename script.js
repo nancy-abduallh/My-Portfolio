@@ -769,7 +769,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  document.querySelectorAll('video').forEach(vid => {
+  document.querySelectorAll('video:not(.jh-hero-video):not(#heroVideo)').forEach(vid => {
     vid.addEventListener('error', function () {
       const ph = document.createElement('div');
       ph.className = 'media-ph';
@@ -778,6 +778,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+/* ── JETON HERO VIDEO CONTROLLER ──────────────────────────── */
+(function initHeroVideo() {
+  const video = document.getElementById('heroVideo');
+  if (!video) return;
+
+  function tryPlay() {
+    video.muted = true;
+    video.playsInline = true;
+    const p = video.play();
+    if (p !== undefined) {
+      p.catch(() => {
+        const resumeOnTouch = () => {
+          video.play().catch(() => {});
+          window.removeEventListener('touchstart', resumeOnTouch);
+          window.removeEventListener('click', resumeOnTouch);
+        };
+        window.addEventListener('touchstart', resumeOnTouch, { passive: true });
+        window.addEventListener('click', resumeOnTouch, { passive: true });
+      });
+    }
+  }
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.05 });
+    obs.observe(video);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      video.pause();
+    } else {
+      video.play().catch(() => {});
+    }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryPlay);
+  } else {
+    tryPlay();
+  }
+})();
 
 /* ── HERO IMAGE SLIDER (2 slides, auto-advance, dots + arrows) ── */
 (function () {
