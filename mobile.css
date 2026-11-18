@@ -95,12 +95,18 @@ html, body { overflow-x: clip; }
     box-sizing: border-box !important;
   }
   .project-card .proj-body { padding: 1.05rem 1.1rem 1.2rem !important; }
+  .project-star-badge {
+    font-size: 0.68rem !important;
+    padding: 0.22rem 0.65rem !important;
+    margin-bottom: 0.45rem !important;
+  }
   .proj-title { font-size: 1.05rem !important; line-height: 1.25; }
   .proj-desc { font-size: .88rem !important; line-height: 1.55 !important; }
   .proj-tech { gap: .4rem !important; }
   .proj-tech .tech-tag { font-size: .68rem !important; padding: .28rem .65rem !important; }
   .proj-links { display: flex; }
   .proj-links .proj-link { flex: 1; justify-content: center; min-height: 44px; }
+  .proj-link.proj-link--live { font-weight: 600 !important; }
   .mtab { min-height: 36px; }
 
   /* ── gallery: 2-col mosaic ───────────────────────────────── */

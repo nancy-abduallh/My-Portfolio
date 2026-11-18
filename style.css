@@ -4596,6 +4596,155 @@ h1.hero-name.jeton-hero-title {
   transform: translateY(-2px);
 }
 
+/* ── ⭐ STARRED & FEATURED CLIENT WORK SPOTLIGHT ─────────────────── */
+.jh-btn--star {
+  position: relative !important;
+  border: 1px solid rgba(247, 59, 32, 0.45) !important;
+  box-shadow: 0 0 24px rgba(247, 59, 32, 0.35), 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.jh-btn--star .star-pulse-icon {
+  color: #ff9800 !important;
+  animation: starTwinkle 2.2s infinite ease-in-out;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; filter: drop-shadow(0 0 2px rgba(255, 152, 0, 0.5)); }
+  50% { transform: scale(1.22) rotate(14deg); opacity: 0.9; filter: drop-shadow(0 0 8px #ff9800); }
+}
+
+.pf-btn.pf-star-btn {
+  background: rgba(247, 59, 32, 0.08) !important;
+  color: #f73b20 !important;
+  border-color: rgba(247, 59, 32, 0.35) !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+}
+
+.pf-btn.pf-star-btn i {
+  color: #f73b20;
+  font-size: 0.78rem;
+}
+
+.pf-btn.pf-star-btn:hover {
+  background: rgba(247, 59, 32, 0.14) !important;
+  border-color: #f73b20 !important;
+}
+
+.pf-btn.pf-star-btn.active {
+  background: linear-gradient(135deg, #f73b20, #d6250e) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 16px rgba(247, 59, 32, 0.35) !important;
+}
+
+.pf-btn.pf-star-btn.active i {
+  color: #ffe600;
+}
+
+[data-theme="dark"] .pf-btn.pf-star-btn {
+  background: rgba(247, 59, 32, 0.18) !important;
+  color: #ffa194 !important;
+  border-color: rgba(247, 59, 32, 0.4) !important;
+}
+
+[data-theme="dark"] .pf-btn.pf-star-btn i {
+  color: #ffa194;
+}
+
+/* Featured Project Card Glow & Hairline */
+.project-card.is-featured-project {
+  border-color: rgba(247, 59, 32, 0.38) !important;
+  box-shadow: 0 8px 30px rgba(247, 59, 32, 0.08), 0 2px 10px rgba(54, 8, 2, 0.04) !important;
+  position: relative;
+}
+
+.project-card.is-featured-project::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #f73b20, #ff9800, transparent);
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.project-card.is-featured-project:hover {
+  border-color: rgba(247, 59, 32, 0.65) !important;
+  box-shadow: 0 16px 44px rgba(247, 59, 32, 0.18), 0 4px 14px rgba(54, 8, 2, 0.08) !important;
+}
+
+[data-theme="dark"] .project-card.is-featured-project {
+  border-color: rgba(247, 59, 32, 0.48) !important;
+  box-shadow: 0 10px 32px rgba(247, 59, 32, 0.22), 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Star Badge Inside Project Card */
+.project-star-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(247, 59, 32, 0.08);
+  color: #f73b20;
+  border: 1px solid rgba(247, 59, 32, 0.25);
+  margin-bottom: 0.65rem;
+  box-shadow: 0 2px 8px rgba(247, 59, 32, 0.06);
+  width: fit-content;
+}
+
+.project-star-badge i {
+  color: #f73b20;
+  font-size: 0.7rem;
+  animation: starTwinkle 2.5s infinite ease-in-out;
+}
+
+[data-theme="dark"] .project-star-badge {
+  background: rgba(247, 59, 32, 0.2);
+  color: #ff9d8f;
+  border-color: rgba(247, 59, 32, 0.4);
+}
+
+[data-theme="dark"] .project-star-badge i {
+  color: #ff9d8f;
+}
+
+/* Live Demo Highlight Button */
+.proj-link.proj-link--live {
+  background: linear-gradient(135deg, #f73b20 0%, #d4220b 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 16px rgba(247, 59, 32, 0.35) !important;
+  font-weight: 600 !important;
+}
+
+.proj-link.proj-link--live i {
+  color: #ffe600 !important;
+  font-size: 0.8rem;
+  filter: drop-shadow(0 0 3px rgba(255, 230, 0, 0.6));
+}
+
+.proj-link.proj-link--live:hover {
+  background: linear-gradient(135deg, #e0280f 0%, #b81804 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(247, 59, 32, 0.5) !important;
+}
+
+[data-theme="dark"] .proj-link.proj-link--live {
+  background: linear-gradient(135deg, #ff4c33 0%, #d4220b 100%) !important;
+  box-shadow: 0 4px 18px rgba(247, 59, 32, 0.45) !important;
+}
+
 /* ── GALLERY (Bento-Grid with Smooth Zoom & Overlays) ─────── */
 .gallery-grid {
   display: grid;

@@ -55,9 +55,9 @@
     <a href="#hero" class="nav-logo">NAF</a>
     <ul class="nav-links">
       <li><a href="#about" data-i18n="nav_about">About</a></li>
-      <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
-      <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
       <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+      <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
       <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
       <li><a href="#education" data-i18n="nav_education">Education</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
@@ -78,9 +78,9 @@
     <div class="sidebar-content">
       <ul class="sidebar-nav">
         <li><a href="#about" data-i18n="nav_about">About</a></li>
-        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
-        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
         <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
         <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
         <li><a href="#education" data-i18n="nav_education">Education</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
@@ -143,7 +143,7 @@
         <p class="jh-role"><span id="typedRole"></span><span class="typed-cursor">|</span></p>
 
         <div class="jh-actions">
-          <a href="#projects" class="jh-btn jh-btn--white"><i class="fas fa-layer-group"></i><span data-i18n="hero_btn_projects">View Projects</span></a>
+          <a href="#projects" class="jh-btn jh-btn--white jh-btn--star"><i class="fas fa-star star-pulse-icon"></i><span data-i18n="hero_btn_projects">Explore Featured Projects</span></a>
           <a href="#contact" class="jh-btn jh-btn--glass"><i class="fas fa-paper-plane"></i><span data-i18n="hero_btn_hire">Hire Me</span></a>
           <a href="mailto:nancyabdo857@gmail.com" class="jh-btn jh-btn--glass"><i class="fas fa-envelope"></i><span data-i18n="hero_btn_email">Email Me</span></a>
         </div>
@@ -303,98 +303,407 @@
 
   <div class="gold-divider"></div>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section-pad">
+  <!-- PROJECTS -->
+  <section id="projects" class="section-pad">
     <div class="container">
       <div class="section-header reveal">
         <div class="sec-num">02</div>
         <div>
-          <div class="sec-tag" data-i18n="skills_tag">What I Know</div>
-          <h2 class="sec-title" data-i18n="skills_title">Technical Skills</h2>
+          <div class="sec-tag" data-i18n="proj_tag">My Work</div>
+          <h2 class="sec-title" data-i18n="proj_title">Featured Projects</h2>
           <div class="gold-line"></div>
         </div>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
-          <div class="skill-cat" data-i18n="sk1_cat">Core</div>
-          <div class="skill-title" data-i18n="sk1_title">Languages</div>
-          <div class="skill-tags">
-            <span class="tag tag-hot">TypeScript</span><span class="tag">JavaScript</span>
-            <span class="tag">HTML5</span><span class="tag">CSS3</span>
-            <span class="tag">PHP</span><span class="tag">Python</span>
-            <span class="tag">Java</span><span class="tag">C++</span>
+      <div class="proj-filters reveal">
+        <button class="pf-btn pf-star-btn" onclick="pFilter(this,'featured')"><i class="fas fa-star"></i> <span data-i18n="pf_featured">⭐ Featured Work</span></button>
+        <button class="pf-btn active" onclick="pFilter(this,'all')" data-i18n="pf_all">All</button>
+        <button class="pf-btn" onclick="pFilter(this,'nextjs')">Next.js</button>
+        <button class="pf-btn" onclick="pFilter(this,'typescript')">TypeScript</button>
+        <button class="pf-btn" onclick="pFilter(this,'react')">React</button>
+        <button class="pf-btn" onclick="pFilter(this,'laravel')">Laravel</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- SA Tourism Platform -->
+        <div class="project-card is-featured-project" data-stack="featured nextjs typescript react">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'saudtourism','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'saudtourism','vid')" data-i18n="demo_video">Demo
+                Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="saudtourism-img" class="media-panel active">
+                <img src="./images/saudtourism.png" alt="SA Tourism Platform" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=SA+Tourism';" />
+              </div>
+              <div id="saudtourism-vid" class="media-panel">
+                <video src="./videos/SA للسياحة _ تجارب سعودية فاخرة - Google Chrome 2026-10-26 13-51-23.mp4" controls
+                  loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="project-star-badge"><i class="fas fa-star"></i> <span data-i18n="badge_flagship">Flagship Client Project</span></div>
+            <div class="proj-title" data-i18n="saudtourism_title">SA Tourism — Luxury Travel &amp; Experiences Platform
+            </div>
+            <p class="proj-desc" data-i18n="saudtourism_desc">Premier Saudi tourism platform offering luxury curated
+              travel experiences, VIP desert expeditions, historical tours in AlUla and Diriyah, and seamless booking
+              for high-end domestic tourism.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">React</span><span class="tech-tag">Tailwind CSS</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://saudtourism.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link proj-link--live"><i
+                  class="fas fa-star"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
           </div>
         </div>
 
-        <div class="skill-card reveal" style="transition-delay: 0.1s">
-          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
-          <div class="skill-cat" data-i18n="sk2_cat">Frameworks</div>
-          <div class="skill-title" data-i18n="sk2_title">Frameworks & Libraries</div>
-          <div class="skill-tags">
-            <span class="tag tag-hot">Next.js</span><span class="tag">React.js</span>
-            <span class="tag">Laravel</span><span class="tag">Vue.js</span>
-            <span class="tag">Livewire</span><span class="tag">Bootstrap</span>
-            <span class="tag">jQuery</span><span class="tag">Tailwind</span><span class="tag">Alpine.js</span>
+        <!-- SAUD TRADING EST. -->
+        <div class="project-card is-featured-project" data-stack="featured react typescript">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'saudtrading','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'saudtrading','vid')" data-i18n="demo_video">Demo
+                Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="saudtrading-img" class="media-panel active">
+                <img src="./images/saudtrading.png" alt="Saud Trading EST" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Saud+Trading';" />
+              </div>
+              <div id="saudtrading-vid" class="media-panel">
+                <video src="./videos/سعود التجارية _ تجارة عالمية برؤية سعودية - Google Chrome 2026-10-08 10-29-29.mp4"
+                  controls loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="saudtrading_title">Saud Trading Est. — Global Trade &amp; Digital
+              Solutions</div>
+            <p class="proj-desc" data-i18n="saudtrading_desc">Corporate global trade platform supplying essential food
+              commodities, raw plastic polymers, and integrated AI-powered digital services across Saudi Arabia aligned
+              with Vision 2030.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">TanStack Start</span><span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span><span class="tech-tag">Tailwind CSS</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://saud.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
           </div>
         </div>
 
-        <div class="skill-card reveal" style="transition-delay: 0.2s">
-          <div class="skill-icon"><i class="fas fa-database"></i></div>
-          <div class="skill-cat" data-i18n="sk3_cat">Data</div>
-          <div class="skill-title" data-i18n="sk3_title">Databases</div>
-          <div class="skill-tags">
-            <span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
-            <span class="tag">MS SQL Server</span><span class="tag">Oracle Server</span>
-            <span class="tag">Eloquent ORM</span><span class="tag">Redis</span><span class="tag">MongoDB</span>
+        <!-- Baytak — Next.js/TS first: flagship for the new role -->
+        <div class="project-card is-featured-project" data-stack="featured nextjs typescript">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'baytak','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'baytak','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="baytak-img" class="media-panel active">
+                <img src="./images/baytak.png" alt="Baytak Home Maintenance Platform" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Baytak';" />
+              </div>
+              <div id="baytak-vid" class="media-panel"><video src="./videos/baytak.mp4" controls loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="project-star-badge"><i class="fas fa-star"></i> <span data-i18n="badge_flagship">Flagship Client Project</span></div>
+            <div class="proj-title" data-i18n="bay_title">Baytak — Home Maintenance Platform</div>
+            <p class="proj-desc" data-i18n="bay_desc">Home-maintenance booking platform connecting customers with
+              verified technicians (plumbing, electrical, AC, carpentry, painting, cleaning) and tracking each request
+              from booking to completion.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Zustand</span>
+              <span class="tech-tag">React Hook Form</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://baytak.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link proj-link--live"><i
+                  class="fas fa-star"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
           </div>
         </div>
 
-        <div class="skill-card reveal" style="transition-delay: 0.1s">
-          <div class="skill-icon"><i class="fas fa-tools"></i></div>
-          <div class="skill-cat" data-i18n="sk4_cat">DevOps</div>
-          <div class="skill-title" data-i18n="sk4_title">Tools & Version Control</div>
-          <div class="skill-tags">
-            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitLab</span>
-            <span class="tag">Docker</span><span class="tag">Docker Compose</span>
-            <span class="tag">VSCode</span><span class="tag">PHPStorm</span><span class="tag">Postman</span>
-            <span class="tag">RESTful APIs</span><span class="tag">GraphQL</span><span class="tag">MyFatoorah</span>
+        <!-- Alf Leila -->
+        <div class="project-card" data-stack="react typescript">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'alfleila','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'alfleila','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="alfleila-img" class="media-panel active">
+                <img src="./images/alfleila.png" alt="Alf Leila Restaurant Platform" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Alf+Leila';" />
+              </div>
+              <div id="alfleila-vid" class="media-panel"><video src="./videos/alfleila.mp4" controls
+                  loading="lazy"></video></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="alf_title">Alf Leila Restaurant Platform</div>
+            <p class="proj-desc" data-i18n="alf_desc">Arabian-Nights-themed restaurant platform with online
+              reservations, QR table scan & ordering, menu browsing, checkout, customer accounts, and an admin
+              dashboard.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">React</span><span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Vite</span><span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">shadcn/ui</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://alf-leila-main.up.railway.app/" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
+
+            </div>
           </div>
         </div>
 
-        <div class="skill-card reveal" style="transition-delay: 0.2s">
-          <div class="skill-icon"><i class="fas fa-brain"></i></div>
-          <div class="skill-cat" data-i18n="sk5_cat">AI</div>
-          <div class="skill-title" data-i18n="sk5_title">AI & Architecture</div>
-          <div class="skill-tags">
-            <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span>
-            <span class="tag">AI Development</span><span class="tag">TensorFlow</span>
-            <span class="tag">PyTorch</span><span class="tag">MVC</span>
-            <span class="tag">Design Patterns</span><span class="tag">SOLID</span>
-            <span class="tag">OOP</span><span class="tag">Microservices</span>
+        <!-- Pharaohs -->
+        <div class="project-card" data-stack="react typescript">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'pharaohs','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'pharaohs','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="pharaohs-img" class="media-panel active">
+                <img src="./images/pharaohs.png" alt="Virtual Pharaohs Museum" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Pharaohs+Museum';" />
+              </div>
+              <div id="pharaohs-vid" class="media-panel"><video src="./videos/pharaohs.mp4" controls
+                  loading="lazy"></video></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="pha_title">Virtual Pharaohs Museum</div>
+            <p class="proj-desc" data-i18n="pha_desc">Graduation project for Egyptology students: an interactive virtual
+              museum with six 360° panoramic exhibition halls, Arabic artifact descriptions, audio narration, and sign
+              language interpretation videos.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">TanStack Start</span><span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span><span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Three.js</span><span class="tech-tag">Motion</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://pharaohs-project.vercel.app/" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
+
+            </div>
           </div>
         </div>
 
-        <div class="skill-card reveal" style="transition-delay: 0.3s">
-          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-          <div class="skill-cat" data-i18n="sk6_cat">Cloud</div>
-          <div class="skill-title" data-i18n="sk6_title">Infrastructure</div>
-          <div class="skill-tags">
-            <span class="tag">AWS</span><span class="tag">DigitalOcean</span>
-            <span class="tag">CI/CD</span><span class="tag">Apache</span><span class="tag">Linux</span>
+        <!-- Car Rental -->
+        <div class="project-card" data-stack="laravel">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'car','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'car','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="car-img" class="media-panel active">
+                <img src="./images/car.png" alt="Car Rental System" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Car+Rental';" />
+              </div>
+              <div id="car-vid" class="media-panel"><video
+                  src="./videos/صلاح أبو الدهب للسيارات - Google Chrome 2026-02-23 15-25-56.mp4" controls
+                  loading="lazy"></video></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="car_title">Car Rental Website</div>
+            <p class="proj-desc" data-i18n="car_desc">A full-featured car rental platform with luxury vehicle listings,
+              advanced search and filtering, customer reviews, and a modern responsive design.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
+            </div>
+            <div class="proj-links">
+              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
+                  Demo</span></a>
+            </div>
           </div>
         </div>
 
-        <div class="skill-card reveal" style="transition-delay: 0.1s">
-          <div class="skill-icon"><i class="fas fa-users"></i></div>
-          <div class="skill-cat" data-i18n="sk7_cat">Soft Skills</div>
-          <div class="skill-title" data-i18n="sk7_title">Professional Skills</div>
-          <div class="skill-tags">
-            <span class="tag">Teamwork</span><span class="tag">Problem Solving</span>
-            <span class="tag">Agile</span><span class="tag">Scrum</span>
-            <span class="tag">Project Management</span><span class="tag">Communication</span>
-            <span class="tag">Technical Writing</span>
+        <!-- Nabela -->
+        <div class="project-card is-featured-project" data-stack="featured laravel">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'nabela','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'nabela','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="nabela-img" class="media-panel active">
+                <img src="./images/nabila.png" alt="Nabela E-Commerce" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Nabela';" />
+              </div>
+              <div id="nabela-vid" class="media-panel"><video src="./videos/nabila.mp4" controls loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="project-star-badge"><i class="fas fa-star"></i> <span data-i18n="badge_ecommerce">Live Store &amp; Payment</span></div>
+            <div class="proj-title" data-i18n="nab_title">Nabela E-Commerce Platform</div>
+            <p class="proj-desc" data-i18n="nab_desc">Kuwait-based e-commerce for traditional women's wear (abayas).
+              Multi-currency (KWD, SAR, AED, QAR, BHD, OMR) and bilingual Arabic/English interface with responsive
+              design.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span><span class="tech-tag">Blade</span><span
+                class="tech-tag">MyFatoorah</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://nabelakwt.com/ar" target="_blank" rel="noopener" class="proj-link proj-link--live"><i
+                  class="fas fa-star"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AndMore -->
+        <div class="project-card" data-stack="laravel">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'andmore','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'andmore','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="andmore-img" class="media-panel active">
+                <img src="./images/andmore.png" alt="AndMore E-commerce" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=AndMore';" />
+              </div>
+              <div id="andmore-vid" class="media-panel"><video
+                  src="./videos/اند مور - Google Chrome 2025-08-18 13-25-17.mp4" controls loading="lazy"></video></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="and_title">AndMore E-commerce Website</div>
+            <p class="proj-desc" data-i18n="and_desc">Kuwait-based e-commerce platform offering diverse products across
+              electronics, fashion, home goods, and personal care. Features promotional ads, intuitive navigation, and
+              multiple payment methods.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span>
+              <span class="tech-tag">MySQL</span><span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">JavaScript</span><span class="tech-tag">MyFatoorah</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://andmoree.com/ar" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sakba -->
+        <div class="project-card" data-stack="laravel">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'sakba','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'sakba','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="sakba-img" class="media-panel active">
+                <img src="./images/sakba.png" alt="Sakba Platform" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Sakba';" />
+              </div>
+              <div id="sakba-vid" class="media-panel"><video
+                  src="./videos/Sakba - Home - Google Chrome 2025-08-18 13-23-29.mp4" controls loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="sak_title">Sakba Custom Dashdasha Platform</div>
+            <p class="proj-desc" data-i18n="sak_desc">Kuwait-based e-commerce for custom men's dashdashas with fabric
+              selection. Integrates Visa, MasterCard & KNET. Improved page responsiveness by 25%.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">Laravel</span><span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Eloquent ORM</span><span class="tech-tag">KNET</span>
+            </div>
+            <div class="proj-links">
+              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
+                  Demo</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shantongulf -->
+        <div class="project-card" data-stack="laravel">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'shanton','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'shanton','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="shanton-img" class="media-panel active">
+                <img src="./images/shanton.png" alt="Shantongulf" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Shantongulf';" />
+              </div>
+              <div id="shanton-vid" class="media-panel"><video
+                  src="./videos/شانتون _ الرئيسية - Google Chrome 2025-08-19 12-24-11.mp4" controls
+                  loading="lazy"></video></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="sha_title">Shantongulf Women's Fashion Store</div>
+            <p class="proj-desc" data-i18n="sha_desc">Kuwait-based e-commerce for traditional women's wear including
+              abayas and seasonal dresses. Multi-currency support, language toggle, and streamlined cart system.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span><span class="tech-tag">Bootstrap</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://www.shantongulf.com/ar" target="_blank" rel="noopener" class="proj-link"><i
+                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AXIT -->
+        <div class="project-card" data-stack="">
+          <div>
+            <div class="mtabs">
+              <button class="mtab active" onclick="swapMedia(this,'axit','img')"
+                data-i18n="screenshot">Screenshot</button>
+              <button class="mtab" onclick="swapMedia(this,'axit','vid')" data-i18n="demo_video">Demo Video</button>
+            </div>
+            <div class="media-wrap">
+              <div id="axit-img" class="media-panel active">
+                <img src="./images/axit.png" alt="AXIT Landing Page" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=AXIT';" />
+              </div>
+              <div id="axit-vid" class="media-panel"><video
+                  src="./videos/AXIT Website - Google Chrome 2026-02-23 17-09-06.mp4" controls loading="lazy"></video>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-title" data-i18n="axi_title">AXIT Landing Page</div>
+            <p class="proj-desc" data-i18n="axi_desc">Modern, responsive landing page for a fictional tech company AXIT.
+              Clean design, tabs, and mobile-first layout with interactive elements.</p>
+            <div class="proj-tech">
+              <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span><span class="tech-tag">Bootstrap</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://nancy-abduallh.github.io/AXIT-Website/" target="_blank" rel="noopener"
+                class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
+                  Demo</span></a>
+
+            </div>
           </div>
         </div>
       </div>
@@ -562,405 +871,98 @@
 
   <div class="gold-divider"></div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section-pad">
+  <!-- SKILLS -->
+  <section id="skills" class="section-pad">
     <div class="container">
       <div class="section-header reveal">
         <div class="sec-num">04</div>
         <div>
-          <div class="sec-tag" data-i18n="proj_tag">My Work</div>
-          <h2 class="sec-title" data-i18n="proj_title">Featured Projects</h2>
+          <div class="sec-tag" data-i18n="skills_tag">What I Know</div>
+          <h2 class="sec-title" data-i18n="skills_title">Technical Skills</h2>
           <div class="gold-line"></div>
         </div>
       </div>
 
-      <div class="proj-filters reveal">
-        <button class="pf-btn active" onclick="pFilter(this,'all')" data-i18n="pf_all">All</button>
-        <button class="pf-btn" onclick="pFilter(this,'nextjs')">Next.js</button>
-        <button class="pf-btn" onclick="pFilter(this,'typescript')">TypeScript</button>
-        <button class="pf-btn" onclick="pFilter(this,'react')">React</button>
-        <button class="pf-btn" onclick="pFilter(this,'laravel')">Laravel</button>
-      </div>
-
-      <div class="projects-grid">
-        <!-- SA Tourism Platform -->
-        <div class="project-card" data-stack="nextjs typescript react">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'saudtourism','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'saudtourism','vid')" data-i18n="demo_video">Demo
-                Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="saudtourism-img" class="media-panel active">
-                <img src="./images/saudtourism.png" alt="SA Tourism Platform" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=SA+Tourism';" />
-              </div>
-              <div id="saudtourism-vid" class="media-panel">
-                <video src="./videos/SA للسياحة _ تجارب سعودية فاخرة - Google Chrome 2026-10-26 13-51-23.mp4" controls
-                  loading="lazy"></video>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="saudtourism_title">SA Tourism — Luxury Travel &amp; Experiences Platform
-            </div>
-            <p class="proj-desc" data-i18n="saudtourism_desc">Premier Saudi tourism platform offering luxury curated
-              travel experiences, VIP desert expeditions, historical tours in AlUla and Diriyah, and seamless booking
-              for high-end domestic tourism.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">React</span><span class="tech-tag">Tailwind CSS</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://saudtourism.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-            </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <div class="skill-cat" data-i18n="sk1_cat">Core</div>
+          <div class="skill-title" data-i18n="sk1_title">Languages</div>
+          <div class="skill-tags">
+            <span class="tag tag-hot">TypeScript</span><span class="tag">JavaScript</span>
+            <span class="tag">HTML5</span><span class="tag">CSS3</span>
+            <span class="tag">PHP</span><span class="tag">Python</span>
+            <span class="tag">Java</span><span class="tag">C++</span>
           </div>
         </div>
 
-        <!-- SAUD TRADING EST. -->
-        <div class="project-card" data-stack="react typescript">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'saudtrading','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'saudtrading','vid')" data-i18n="demo_video">Demo
-                Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="saudtrading-img" class="media-panel active">
-                <img src="./images/saudtrading.png" alt="Saud Trading EST" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Saud+Trading';" />
-              </div>
-              <div id="saudtrading-vid" class="media-panel">
-                <video src="./videos/سعود التجارية _ تجارة عالمية برؤية سعودية - Google Chrome 2026-10-08 10-29-29.mp4"
-                  controls loading="lazy"></video>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="saudtrading_title">Saud Trading Est. — Global Trade &amp; Digital
-              Solutions</div>
-            <p class="proj-desc" data-i18n="saudtrading_desc">Corporate global trade platform supplying essential food
-              commodities, raw plastic polymers, and integrated AI-powered digital services across Saudi Arabia aligned
-              with Vision 2030.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">TanStack Start</span><span class="tech-tag">React</span>
-              <span class="tech-tag">TypeScript</span><span class="tech-tag">Tailwind CSS</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://saud.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-            </div>
+        <div class="skill-card reveal" style="transition-delay: 0.1s">
+          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="skill-cat" data-i18n="sk2_cat">Frameworks</div>
+          <div class="skill-title" data-i18n="sk2_title">Frameworks & Libraries</div>
+          <div class="skill-tags">
+            <span class="tag tag-hot">Next.js</span><span class="tag">React.js</span>
+            <span class="tag">Laravel</span><span class="tag">Vue.js</span>
+            <span class="tag">Livewire</span><span class="tag">Bootstrap</span>
+            <span class="tag">jQuery</span><span class="tag">Tailwind</span><span class="tag">Alpine.js</span>
           </div>
         </div>
 
-        <!-- Baytak — Next.js/TS first: flagship for the new role -->
-        <div class="project-card" data-stack="nextjs typescript">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'baytak','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'baytak','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="baytak-img" class="media-panel active">
-                <img src="./images/baytak.png" alt="Baytak Home Maintenance Platform" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Baytak';" />
-              </div>
-              <div id="baytak-vid" class="media-panel"><video src="./videos/baytak.mp4" controls loading="lazy"></video>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="bay_title">Baytak — Home Maintenance Platform</div>
-            <p class="proj-desc" data-i18n="bay_desc">Home-maintenance booking platform connecting customers with
-              verified technicians (plumbing, electrical, AC, carpentry, painting, cleaning) and tracking each request
-              from booking to completion.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Zustand</span>
-              <span class="tech-tag">React Hook Form</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://baytak.ksaplatforms.com/" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
-                  Demo</span></a>
-
-            </div>
+        <div class="skill-card reveal" style="transition-delay: 0.2s">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <div class="skill-cat" data-i18n="sk3_cat">Data</div>
+          <div class="skill-title" data-i18n="sk3_title">Databases</div>
+          <div class="skill-tags">
+            <span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+            <span class="tag">MS SQL Server</span><span class="tag">Oracle Server</span>
+            <span class="tag">Eloquent ORM</span><span class="tag">Redis</span><span class="tag">MongoDB</span>
           </div>
         </div>
 
-        <!-- Alf Leila -->
-        <div class="project-card" data-stack="react typescript">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'alfleila','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'alfleila','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="alfleila-img" class="media-panel active">
-                <img src="./images/alfleila.png" alt="Alf Leila Restaurant Platform" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Alf+Leila';" />
-              </div>
-              <div id="alfleila-vid" class="media-panel"><video src="./videos/alfleila.mp4" controls
-                  loading="lazy"></video></div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="alf_title">Alf Leila Restaurant Platform</div>
-            <p class="proj-desc" data-i18n="alf_desc">Arabian-Nights-themed restaurant platform with online
-              reservations, QR table scan & ordering, menu browsing, checkout, customer accounts, and an admin
-              dashboard.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">React</span><span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Vite</span><span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">shadcn/ui</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://alf-leila-main.up.railway.app/" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-
-            </div>
+        <div class="skill-card reveal" style="transition-delay: 0.1s">
+          <div class="skill-icon"><i class="fas fa-tools"></i></div>
+          <div class="skill-cat" data-i18n="sk4_cat">DevOps</div>
+          <div class="skill-title" data-i18n="sk4_title">Tools & Version Control</div>
+          <div class="skill-tags">
+            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitLab</span>
+            <span class="tag">Docker</span><span class="tag">Docker Compose</span>
+            <span class="tag">VSCode</span><span class="tag">PHPStorm</span><span class="tag">Postman</span>
+            <span class="tag">RESTful APIs</span><span class="tag">GraphQL</span><span class="tag">MyFatoorah</span>
           </div>
         </div>
 
-        <!-- Pharaohs -->
-        <div class="project-card" data-stack="react typescript">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'pharaohs','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'pharaohs','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="pharaohs-img" class="media-panel active">
-                <img src="./images/pharaohs.png" alt="Virtual Pharaohs Museum" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Pharaohs+Museum';" />
-              </div>
-              <div id="pharaohs-vid" class="media-panel"><video src="./videos/pharaohs.mp4" controls
-                  loading="lazy"></video></div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="pha_title">Virtual Pharaohs Museum</div>
-            <p class="proj-desc" data-i18n="pha_desc">Graduation project for Egyptology students: an interactive virtual
-              museum with six 360° panoramic exhibition halls, Arabic artifact descriptions, audio narration, and sign
-              language interpretation videos.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">TanStack Start</span><span class="tech-tag">React</span>
-              <span class="tech-tag">TypeScript</span><span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Three.js</span><span class="tech-tag">Motion</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://pharaohs-project.vercel.app/" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-
-            </div>
+        <div class="skill-card reveal" style="transition-delay: 0.2s">
+          <div class="skill-icon"><i class="fas fa-brain"></i></div>
+          <div class="skill-cat" data-i18n="sk5_cat">AI</div>
+          <div class="skill-title" data-i18n="sk5_title">AI & Architecture</div>
+          <div class="skill-tags">
+            <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span>
+            <span class="tag">AI Development</span><span class="tag">TensorFlow</span>
+            <span class="tag">PyTorch</span><span class="tag">MVC</span>
+            <span class="tag">Design Patterns</span><span class="tag">SOLID</span>
+            <span class="tag">OOP</span><span class="tag">Microservices</span>
           </div>
         </div>
 
-        <!-- Car Rental -->
-        <div class="project-card" data-stack="laravel">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'car','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'car','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="car-img" class="media-panel active">
-                <img src="./images/car.png" alt="Car Rental System" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Car+Rental';" />
-              </div>
-              <div id="car-vid" class="media-panel"><video
-                  src="./videos/صلاح أبو الدهب للسيارات - Google Chrome 2026-02-23 15-25-56.mp4" controls
-                  loading="lazy"></video></div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="car_title">Car Rental Website</div>
-            <p class="proj-desc" data-i18n="car_desc">A full-featured car rental platform with luxury vehicle listings,
-              advanced search and filtering, customer reviews, and a modern responsive design.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
-            </div>
-            <div class="proj-links">
-              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
-                  Demo</span></a>
-            </div>
+        <div class="skill-card reveal" style="transition-delay: 0.3s">
+          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+          <div class="skill-cat" data-i18n="sk6_cat">Cloud</div>
+          <div class="skill-title" data-i18n="sk6_title">Infrastructure</div>
+          <div class="skill-tags">
+            <span class="tag">AWS</span><span class="tag">DigitalOcean</span>
+            <span class="tag">CI/CD</span><span class="tag">Apache</span><span class="tag">Linux</span>
           </div>
         </div>
 
-        <!-- Nabela -->
-        <div class="project-card" data-stack="laravel">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'nabela','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'nabela','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="nabela-img" class="media-panel active">
-                <img src="./images/nabila.png" alt="Nabela E-Commerce" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Nabela';" />
-              </div>
-              <div id="nabela-vid" class="media-panel"><video src="./videos/nabila.mp4" controls loading="lazy"></video>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="nab_title">Nabela E-Commerce Platform</div>
-            <p class="proj-desc" data-i18n="nab_desc">Kuwait-based e-commerce for traditional women's wear (abayas).
-              Multi-currency (KWD, SAR, AED, QAR, BHD, OMR) and bilingual Arabic/English interface with responsive
-              design.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span>
-              <span class="tech-tag">MySQL</span><span class="tech-tag">Blade</span><span
-                class="tech-tag">MyFatoorah</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://nabelakwt.com/ar" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- AndMore -->
-        <div class="project-card" data-stack="laravel">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'andmore','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'andmore','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="andmore-img" class="media-panel active">
-                <img src="./images/andmore.png" alt="AndMore E-commerce" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=AndMore';" />
-              </div>
-              <div id="andmore-vid" class="media-panel"><video
-                  src="./videos/اند مور - Google Chrome 2025-08-18 13-25-17.mp4" controls loading="lazy"></video></div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="and_title">AndMore E-commerce Website</div>
-            <p class="proj-desc" data-i18n="and_desc">Kuwait-based e-commerce platform offering diverse products across
-              electronics, fashion, home goods, and personal care. Features promotional ads, intuitive navigation, and
-              multiple payment methods.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span>
-              <span class="tech-tag">MySQL</span><span class="tech-tag">Bootstrap</span>
-              <span class="tech-tag">JavaScript</span><span class="tech-tag">MyFatoorah</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://andmoree.com/ar" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sakba -->
-        <div class="project-card" data-stack="laravel">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'sakba','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'sakba','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="sakba-img" class="media-panel active">
-                <img src="./images/sakba.png" alt="Sakba Platform" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Sakba';" />
-              </div>
-              <div id="sakba-vid" class="media-panel"><video
-                  src="./videos/Sakba - Home - Google Chrome 2025-08-18 13-23-29.mp4" controls loading="lazy"></video>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="sak_title">Sakba Custom Dashdasha Platform</div>
-            <p class="proj-desc" data-i18n="sak_desc">Kuwait-based e-commerce for custom men's dashdashas with fabric
-              selection. Integrates Visa, MasterCard & KNET. Improved page responsiveness by 25%.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">Laravel</span><span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Eloquent ORM</span><span class="tech-tag">KNET</span>
-            </div>
-            <div class="proj-links">
-              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
-                  Demo</span></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Shantongulf -->
-        <div class="project-card" data-stack="laravel">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'shanton','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'shanton','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="shanton-img" class="media-panel active">
-                <img src="./images/shanton.png" alt="Shantongulf" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=Shantongulf';" />
-              </div>
-              <div id="shanton-vid" class="media-panel"><video
-                  src="./videos/شانتون _ الرئيسية - Google Chrome 2025-08-19 12-24-11.mp4" controls
-                  loading="lazy"></video></div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="sha_title">Shantongulf Women's Fashion Store</div>
-            <p class="proj-desc" data-i18n="sha_desc">Kuwait-based e-commerce for traditional women's wear including
-              abayas and seasonal dresses. Multi-currency support, language toggle, and streamlined cart system.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span>
-              <span class="tech-tag">MySQL</span><span class="tech-tag">Bootstrap</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://www.shantongulf.com/ar" target="_blank" rel="noopener" class="proj-link"><i
-                  class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live Demo</span></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- AXIT -->
-        <div class="project-card" data-stack="">
-          <div>
-            <div class="mtabs">
-              <button class="mtab active" onclick="swapMedia(this,'axit','img')"
-                data-i18n="screenshot">Screenshot</button>
-              <button class="mtab" onclick="swapMedia(this,'axit','vid')" data-i18n="demo_video">Demo Video</button>
-            </div>
-            <div class="media-wrap">
-              <div id="axit-img" class="media-panel active">
-                <img src="./images/axit.png" alt="AXIT Landing Page" loading="lazy"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/640x360/1a1a1a/c9a84c?text=AXIT';" />
-              </div>
-              <div id="axit-vid" class="media-panel"><video
-                  src="./videos/AXIT Website - Google Chrome 2026-02-23 17-09-06.mp4" controls loading="lazy"></video>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title" data-i18n="axi_title">AXIT Landing Page</div>
-            <p class="proj-desc" data-i18n="axi_desc">Modern, responsive landing page for a fictional tech company AXIT.
-              Clean design, tabs, and mobile-first layout with interactive elements.</p>
-            <div class="proj-tech">
-              <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span>
-              <span class="tech-tag">JavaScript</span><span class="tech-tag">Bootstrap</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://nancy-abduallh.github.io/AXIT-Website/" target="_blank" rel="noopener"
-                class="proj-link"><i class="fas fa-external-link-alt"></i><span data-i18n="live_demo">Live
-                  Demo</span></a>
-
-            </div>
+        <div class="skill-card reveal" style="transition-delay: 0.1s">
+          <div class="skill-icon"><i class="fas fa-users"></i></div>
+          <div class="skill-cat" data-i18n="sk7_cat">Soft Skills</div>
+          <div class="skill-title" data-i18n="sk7_title">Professional Skills</div>
+          <div class="skill-tags">
+            <span class="tag">Teamwork</span><span class="tag">Problem Solving</span>
+            <span class="tag">Agile</span><span class="tag">Scrum</span>
+            <span class="tag">Project Management</span><span class="tag">Communication</span>
+            <span class="tag">Technical Writing</span>
           </div>
         </div>
       </div>
@@ -1233,10 +1235,10 @@
       <div class="capsule-divider"></div>
       <div class="capsule-links">
         <a href="#about" class="capsule-item"><span data-i18n="nav_about">About</span> <i class="fas fa-chevron-down"></i></a>
-        <a href="#skills" class="capsule-item"><span data-i18n="nav_skills">Skills</span> <i class="fas fa-chevron-down"></i></a>
         <a href="#projects" class="capsule-item"><span data-i18n="nav_projects">Projects</span> <i class="fas fa-chevron-down"></i></a>
-        <a href="#gallery" class="capsule-item"><span data-i18n="nav_gallery">Gallery</span> <i class="fas fa-chevron-down"></i></a>
         <a href="#experience" class="capsule-item"><span data-i18n="nav_experience">Experience</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#skills" class="capsule-item"><span data-i18n="nav_skills">Skills</span> <i class="fas fa-chevron-down"></i></a>
+        <a href="#gallery" class="capsule-item"><span data-i18n="nav_gallery">Gallery</span> <i class="fas fa-chevron-down"></i></a>
         <a href="#contact" class="capsule-item"><span data-i18n="nav_contact">Contact</span> <i class="fas fa-chevron-down"></i></a>
       </div>
     </div>
